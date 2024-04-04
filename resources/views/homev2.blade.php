@@ -38,11 +38,15 @@
             <div class="position-absolute top-0 end-0" style="margin-top: 1rem; margin-right: 1rem; font-size:20px;">
                 ลงชื่อเข้าใช้
             </div>
-            <!-- เมนู -->
-            <div class="shadow mt-3" style="width: 60%; height: 10%; border-radius: 15px; background-color: #D9D9D9;">
-            </div>
-            <!-- กรอบ input ข้อมูล -->
-            <div class="shadow mt-3" style="width: 60%; height: 60%; border-radius: 15px; background-color: #D9D9D9;">
+            <div class="position-absolute top-50 start-50 translate-middle">
+                <!-- เมนู -->
+                <div class="shadow mt-3"
+                    style="width: 60%; height: 10%; border-radius: 15px; background-color: #D9D9D9;">
+                </div>
+                <!-- กรอบ input ข้อมูล -->
+                <div class="shadow mt-3 "
+                    style="width: 60%; height: 60%; border-radius: 15px; background-color: #D9D9D9;">
+                </div>
             </div>
         </div>
     </div>
