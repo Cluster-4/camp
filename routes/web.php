@@ -19,3 +19,6 @@ Route::get('/', function () {
 Route::get('/test', function () {
     return view('layout.norm_officer_layout');
 });
+Route::get('/edit_room', function () {
+    return view('edit_size_room');
+});
