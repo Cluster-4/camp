@@ -54,15 +54,15 @@
                     </a>
                     <a href="{{ url('/') }}" class="nav-link text-white"><i class="fi fi-sr-sign-out-alt" style="font-size: 30"></i></a>
                 </div>
-                <div class="d-flex flex-row mx-auto mt-1">
-                    {{-- navbar --}}
-                    <div class="d-flex bg-dark text-white align-items-center p-4 fs-3" style="width: 80vw; height: 10%; background-image: linear-gradient(to right ,#1E1450 ,#1E3ACC); border-radius: 18px;">
-                        <i class="fi fi-sr-meeting-alt me-4" style="font-size: 45px;"></i>
-                        จองห้องประชุม
-                    </div>
-                    <div class="content-wrapper">
-                        @yield('content')
-                    </div>
+            </div>
+            <div class="d-flex flex-row mx-auto mt-1">
+                {{-- navbar --}}
+                <div class="d-flex bg-dark text-white align-items-center p-4 fs-3" style="width: 80vw; height: 10%; background-image: linear-gradient(to right ,#1E1450 ,#1E3ACC); border-radius: 18px;">
+                    <i class="fi fi-sr-meeting-alt me-4" style="font-size: 45px;"></i>
+                    จองห้องประชุม
+                </div>
+                <div class="content-wrapper">
+                    @yield('content')
                 </div>
             </div>
         </div>
