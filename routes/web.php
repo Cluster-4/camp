@@ -16,6 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/home', function () {
+    return view('home');
+});
+
+Route::get('/tracking', function () {
+    return view('tracking');
+});
+
 Route::get('/test', function () {
     return view('layout.norm_officer_layout');
 });
