@@ -16,6 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/db', function () {
+    return view('dashboard');
+});
+
 Route::get('/test', function () {
     return view('layout.norm_officer_layout');
 });
