@@ -1,3 +1,5 @@
+@extends()
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,26 +32,37 @@
     <div class="d-flex flex-column" style="width: 100vw; height:100vh;">
         <!-- หัวระบ -->
         <div class="shadow mt-1 mx-auto"
-            style="width: 95%; height: 10%; border-radius: 15px; background: linear-gradient(#1E1450, #1E3ACC); font-size:40px; color:white;">
-            <h1 style="margin-top: 1rem; margin-left: 1rem;">ระบบจองห้องประชุมหน่วยงานรายการ</h1>
+            style="display: flex; align-items: center; width: 95%; height: 10%; border-radius: 15px; background: linear-gradient(#1E1450, #1E3ACC); font-size:40px; color:white;">
+            <h1 style="margin-left: 1rem;">ระบบจองห้องประชุมหน่วยงานรายการ</h1>
         </div>
         <!-- กรอบใหญ่ -->
         <div class="shadow mt-3 mx-auto position-relative" style="width: 95%; height: 85%; border-radius: 15px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
             <!-- ลงชื่อเข้าใช้ -->
-            <div class="position-absolute top-0 end-0" style="margin-top: 1rem; margin-right: 1rem; font-size:20px;">
+            <div class="position-absolute top-0 end-0" style="margin-top: 1rem; margin-right: 1rem; font-size:30px;">
                 ลงชื่อเข้าใช้
             </div>
             <!-- เมนู -->
-            <div class="shadow" style="width: 60%; height: 10%; border-radius: 15px; background-color: #D9D9D9; display: flex; justify-content: center; align-items: center;">
-                <div id="booking" style="" onclick="goBookingPage()">
-                    จองห้องประชุม
+            <div class="shadow row" style="width: 60%; height: 10%; border-radius: 15px; background-color: #D9D9D9; display: flex; justify-content: center; align-items: center;">
+                <!-- จองห้อง -->
+                <div class="col-6" id="booking" style="color:#000C6A; border-right: 1px solid #C2C2C2;" onclick="goBookingPage()">
+                    <div class="row" style="display: flex; justify-content: center;">
+                        <div class="col-10" style="padding:2%; border-bottom: 1px solid #000C6A; font-size: 30px; font-weight:600; display: flex; justify-content: center; align-items: center;">
+                            จองห้องประชุม
+                        </div>
+                    </div>
                 </div>
-                <div id="tracking" style="" onclick="goTrackingPage()">
-                    ติดตามสถานะการจอง
+                <!-- ติดตามสถานะการจอง -->
+                <div class="col-6" id="tracking" style="color:#5F5F5F;" onclick="goTrackingPage()" onmouseover="this.style.color='#000C6A'" onmouseout="this.style.color='#5F5F5F'">
+                    <div class="row" style="display: flex; justify-content: center;">
+                        <div class="col-10" style="padding:2%; font-size: 30px; font-weight:600; display: flex; justify-content: center; align-items: center;">
+                            ติดตามสถานะการจอง
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- กรอบ input ข้อมูล -->
             <div class="shadow mt-3" style="width: 60%; height: 60%; border-radius: 15px; background-color: #D9D9D9; display: flex; justify-content: center; align-items: center;">
+                
             </div>
         </div>
     </div>
