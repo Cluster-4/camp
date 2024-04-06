@@ -67,8 +67,8 @@
             {{-- navbar --}}
             <div class="d-flex bg-dark text-white align-items-center p-4 fs-3"
                 style="width: 80vw; height: 10%; background-image: linear-gradient(to right ,#1E1450 ,#1E3ACC); border-radius: 18px;">
-                <i class="fi fi-sr-meeting-alt me-4" style="font-size: 45px;"></i>
-                จองห้องประชุม
+                <i class="fi fi-sr-stats me-3 mt-3 " style="font-size: 40px;"></i>
+                แดชบอร์ด
             </div>
             <div class="d-flex">
                 @yield('content')
