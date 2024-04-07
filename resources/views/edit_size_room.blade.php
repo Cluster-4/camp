@@ -63,12 +63,24 @@
                     </div>
                 </div>
                 <div class="d-flex align-items-end justify-content-end" style="padding-top: 23%">
-                    <button type="button" class="btn me-3 btn-secondary shadow"
-                        style="width: 15%; height: 15%; border-radius: 10px;">ย้อนกลับ</button>
-                    <button type="submit" class="btn shadow"
-                        style="width: 15%; height: 15%; border-radius: 10px; background-color: #000C6A; color: #ffffff">บันทึก</button>
+                    <button type="button" class="btn me-3 btn-secondary shadow buttom-cancel">ย้อนกลับ</button>
+                    <button type="submit" class="btn shadow buttom-sumit">บันทึก</button>
                 </div>
             </form>
         </div>
     </div>
+    <style>
+        .buttom-sumit{
+            width: 15%;
+            height: 15%;
+            border-radius: 10px;
+            background-color: #000C6A;
+            color: #ffffff;
+        }
+        .buttom-cancel{
+            width: 15%;
+            height: 15%;
+            border-radius: 10px;
+        }
+    </style>
 @endsection
