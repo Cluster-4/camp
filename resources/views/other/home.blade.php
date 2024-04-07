@@ -29,9 +29,6 @@
                 window.location.href = "/home"
             }
 
-            function goRoomGenaratePage() {
-                window.location.href = "/booking";
-            }
         </script>
     </head>
 
@@ -81,14 +78,14 @@
                             <i class="fi fi-rr-calendar" style="color: black; font-size: 27px; margin-right:4%"></i>
                             <input required="" type="text" id="date_in" class="form-control input-date"
                                 style="height: 8vh; border-radius: 15px; font-size: 30px; " placeholder="วันที่เข้าใช้"
-                                onfocus="(this.type='date')" />
+                                onclick="(this.type='date')" />
                             <span style="position: absolute; top: 1vh; right: 5%; color: red;">*</span>
                         </div>
                         <div class="col-5 mt-2 inner-addon right-addon" style="position: relative;">
                             <i class="fi fi-rr-calendar" style="color: black; font-size: 27px; margin-right:4%"></i>
                             <input required="" type="text" id="date_in" class="form-control"
                                 style="height: 8vh; border-radius: 15px; font-size: 30px;" placeholder="วันที่สิ้นสุดการใช้"
-                                onfocus="(this.type='date')" />
+                                onclick="(this.type='date')" />
                             <span style="position: absolute; top: 1vh; right: 5%; color: red;">*</span>
                         </div>
                     </div>
@@ -98,21 +95,21 @@
                             <i class="fi fi-rr-clock-three" style="color: black; font-size: 27px; margin-right:4%"></i>
                             <input required="" type="text" id="time_in" class="form-control"
                                 style="height: 8vh; border-radius: 15px; font-size: 30px;" placeholder="เวลาเข้าใช้"
-                                onfocus="(this.type='time')" />
+                                onclick="(this.type='time')" />
                             <span style="position: absolute; top: 1vh; right: 5%; color: red;">*</span>
                         </div>
                         <div class="col-5 mt-2 inner-addon right-addon" style="position: relative;">
                             <i class="fi fi-rr-clock-three" style="color: black; font-size: 27px; margin-right:4%"></i>
                             <input required="" type="text" id="time_in" class="form-control"
                                 style="height: 8vh; border-radius: 15px; font-size: 30px;"
-                                placeholder="เวลาที่สิ้นสุดการใช้" onfocus="(this.type='time')" />
+                                placeholder="เวลาที่สิ้นสุดการใช้" onclick="(this.type='time')" />
                             <span style="position: absolute; top: 1vh; right: 5%; color: red;">*</span>
                         </div>
                     </div>
-                    <!-- ปุ่มค้นหา -->
-                    <div class="row">
+                     <!-- ปุ่มค้นหา -->
+                     <div class="row">
                         <div class="col-12 mt-5" style="display: flex; justify-content: center; align-items: center;">
-                            <button type="submit" onclick="goRoomGenaratePage()">
+                            <button type="button" onclick="window.location.href='{{ url('/booking') }}'">
                                 ค้นหา
                             </button>
                         </div>

@@ -20,20 +20,17 @@
 <style>
     .content-wrapper {
         overflow: hidden;
-    }
-
-    .no-scrollbar {
-        overflow-y: hidden;
+        height: 100vh;
+        /* ตั้งค่าความสูงเท่ากับความสูงของหน้าจอ */
     }
 </style>
 <script>
     window.onload = function() {
         var contentWrapper = document.querySelector('.content-wrapper');
-        var noScrollbar = document.querySelector('.no-scrollbar');
-        if (contentWrapper.clientHeight >= contentWrapper.scrollHeight) {
-            noScrollbar.style.overflowY = 'hidden';
+        if (contentWrapper.scrollHeight <= window.innerHeight) {
+            contentWrapper.style.height = '100vh'; // ถ้าไม่มีการเลื่อนให้ใช้ความสูงเท่ากับหน้าจอ
         } else {
-            noScrollbar.style.overflowY = 'scroll';
+            contentWrapper.style.overflowY = 'scroll'; // ถ้ามีการเลื่อนให้แสดงแถบเลื่อน
         }
     }
 </script>

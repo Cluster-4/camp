@@ -30,14 +30,6 @@
         </style>
         <!--JAVA SCRIPT-->
         <script>
-            function goTrackingPage() {
-                window.location.href = "/tracking";
-            }
-
-            function goBookingPage() {
-                window.location.href = "/home"
-            }
-
             function goRoomGenaratePage() {
                 window.location.href = "/booking";
             }
