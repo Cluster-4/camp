@@ -26,10 +26,8 @@
     padding-right: 30px;
 }
 
-
 input[type="date"]::-webkit-calendar-picker-indicator {
-    display: none;
-    -webkit-appearance: none;
+    background: none;
 }
 
 input[type="time"]::-webkit-calendar-picker-indicator {

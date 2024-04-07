@@ -71,7 +71,6 @@
     }
 
     .form-signin input[type="password"] {
-
         width: 459px;
         margin-bottom: 10px;
         border-top-left-radius: 0;

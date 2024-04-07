@@ -54,3 +54,10 @@ Route::get('/process_first', function () {
     return view('other.process_first');
 });
 
+Route::get('/wait', function () {
+    return view('other.wait');
+});
+
+Route::get('/cancel', function () {
+    return view('other.cancel_finish');
+});
