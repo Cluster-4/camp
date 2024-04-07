@@ -18,15 +18,15 @@ Route::get('/', function () {
 });
 
 Route::get('/home', function () {
-    return view('home');
+    return view('other.home');
 });
 
 Route::get('/tracking', function () {
-    return view('tracking');
+    return view('other.tracking');
 });
 
 Route::get('/pcf', function () {
-    return view('process_finish');
+    return view('other.process_finish');
 });
 
 Route::get('/login', function () {
@@ -46,10 +46,11 @@ Route::get('/system_admin', function () {
     return view('layout.system_admin_layout');
 });
 
+Route::get('/booking', function () {
+    return view('other.booking');
+});
 
-
-
-Route::get('/filter', function () {
-    return view('filter');
+Route::get('/process_first', function () {
+    return view('other.process_first');
 });
 

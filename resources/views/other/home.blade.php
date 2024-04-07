@@ -30,7 +30,7 @@
             }
 
             function goRoomGenaratePage() {
-                window.location.href = "/filter";
+                window.location.href = "/booking";
             }
         </script>
     </head>
