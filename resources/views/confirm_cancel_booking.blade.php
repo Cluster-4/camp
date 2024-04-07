@@ -15,8 +15,8 @@
                 <div class="row" style="display : flex ;  flex-direction: row ; justify-content-start; width:90vw; margin-top:3%; ">
 
 
-                    <div  class="col" style="width:45%; " >
-                        <img src="https://www.lifewire.com/thmb/AVyFbv7LAuEgM7fli8NvJsfc8y8=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/columns-rows-excel-google-spreadsheets-57dd3f055f9b586516c6086f.jpg" class="img-fluid" alt="">
+                    <div  class="col" style="width:45%;" >
+                        <img src="https://avl.co.th/wp-content/uploads/2020/11/7-types-of-meeting-rooms-blog-cover-article15.jpg" class="img-fluid" alt="" style=" border-radius: 25px;">
                     </div>
 
                     <div class="data_cf_cc" style="font-size:30px; color : #000C6A ; width:55%; ">
@@ -33,7 +33,7 @@
 
                         </div>
 
-                            <div class="container; " style="width:100% ; margin-top:3%; display:flex; justify-content:flex-end;">
+                            <div class="container; " style="width:100% ; margin-top:3%; display:flex;justify-content:flex-end;">
                                 <button class="btn cancle"
                                     style="width: 30% ; height : 55px; color : white; border-radius : 9px;background-color: #898989 ; box-shadow : 4px 3px  rgba(50,50,50,.2); font-size:20px;">
                                     ย้อนกลับ
