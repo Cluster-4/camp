@@ -1,3 +1,13 @@
 function sidebar_open() {
-    document.getElementById("sidebar").classList.toggle("expand");
+    var sidebar = document.getElementById("sidebar");
+    if (!sidebar.classList.contains("expand")) {
+        sidebar.classList.toggle("expand");
+    }
+}
+
+function sidebar_close() {
+    var sidebar = document.getElementById("sidebar");
+    if (sidebar.classList.contains("expand")) {
+        sidebar.classList.remove("expand");
+    }
 }

@@ -76,11 +76,18 @@ h1 {
 }
 
 #sidebar:not(.expand) .sidebar-footer{
-    margin-left: 30%;
+    width: 50%;
+    padding-left: 10px;
+}
+
+#sidebar.expand .sidebar-footer div{
+    width: 100%;
+    padding-left: 10px;
 }
 
 .sidebar-footer {
-    margin-left: 1rem;
+    padding-top: 1rem; /* Adjust as needed */
+    border-top: 1px solid #000; /* Change color and thickness as needed */
 }
 
 .sidebar-nav {
@@ -101,7 +108,9 @@ a.sidebar-link {
     display: flex;
     justify-content: center;
 }
-
+.sidebar-link{
+    width: 100%;
+}
 .sidebar-link i {
     font-size: 1.1rem;
     margin-right: 0.75rem;
@@ -119,7 +128,6 @@ a.sidebar-link:hover {
     width: 100%;
     height: 10%;
 }
-
 
 #sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
     position: absolute;
@@ -139,6 +147,8 @@ a.sidebar-link:hover {
 }
 
 .sidebar-logo {
+    display: flex;
+    align-self: center;
     padding: .625rem 1.625rem;
     color: #FFF;
     font-size: 0.9rem;
