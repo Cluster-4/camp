@@ -46,3 +46,10 @@ Route::get('/system_admin', function () {
     return view('layout.system_admin_layout');
 });
 
+
+
+
+Route::get('/filter', function () {
+    return view('filter');
+});
+

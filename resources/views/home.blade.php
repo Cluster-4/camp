@@ -28,6 +28,10 @@
             function goBookingPage() {
                 window.location.href = "/home"
             }
+
+            function goRoomGenaratePage() {
+                window.location.href = "/filter";
+            }
         </script>
     </head>
 
@@ -103,7 +107,7 @@
                 <!-- ปุ่มค้นหา -->
                 <div class="row">
                     <div class="col-12 mt-5" style="display: flex; justify-content: center; align-items: center;">
-                        <button type="submit">
+                        <button type="submit" onclick="goRoomGenaratePage()">
                             ค้นหา
                         </button>
                     </div>
