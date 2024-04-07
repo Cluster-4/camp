@@ -29,6 +29,10 @@ Route::get('/pcf', function () {
     return view('process_finish');
 });
 
+Route::get('/login', function () {
+    return view('login');
+});
+
 Route::get('/test', function () {
     return view('layout.norm_officer_layout');
 });
