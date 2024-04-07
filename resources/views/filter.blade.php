@@ -1,7 +1,8 @@
 @extends('layout.norm_other_layout')
 @section('content')
-<head>
-    <link rel="stylesheet" href="{{url ('dist\css\inner-addon.css')}}">
+
+    <head>
+        <link rel="stylesheet" href="{{ url('dist\css\inner-addon.css') }}">
         <!-- CSS BTN HOVER-->
         <style>
             button:hover {
@@ -33,7 +34,39 @@
             }
         </script>
     </head>
-<body>
-    <div class="row"></div>
-</body>
+
+    <body>
+        <div class="row">
+            <div class="col-2 inner-addon left-addon mt-3 ms-3">
+                <i class="fi fi-rr-search" style="color: black; font-size: 150%; margin-left:5%;"></i>
+                <input type="text" class="form-control"
+                    style="height: 5vh; border-radius: 10px; display: flex; justify-content: center; align-items: center; font-size: 150%; padding-left:15%;"
+                    id="name_room" placeholder="ค้นหาห้องประชุม">
+            </div>
+            <div class="col-2 inner-addon left-addon mt-3">
+                <i class="fi fi-rr-calendar" style="color: black; font-size: 150%; margin-right:5%; padding-left:10%;"></i>
+                <input required="" type="text" id="date_in" class="form-control input-date"
+                    style="height: 5vh; border-radius: 10px; font-size: 150%; padding-left:20%;" placeholder="วันที่เข้าใช้"
+                    onfocus="(this.type='date')" />
+            </div>
+            <div class="col-2 inner-addon left-addon mt-3">
+                <i class="fi fi-rr-calendar" style="color: black; font-size: 150%; margin-right:5%; padding-left:10%;"></i>
+                <input required="" type="text" id="date_in" class="form-control input-date"
+                    style="height: 5vh; border-radius: 10px; font-size: 150%; padding-left:20%;" placeholder="วันที่สิ้นสุดการใช้"
+                    onfocus="(this.type='date')" />
+            </div>
+            <div class="col-2 inner-addon left-addon mt-3">
+                <i class="fi fi-rr-clock-three" style="color: black; font-size: 150%; margin-right:5%; padding-left:10%;"></i>
+                <input required="" type="text" id="time_in" class="form-control"
+                    style="height: 5vh; border-radius: 10px; font-size: 150%; padding-left:20%;" placeholder="เวลาเข้าใช้"
+                    onfocus="(this.type='time')" />
+            </div>
+            <div class="col-2 inner-addon left-addon mt-3">
+                <i class="fi fi-rr-clock-three" style="color: black; font-size: 150%; margin-right:5%; padding-left:10%;"></i>
+                <input required="" type="text" id="time_in" class="form-control"
+                    style="height: 5vh; border-radius: 10px; font-size: 150%; padding-left:20%;"
+                    placeholder="เวลาที่สิ้นสุดการใช้" onfocus="(this.type='time')" />
+            </div>
+        </div>
+    </body>
 @endsection

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ url('dist/css/bootstrap.min.css') }}">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.2.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.2.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.2.0/uicons-bold-straight/css/uicons-bold-straight.css'>
     <script src="{{ url('dist/js/bootstrap.min.js') }}"></script>
     <title>ระบบจองห้องประชุมหน่วยงานราชการ</title>
 </head>
@@ -24,7 +25,7 @@
         </div>
         <!-- กรอบใหญ่ -->
         <div class="shadow mt-3 mx-auto position-relative"
-            style="width: 95%; height: 85%; border-radius: 15px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            style="width: 95%; height: 85%; border-radius: 15px;">
             <!-- ลงชื่อเข้าใช้ -->
             <div class="position-absolute top-0 end-0" style="margin-top: 1rem; margin-right: 1rem; font-size:25px;">
                 <p><a class="link-opacity-100" href="login">ลงชื่อเข้าใช้</a></p>

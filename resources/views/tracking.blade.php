@@ -40,45 +40,47 @@
     </head>
 
     <body>
-        <!-- เมนู -->
-        <div class="shadow row mb-3"
-            style="width: 60%; height: 10%; border-radius: 15px; background-color: #D9D9D9; display: flex; justify-content: center; align-items: center;">
-            <!-- จองห้อง -->
-            <div class="col-6" id="booking" style="color:#000C6A; border-right: 1px solid #C2C2C2;"
-                onclick="goBookingPage()">
-                <div class="row" style="display: flex; justify-content: center;">
-                    <div class="col-10"
-                        style="padding:1%; font-size: 30px; font-weight:600; display: flex; justify-content: center; align-items: center;">
-                        <a href="#" class="nav-link" style="color: #5F5F5F" onclick="goBookingPage()"
-                            onmouseover="this.style.color='#000C6A'" onmouseout="this.style.color='#5F5F5F'">
-                            จองห้องประชุม</a>
+        <div style=" display: flex; flex-direction: column; justify-content: center; align-items: center; height:100%;">
+            <!-- เมนู -->
+            <div class="shadow row mb-3"
+                style="width: 60%; height: 10%; border-radius: 15px; background-color: #D9D9D9; display: flex; justify-content: center; align-items: center;">
+                <!-- จองห้อง -->
+                <div class="col-6" id="booking" style="color:#000C6A; border-right: 1px solid #C2C2C2;"
+                    onclick="goBookingPage()">
+                    <div class="row" style="display: flex; justify-content: center;">
+                        <div class="col-10"
+                            style="padding:1%; font-size: 30px; font-weight:600; display: flex; justify-content: center; align-items: center;">
+                            <a href="#" class="nav-link" style="color: #5F5F5F" onclick="goBookingPage()"
+                                onmouseover="this.style.color='#000C6A'" onmouseout="this.style.color='#5F5F5F'">
+                                จองห้องประชุม</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- ติดตามสถานะการจอง -->
+                <div class="col-6" id="tracking">
+                    <div class="row" style="display: flex; justify-content: center;">
+                        <div class="col-10"
+                            style="padding:2%; border-bottom: 1px solid #000C6A; color: #000C6A; font-size: 30px; font-weight:600; display: flex; justify-content: center; align-items: center;">
+                            ติดตามสถานะการจอง
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- ติดตามสถานะการจอง -->
-            <div class="col-6" id="tracking">
-                <div class="row" style="display: flex; justify-content: center;">
-                    <div class="col-10"
-                        style="padding:2%; border-bottom: 1px solid #000C6A; color: #000C6A; font-size: 30px; font-weight:600; display: flex; justify-content: center; align-items: center;">
-                        ติดตามสถานะการจอง
-                    </div>
+            <!-- กรอบ input ข้อมูล -->
+            <div class="shadow"
+                style="width: 60%; height: 20%; border-radius: 15px; background-color: #D9D9D9; display: flex; justify-content: center; align-items: center;">
+                <!-- กรอกรหัสการจอง -->
+                <div style="width:75%;">
+                    <input type="text" class="form-control"
+                        style="height: 13vh; border-start-start-radius: 15px; border-end-start-radius: 15px; font-size: 30px;"
+                        id="name_room" placeholder="กรอกรหัสการจอง">
                 </div>
-            </div>
-        </div>
-        <!-- กรอบ input ข้อมูล -->
-        <div class="shadow"
-            style="width: 60%; height: 20%; border-radius: 15px; background-color: #D9D9D9; display: flex; justify-content: center; align-items: center;">
-            <!-- กรอกรหัสการจอง -->
-            <div style="width:75%;">
-                <input type="text" class="form-control"
-                    style="height: 13vh; border-start-start-radius: 15px; border-end-start-radius: 15px; font-size: 30px;"
-                    id="name_room" placeholder="กรอกรหัสการจอง">
-            </div>
-            <!-- ปุ่มค้นหา -->
-            <div style="width:20%;">
-                <button type="submit">
-                    ค้นหา
-                </button>
+                <!-- ปุ่มค้นหา -->
+                <div style="width:20%;">
+                    <button type="submit">
+                        ค้นหา
+                    </button>
+                </div>
             </div>
         </div>
     </body>
