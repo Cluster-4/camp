@@ -1,175 +1,87 @@
-<!DOCTYPE html>
-<html lang="th">
+@extends('layout.norm_other_layout')
+@section('content')
 
-<head>
-    <meta charset="UTF-8">
-    <title>ระบบจองห้องประชุมหน่วยงานราชการ</title>
-    <!-- JavaScript -->
-    <script>
-        function goTrackingPage() {
-            window.location.href = "/tracking";
-        }
+    <head>
+        <!-- CSS BTN HOVER-->
+        <style>
+            .form-control {
+                border-radius: 0;
+            }
 
-        function goBookingPage() {
-            window.location.href = "/home"
-        }
-    </script>
+            button:hover {
+                background-color: #3267d1;
+            }
 
-    <!--CSS-->
-    <style>
-        #frame {
-            height: 936px;
-            width: 1866px;
-            background-color: #ffffff;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-            border-radius: 15px;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            place-items: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+            button {
+                width: 100%;
+                height: 13vh;
+                border-start-end-radius: 15px;
+                border-end-end-radius: 15px;
+                font-size: 30px;
+                background-color: #3E7FFD;
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0;
+                border: 0;
+            }
+        </style>
+        <!--JAVA SCRIPT-->
+        <script>
+            function goTrackingPage() {
+                window.location.href = "/tracking";
+            }
 
-        #login {
-            font-size: 24px;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            margin: 1rem;
-        }
+            function goBookingPage() {
+                window.location.href = "/home"
+            }
+        </script>
+    </head>
 
-        #group {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        #menu {
-            height: 72px;
-            width: 752px;
-            background-color: #D9D9D9;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            border-radius: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        #search {
-            height: 197px;
-            width: 752px;
-            background-color: #D9D9D9;
-            border-radius: 15px;
-            margin-top: 1rem;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: center;
-            /* จัดให้ชิดกันตรงกลางแนวนอน */
-            align-items: center;
-            /* จัดให้ชิดกันตรงกลางแนวตั้ง */
-            position: relative;
-        }
-
-        #booking,
-        #tracking {
-            height: 72px;
-            width: 376px;
-            background-color: #D9D9D9;
-            border-radius: 15px;
-            display: grid;
-            place-items: center;
-            position: relative;
-            font-size: 20px;
-            cursor: pointer;
-        }
-
-        #booking {
-            color: #5F5F5F;
-        }
-
-        #tracking {
-            color: #000C6A;
-        }
-
-        #tracking::after {
-            content: '';
-            position: absolute;
-            width: 80%;
-            height: 3px;
-            background-color: #000C6A;
-            bottom: 10px;
-        }
-
-        #tracking::before {
-            content: '';
-            position: absolute;
-            width: 1px;
-            height: 40px;
-            background-color: #707070;
-            left: 0;
-            top: 16px;
-        }
-
-        #booking:hover {
-            color: #000C6A;
-        }
-
-        #search input[type="text"] {
-            font-size: 30px;
-            width: 542px;
-            height: 124px;
-            background-color: #F5F9FD;
-            text-align: center;
-            border-top-left-radius: 15px;
-            border-bottom-left-radius: 15px;
-        }
-
-        #search input[type="submit"] {
-            font-size: 30px;
-            width: 166px;
-            height: 128px;
-            border-top-right-radius: 15px;
-            border-bottom-right-radius: 15px;
-            background-color: #000C6A;
-            color: white;
-        }
-
-        #search input[type="submit"]:hover {
-            background-color: #707070;
-        }
-    </style>
-</head>
-
-<body>
-    <header>
-        <div id="frame">
-            <div id="login">
-                ลงชื่อเข้าใช้
-            </div>
-            <div id="group">
-                <div id="menu">
-                    <div id="booking" onclick="goBookingPage()">
-                        จองห้องประชุม
-                    </div>
-                    <div id="tracking" onclick="goTrackingPage()">
-                        ติดตามสถานะการจอง
+    <body>
+        <!-- เมนู -->
+        <div class="shadow row mb-3"
+            style="width: 60%; height: 10%; border-radius: 15px; background-color: #D9D9D9; display: flex; justify-content: center; align-items: center;">
+            <!-- จองห้อง -->
+            <div class="col-6" id="booking" style="color:#000C6A; border-right: 1px solid #C2C2C2;"
+                onclick="goBookingPage()">
+                <div class="row" style="display: flex; justify-content: center;">
+                    <div class="col-10"
+                        style="padding:1%; font-size: 30px; font-weight:600; display: flex; justify-content: center; align-items: center;">
+                        <a href="#" class="nav-link" style="color: #5F5F5F" onclick="goBookingPage()"
+                            onmouseover="this.style.color='#000C6A'" onmouseout="this.style.color='#5F5F5F'">
+                            จองห้องประชุม</a>
                     </div>
                 </div>
-                <div id="search">
-                    <div id="search_tracking">
-                        <input type="text" id="tracking_user" class="form-control" placeholder="กรอกหมายเลขการจอง"
-                            onfocus="(this.type='text')" />
-                    </div>
-                    <div id="get_info">
-                        <input type="submit" value="ค้นหา">
+            </div>
+            <!-- ติดตามสถานะการจอง -->
+            <div class="col-6" id="tracking">
+                <div class="row" style="display: flex; justify-content: center;">
+                    <div class="col-10"
+                        style="padding:2%; border-bottom: 1px solid #000C6A; color: #000C6A; font-size: 30px; font-weight:600; display: flex; justify-content: center; align-items: center;">
+                        ติดตามสถานะการจอง
                     </div>
                 </div>
             </div>
         </div>
-    </header>
-</body>
+        <!-- กรอบ input ข้อมูล -->
+        <div class="shadow"
+            style="width: 60%; height: 20%; border-radius: 15px; background-color: #D9D9D9; display: flex; justify-content: center; align-items: center;">
+            <!-- กรอกรหัสการจอง -->
+            <div style="width:75%;">
+                <input type="text" class="form-control"
+                    style="height: 13vh; border-start-start-radius: 15px; border-end-start-radius: 15px; font-size: 30px;"
+                    id="name_room" placeholder="กรอกรหัสการจอง">
+            </div>
+            <!-- ปุ่มค้นหา -->
+            <div style="width:20%;">
+                <button type="submit">
+                    ค้นหา
+                </button>
+            </div>
+        </div>
+    </body>
 
-</html>
+    </html>
+@endsection
