@@ -13,6 +13,8 @@
         rel="stylesheet">
     <link rel='stylesheet'
         href='https://cdn-uicons.flaticon.com/2.2.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.2.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 </head>
 <style>
     .nav-link {
@@ -44,8 +46,20 @@
             </a>
             <hr class="invisible">
             <ul class="nav nav-pills flex-column mb-auto">
-                <li class="nav-item">
-                    <a href="#" class="d-flex nav-link active align-items-center" aria-current="booking room">
+                <li class="nav-item mt-2">
+                    <a href="#" class="d-flex nav-link active text-white align-items-center" aria-current="booking room">
+                        <i class="fi fi-rr-pencil me-2" style="font-size: 30px"></i>
+                        จัดการห้องประชุม
+                    </a>
+                </li>
+                <li class="nav-item mt-2">
+                    <a href="#" class="d-flex nav-link text-white align-items-center" aria-current="booking room">
+                        <i class="fi fi-sr-users me-2" style="font-size: 30px"></i>
+                        จัดการบัญชีผู้ใช้งาน
+                    </a>
+                </li>
+                <li class="nav-item mt-2">
+                    <a href="#" class="d-flex nav-link text-white align-items-center" aria-current="booking room">
                         <i class="fi fi-sr-meeting-alt me-2" style="font-size: 30px"></i>
                         จองห้องประชุม
                     </a>
