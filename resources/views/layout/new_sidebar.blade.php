@@ -22,9 +22,11 @@
     <div class="wrapper">
         <aside id="sidebar" onclick="sidebar_open()" onmouseover="sidebar_open()" onmouseout="sidebar_open()">
             <div class="d-flex">
+                {{-- hamburger-bar --}}
                 <button class="toggle-btn" type="button" style="background-color: transparent; border: 0px;">
                     <i class="fi fi-sr-menu-burger text-white"></i>
                 </button>
+                {{-- ชื่่อระบบ โลโก้ระบบ --}}
                 <div class="sldebar-logo">
                     <a href="#" class="sidebar-link d-flex flex-row justify-content-center">
                         <img src="logo_bmrs.jpg" class="img-fluid" alt="" width="73px" height="65.39px"
@@ -48,9 +50,9 @@
                     </a>
                 </li>
             </ul>
-            <div class="sidebar-footer">
+            <div class="sidebar-footer mb-3">
                 <hr>
-                <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-around">
                     <div href="#" class="d-flex align-items-center text-white text-decoration-none sidebar-link"
                         aria-expanded="false">
                         <img src="https://media.discordapp.net/attachments/1209200207963758673/1224255943861080064/a8a6659eb448af110e0eb9cfb83e901d.png?ex=661cd432&is=660a5f32&hm=a4a235e24939438515f682e285e9e1fe9d10fb1ea91b0bf873690fee774c090b&=&format=webp&quality=lossless&width=628&height=585"
@@ -64,7 +66,7 @@
                 </div>
             </div>
         </aside>
-        <div class="main p-3">
+        <div class="main p-3 overflow-container">
             {{-- navbar --}}
             <div class="d-flex bg-dark text-white align-items-center p-4 fs-3"
                 style="width: 80; height: 10%; background-image: linear-gradient(to right ,#1E1450 ,#1E3ACC); border-radius: 18px;">
