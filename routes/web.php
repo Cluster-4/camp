@@ -28,3 +28,6 @@ Route::get('/sidebar_admin_room', function () {
 Route::get('/system_admin', function () {
     return view('layout.system_admin_layout');
 });
+Route::get('/sidebar', function () {
+    return view('layout.new_sidebar');
+});
