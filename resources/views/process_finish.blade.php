@@ -22,43 +22,11 @@
 
 <body>
     <div class="shadow" style="width: 50%; height: 50%; border-radius: 15px; background-color: white; display: flex; justify-content: center; align-items: center; flex-direction: column;">
-        <i class="fi fi-sr-check-circle" style="color: green; font-size: 100px; display: block;"></i>
+        <i class="fi fi-sr-check-circle" style="color: green; font-size: 100px;"></i>
         <p style="font-size: 64px; color: #000C6A;"> เสร็จสิ้นการดำเนินการ</p>
         <p style="font-size:24px;">หมายเลขการจอง : xxxxxxxxxxx </p>
         <p style="font-size:20px;"><span style="color: red">หมายเหตุ</span> : หมายเลขการจองสามารถนำไปตรวจสอบสถานะการจองได้ในเมนูติดตามสถานะการจอง</p>
         <button type="submit" onclick="">ยืนยัน</button>
     </div>
 </body>
-
-
-{{-- <div class="row">
-    <div class="col-6">
-        <div class="row">
-            <div class="col-2">
-
-            </div>
-            <div class="col-2">
-
-            </div>
-            <div class="col-8">
-                <div class="row">
-                    <div class="col-4">
-
-                    </div>
-                    <div class="col-4">
-
-                    </div>
-                    <div class="col-4">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="col-6">
-
-    </div>
-</div> --}}
 @endsection

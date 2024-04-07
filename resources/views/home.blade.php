@@ -2,6 +2,7 @@
 @section('content')
 
     <head>
+    <link rel="stylesheet" href="{{url ('dist\css\inner-addon.css')}}">
         <!-- CSS BTN HOVER-->
         <style>
             button:hover {
@@ -62,7 +63,8 @@
             <form>
                 <!-- ชื่อห้อง -->
                 <div class="row" style="display: flex; justify-content: center;">
-                    <div class="col-10 mt-5">
+                    <div class="col-10 mt-5 inner-addon right-addon">
+                        <i class="fi fi-sr-check-circle" style="color: black; font-size: 50px;"></i>
                         <input type="text" class="form-control"
                             style="height: 8vh; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 30px;"
                             id="name_room" placeholder="ค้นหาห้องประชุม">
@@ -115,5 +117,6 @@
             </p>
         </div>
     </body>
+
     </html>
 @endsection
