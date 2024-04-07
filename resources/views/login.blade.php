@@ -28,7 +28,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-image: url('assets/dist/img/loginbg.jpg');
+        background-image: url('loginbg.jpg');
         /* assets\dist\img\window11.png */
         background-size: cover;
 
@@ -92,14 +92,14 @@
 <body>
     <div class="wrap-login100">
         <div style="margin-top: 4%;">
-            <img src="assets/dist/img/Meethig icon.jpg" alt="" width="288" height="299">
+            <img src="img/Meethig icon.jpg" alt="" width="288" height="299">
         </div>
         <div class="fs-1 text-center " style="font-family: 'Noto Sans Thai',sans-serif; color: #000C6A; ">
             ระบบจองห้องประชุม<br>หน่วยงานราชการ
         </div>
 
         <div class="d-flex flex-row justify-content-center mt-4 form-floating" style="margin-top: 4%;">
-            <img src="assets\dist\img\profileicon.jpg" alt="" style="width: 45px; height: 45px;" class="">
+            <img src="img\profileicon.jpg" alt="" style="width: 45px; height: 45px;" class="">
             <div class="form-floating ms-4">
             <input type="text" class="form-control ms-1" id="floatingInput" placeholder="Username" style="width: 459px">
             <label  style="color: #9B9B9B" for="floatingInput">Username</label>
@@ -108,7 +108,7 @@
 
 
         <div class="d-flex flex-row justify-content-center mt-4 form-floating">
-            <img src="assets\dist\img\lockicon.jpg" alt="" style="width: 45px; height: 45px;">
+            <img src="img\lockicon.jpg" alt="" style="width: 45px; height: 45px;">
             <div class="form-floating ms-4">
             <input type="password" class="form-control " id="floatingPassword" placeholder="Password" style="width: 459px ">
             <label style="color:#9B9B9B "  for="floatingPassword">Password</label>
@@ -135,10 +135,10 @@
 
                 <div class="ml-6"style="width:68%" >
 
-                <span style="color: #000C6A;" class="mb-3 mb-md-0 text-body-secondary"><img src="assets/dist/img/Iv.jpg"
+                <span style="color: #000C6A;" class="mb-3 mb-md-0 text-body-secondary"><img src="img/Iv.jpg"
                     alt="IV Soft Co. Logo" width="20" height="20"> IV Soft Co.,Ltd.</span>
 
-                <span style="color: #000C6A;" class="mb-3 mb-md-0 text-body-secondary"><img src="assets/dist/img/buuicon.jpg"
+                <span style="color: #000C6A;" class="mb-3 mb-md-0 text-body-secondary"><img src="img/buuicon.jpg"
                     alt="Burapha University Logo" width="20" height="20"><i class="fas fa-building"> Burapha University</span>
 
                 </div>
