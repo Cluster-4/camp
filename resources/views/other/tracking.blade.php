@@ -77,7 +77,7 @@
                 </div>
                 <!-- ปุ่มค้นหา -->
                 <div style="width:20%;">
-                    <button type="submit">
+                    <button type="button" onclick="window.location.href='{{ url('/booking') }}'">
                         ค้นหา
                     </button>
                 </div>
