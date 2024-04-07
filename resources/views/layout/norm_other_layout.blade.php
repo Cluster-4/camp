@@ -24,7 +24,7 @@
         </div>
         <!-- กรอบใหญ่ -->
         <div class="shadow mt-3 mx-auto position-relative"
-            style="width: 95%; height: 85%; border-radius: 15px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            style="width: 95%; height: 95%; border-radius: 15px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
             <!-- ลงชื่อเข้าใช้ -->
             <div class="position-absolute top-0 end-0" style="margin-top: 1rem; margin-right: 1rem; font-size:25px;">
                 <p><a class="link-opacity-100" href="login">ลงชื่อเข้าใช้</a></p>

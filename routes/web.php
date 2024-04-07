@@ -47,9 +47,12 @@ Route::get('/system_admin', function () {
 });
 
 
-
-
 Route::get('/filter', function () {
     return view('filter');
 });
+
+Route::get('/confirm_cancel_booking', function () {
+    return view('confirm_cancel_booking');
+});
+
 
