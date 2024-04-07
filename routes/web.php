@@ -21,6 +21,10 @@ Route::get('/db', function () {
     return view('dashboard');
 });
 
+Route::get('/wait1', function () {
+    return view('wait');
+});
+
 Route::get('/test', function () {
     return view('layout.norm_officer_layout');
 });

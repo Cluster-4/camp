@@ -21,7 +21,7 @@
                         </div>
                         <div class="d-flex justify-content-evenly" style="font-size: 128px; color: white">
                             15
-                            <i class="fi fi-sr-newspaper j" style="font-size: 180px; opacity: 0.3 ; color: black"></i>
+                            <i class="fi fi-sr-newspaper j" style="font-size: 180px ; opacity: 0.3 ; color: black"></i>
                         </div>
                     </div>
                 </div>

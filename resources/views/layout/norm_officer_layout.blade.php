@@ -40,13 +40,31 @@
             <ul class="nav nav-pills flex-column mb-auto">
                 <li class="nav-item">
                     <a href="#" class="d-flex nav-link active align-items-center" aria-current="booking room">
-                        <i class="fi fi-sr-meeting-alt me-2" style="font-size: 30px"></i>
+                        <i class="fi fi-sr-stats me-2 mt-3 " style="font-size: 25px;"></i>
+                แดชบอร์ด
+                    </a>
+                </li>
+                <li class="nav-item mt-1">
+                    <a href="#" class="d-flex nav-link text-white align-items-center" aria-current="track status">
+                        <i class="fi fi-sr-checkbox  me-2 mt-2 " style="font-size: 23px;"></i>
+                        อนุมัติคำขอจองห้อง
+                    </a>
+                </li>
+                <li class="nav-item mt-1">
+                    <a href="#" class="d-flex nav-link text-white align-items-center" aria-current="track status">
+                        <i class="fi fi-sr-table-list me-2 mt-2 " style="font-size: 25px;"></i>
+                        ตารางการใช้ห้อง
+                    </a>
+                </li>
+                <li class="nav-item mt-1">
+                    <a href="#" class="d-flex nav-link text-white align-items-center" aria-current="track status">
+                        <i class="fi fi-sr-meeting-alt me-2 mt-2 " style="font-size: 25px;"></i>
                         จองห้องประชุม
                     </a>
                 </li>
-                <li class="nav-item mt-2">
+                <li class="nav-item mt-1">
                     <a href="#" class="d-flex nav-link text-white align-items-center" aria-current="track status">
-                        <i class="fi fi-sr-time-past me-2" style="font-size: 30px"></i>
+                        <i class="fi fi-sr-time-past me-2 mt-2 " style="font-size: 25px;"></i>
                         ติดตามสถานะการจอง
                     </a>
                 </li>
