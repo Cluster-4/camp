@@ -68,7 +68,7 @@
                 <!-- ชื่อห้อง -->
                 <div class="row" style="display: flex; justify-content: center;">
                     <div class="col-10 mt-5 inner-addon right-addon">
-                        <i class="fi fi-sr-check-circle" style="color: black; font-size: 50px;"></i>
+                        <i class="fi fi-rr-search me-2" style="color: black; font-size: 30px;"></i>
                         <input type="text" class="form-control"
                             style="height: 8vh; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 30px;"
                             id="name_room" placeholder="ค้นหาห้องประชุม">
@@ -76,7 +76,7 @@
                 </div>
                 <!-- วันที่ใช้ห้อง -->
                 <div class="row" style="display: flex; justify-content: center;">
-                    <div class="col-5 mt-2" style="position: relative;">
+                    <div class="col-5 mt-2 inner-addon right-addon" style="position: relative;">
                         <input required="" type="text" id="date_in" class="form-control"
                             style="height: 8vh; border-radius: 15px; font-size: 30px;" placeholder="วันที่เข้าใช้"
                             onfocus="(this.type='date')" />

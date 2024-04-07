@@ -127,9 +127,6 @@
             width: 259px;" class="btn btn-primary py-2 btn-lg" type="submit">Login</button>
           </div>
 
-
-
-
           <div class="d-flex align-items-start mt-5" style="width:100%; ">
             <footer class="text-center py-3  my-4 border-top d-flex align-items-start pr-6" style="font-size: 0.8rem; width: 100%; ">
 

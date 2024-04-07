@@ -1,5 +1,7 @@
 .inner-addon {
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .inner-addon .fi {
@@ -23,3 +25,4 @@
 .right-addon input {
     padding-right: 30px;
 }
+
