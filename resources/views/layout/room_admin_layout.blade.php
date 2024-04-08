@@ -14,25 +14,29 @@
         rel="stylesheet">
     <link rel='stylesheet'
         href='https://cdn-uicons.flaticon.com/2.2.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
-    <link rel="stylesheet" href="{{ url('dist\css\sidebar_style.css') }}">
-    <script src="{{ url('dist\js\sidebar.js') }}"></script>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.2.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 </head>
 <style>
     .nav-link {
         height: 44px;
     }
+
     .navbar .nav-link.active {
         background-color: #69A5DD;
         color: white;
     }
 
     .overflow-container {
+        overflow-y: auto;
+        overflow-x: hidden;
         max-height: 87vh;
         /* กำหนดความสูงสูงสุดของเนื้อหา */
     }
 </style>
 
 <body style="font-family: Noto Sans Thai, DM Sans;">
+    <div class="d-flex flex-row">
         {{-- sidebar --}}
         <div class="d-flex flex-column flex-shrink-0 p-3 text-white"
             style="width: 350px; height: 100vh; background-color: #242038;">
@@ -46,6 +50,24 @@
             <ul class="nav nav-pills flex-column mb-auto">
                 <li class="nav-item">
                     <a href="#" class="d-flex nav-link active align-items-center" aria-current="booking room">
+                        <i class="fi fi-sr-stats me-2" style="font-size: 30px"></i>
+                        แดชบอร์ด
+                    </a>
+                </li>
+                <li class="nav-item mt-2">
+                    <a href="#" class="d-flex nav-link text-white align-items-center" aria-current="track status">
+                        <i class="fi fi-rr-checkbox me-2" style="font-size: 30px"></i>
+                        อนุมัติคำขอจองห้อง
+                    </a>
+                </li>
+                <li class="nav-item mt-2">
+                    <a href="#" class="d-flex nav-link text-white align-items-center" aria-current="track status">
+                        <i class="fi fi-rr-table-list me-2" style="font-size: 30px"></i>
+                        ตารางการใช้ห้อง
+                    </a>
+                </li>
+                <li class="nav-item mt-2">
+                    <a href="#" class="d-flex nav-link text-white align-items-center" aria-current="track status">
                         <i class="fi fi-sr-meeting-alt me-2" style="font-size: 30px"></i>
                         จองห้องประชุม
                     </a>
