@@ -137,6 +137,19 @@ a.sidebar-link:hover {
     height: 100%;
 }
 
+.sidebar-title{
+    width: 80;
+    height: 10%;
+    background-image: linear-gradient(to right ,#1E1450 ,#1E3ACC);
+    border-radius: 18px;
+}
+
+.sidebar-title i{
+    font-size: 45px;
+    display: flex;
+    align-items: center;
+}
+
 #sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
     position: absolute;
     top: 0;
