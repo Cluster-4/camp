@@ -8,7 +8,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="{{ asset('CSS/add_account.css') }}">
+        <link rel="stylesheet" href="{{ asset('CSS/edit_account.css') }}">
         <title>Document</title>
     </head>
 
@@ -107,10 +107,12 @@
                                 <button type="btn" class="btn2 btn-primary">ถัดไป</button>
                                 <button type="btn" class="btn1 btn-primary">ยกเลิก</button>
                             </div>
+
                         </form>
                     </div>
                 </div>
             </div>
     </body>
+
     </html>
 @endsection

@@ -1,4 +1,4 @@
-@extends('layout.system_admin_sidebar')
+@extends('layout.new_sidebar')
 @section('page_name', 'Booking_approvement')
 @section('content')
     <!DOCTYPE html>
@@ -15,10 +15,9 @@
     <body>
         <div class="shadow container container" style="background-color :#ffffff;">
             <div class="container text-center">
-                <label for="text" class="Name mt-5 front-size: ">เพิ่มบัญชีผู้ใช้</label>
+                <label for="text" class="Name mt-5 front-size: ">ตรวจสอบรายละเอียด</label>
                 <div class="row">
                     <div class="col-sm-5 col-md-6">
-                        {{-- style="margin-left:25%" --}}
                         <div class="col+10 mage mb-3 mt-4" >
                             <img id="selectedImage" src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
                                 alt="example placeholder" style="width: 350px;" />
@@ -107,10 +106,12 @@
                                 <button type="btn" class="btn2 btn-primary">ถัดไป</button>
                                 <button type="btn" class="btn1 btn-primary">ยกเลิก</button>
                             </div>
+
                         </form>
                     </div>
                 </div>
             </div>
     </body>
+
     </html>
 @endsection
