@@ -61,3 +61,7 @@ Route::get('/wait', function () {
 Route::get('/cancel', function () {
     return view('other.cancel_finish');
 });
+
+Route::get('/notfound', function () {
+    return view('other.notfound');
+});
