@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+}
+
+body {
+    background: #dbdbdb;
+}
+.container{
+    width: 1250px;
+    height: 593px;
+    border-radius: 10px;
+    margin-top: 90px;
+    margin-right: 15px;
+    margin-left: 270px;
+}
+.Set{
+    margin-left: 440px;
+}
+.Set .text{
+    border-radius: 10px;
+    background-color: #b9b9b9;
+    color: #ffffff;
+    border-color: #b9b9b9;
+    width: 210px;
+    height: 23px;
+    border-style: double;
+}
+.Set .drop{
+    border-radius: 10px;
+    background-color: #acacac;
+    color: #ffffff;
+    border-color: #b9b9b9;
+    height: 30px;
+    width: 130px;
+    border-style: double;
+}
+h1{
+    margin-left: 350px;
+}
+.Im{
+    margin-left: 100px;
+ }
+.Set .btn1 {
+    color: #ffffff;
+    float: right;
+    font-size: 20px;
+    background: #566787;
+    border-radius: 10px;
+    margin-top: 60px;
+    margin-right: 20px;
+    margin-left: 450px;
+}
+.Set .btn1 span {
+    float: left;
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 10px;
+}
+.Set .btn2 {
+    color: #ffffff;
+    float: right;
+    font-size: 20px;
+    background: #172c94;
+    border-radius: 10px;
+    margin-top: 90px;
+    margin-right: 15px;
+}
+.Set .btn2 span {
+    float: left;
+    margin-top: 10px;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-bottom: 10px;
+}
+

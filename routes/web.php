@@ -36,8 +36,13 @@ Route::get('/login', function () {
 Route::get('/test', function () {
     return view('layout.norm_officer_layout');
 });
-Route::get('/edit_room', function () {
-    return view('edit_size_room');
+
+Route::get('/manage_account', function () {
+    return view('manage_account');
+});
+
+Route::get('/add_account', function () {
+    return view('add_account');
 });
 Route::get('/sidebar_admin_room', function () {
     return view('layout.room_admin_layout');
