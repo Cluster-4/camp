@@ -53,6 +53,12 @@
                 </li>
                 <li class="sidebar-item" onclick="toggleActive(event)">
                     <a href="#" class="sidebar-link">
+                        <i class="fi fi-rr-table-list" style="font-size: 30px; display: flex;"></i>
+                        <span class="pl-3">ตารางการใช้ห้อง</span>
+                    </a>
+                </li>
+                <li class="sidebar-item" onclick="toggleActive(event)">
+                    <a href="#" class="sidebar-link">
                         <i class="fi fi-sr-meeting-alt" style="font-size: 30px; display: flex;"></i>
                         <span class="pl-3">จองห้องประชุม</span>
                     </a>

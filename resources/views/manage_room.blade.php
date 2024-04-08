@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-@extends('layout.new_sidebar')
+@extends('layout.system_admin_sidebar')
 @section('content')
 
     <head>
