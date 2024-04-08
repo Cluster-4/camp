@@ -67,8 +67,12 @@
                         alt="" width="32" height="32" class="rounded-circle me-2">
                     <strong><u>เจ้าหน้าที่</u></strong>
                 </a>
+                <form action="{{route('logout')}}" method="POST">
+                    @csrf
+                    @method('DELETE')
                 <a href="{{ url('/') }}" class="nav-link text-white"><i class="fi fi-sr-sign-out-alt"
                         style="font-size: 30"></i></a>
+                </form>
             </div>
         </div>
         <div class="d-flex flex-column mx-auto mt-1">

@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +15,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/login',[LoginController::class,'viewlogin'])->name('viewlogin');
+Route::post('/login',[LoginController::class,'login'])->name('login');
+Route::get('/home',[LoginController::class,'viewlogin'])->name('home');
+Route::get('/edit_room',[LoginController::class,'edit_size_room'])->name('edit_room');
+Route::delete('/logout',[LoginController::class,'logout'])->name('logout');
+
+
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('loginpage');
 });
 Route::get('/sidebar_norm_officer', function () {
     return view('layout.norm_officer_layout');
@@ -28,7 +38,3 @@ Route::get('/sidebar_admin_room', function () {
 Route::get('/system_admin', function () {
     return view('layout.system_admin_layout');
 });
-Route::get('/login', function () {
-    return view('login');
-});
-
