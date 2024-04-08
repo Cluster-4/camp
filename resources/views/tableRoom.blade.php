@@ -1,4 +1,4 @@
-@extends('layout.new_sidebar')
+@extends('layout.room_admin_sidebar')
 @section('content')
     <!DOCTYPE html>
     <html lang="en">
