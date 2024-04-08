@@ -34,4 +34,3 @@ Route::get('/test', function () {
 Route::get('/edit_size_room', function () {
     return view('edit_size_room');
 });
-
