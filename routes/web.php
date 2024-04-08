@@ -32,5 +32,5 @@ Route::get('/system_admin', function () {
     return view('layout.system_admin_layout');
 });
 Route::get('/sidebar', function () {
-    return view('layout.new_sidebar');
+    return view('layout.system_admin_sidebar');
 });

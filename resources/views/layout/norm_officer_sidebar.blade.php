@@ -27,7 +27,7 @@
                 {{-- hamburger-bar --}}
                 <button class="toggle-btn" type="button" style="background-color: transparent; border: 0px;">
                     {{-- <i class="fi fi-sr-menu-burger text-white"></i> --}}
-                    <i class="fi fi-rr-hamburger text-white"></i>
+                    <i class="fi fi-rr-hamburger text-white" style="font-size: 30px"></i>
                 </button>
                 {{-- ชื่่อระบบ โลโก้ระบบ --}}
                 <div class="sidebar-logo d-flex flex-row justify-content-center">
@@ -38,16 +38,16 @@
             </div>
 
             <ul class="sidebar-nav">
-                <li class="sidebar-item">
+                <li class="sidebar-item" onclick="toggleActive(event)">
                     <a href="#" class="sidebar-link">
-                        <i class="fi fi-sr-meeting-alt me-2" style="font-size: 30px"></i>
-                        <span>จองห้องประชุม</span>
+                        <i class="fi fi-sr-meeting-alt" style="font-size: 30px; display: flex;"></i>
+                        <span class="pl-3">จองห้องประชุม</span>
                     </a>
                 </li>
-                <li class="sidebar-item">
+                <li class="sidebar-item" onclick="toggleActive(event)">
                     <a href="#" class="sidebar-link">
-                        <i class="fi fi-sr-time-past me-2" style="font-size: 30px"></i>
-                        <span>ติดตามสถานะการจอง</span>
+                        <i class="fi fi-sr-time-past" style="font-size: 30px; display: flex;"></i>
+                        <span class="">ติดตามสถานะการจอง</span>
                     </a>
                 </li>
             </ul>
@@ -65,10 +65,9 @@
         </aside>
         <div class="main p-3 overflow-container">
             {{-- navbar --}}
-            <div class="d-flex bg-dark text-white align-items-center p-4 fs-3"
-                style="width: 80; height: 10%; background-image: linear-gradient(to right ,#1E1450 ,#1E3ACC); border-radius: 18px;">
-                <i class="fi fi-sr-meeting-alt me-4" style="font-size: 45px;"></i>
-                จองห้องประชุม
+            <div class="d-flex bg-dark text-white align-items-center p-4 fs-3 sidebar-title">
+                <i class="fi fi-sr-meeting-alt me-4"></i>
+                
             </div>
             @yield('content')
         </div>
