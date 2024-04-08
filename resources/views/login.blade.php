@@ -125,7 +125,7 @@
 
           <div >
             <button style="background-color: #000C6A ;height: 50px;
-            width: 259px;" class="btn btn-primary py-2 btn-lg" type="submit">Login</button>
+            width: 259px;" class="btn btn-primary py-2 btn-lg" type="button" onclick="">Login</button>
           </div>
 
           <div class="d-flex align-items-start mt-5" style="width:100%; ">

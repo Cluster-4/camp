@@ -33,9 +33,14 @@
                             style="width:100% ; margin-top:15rem;">
                             <button class="btn cancle"
                                 style="width: 30% ; height : 55px; color : white; border-radius : 9px;background-color: #FF0000 ; box-shadow : 4px 3px  rgba(50,50,50,.2); font-size:20px;"
-                                onclick="window.location.href='{{ url('/confirm_cancel_booking') }}'">
+                                href='{{ url('/confirm_cancel_booking') }}'>
                                 ยกเลิกการจอง
                             </button>
+                            <button class="btn cancle"
+                            style="width: 30% ; height : 55px; color : white; border-radius : 9px;background-color: #FF0000 ; box-shadow : 4px 3px  rgba(50,50,50,.2); font-size:20px;"
+                            onclick="window.location.href='{{ url('/confirm_cancel_booking') }}'">
+                            ยกเลิกการจอง
+                        </button>
                             <button class="btn approve mx-4"
                                 style="width: 30% ; height : 55px; color : white; border-radius : 9px;background-color: #000C6A ; box-shadow : 4px 3px  rgba(50,50,50,.2);
                                  font-size:20px;" onclick="window.location.href='{{ url('/tracking') }}'">
