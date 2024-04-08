@@ -14,14 +14,24 @@
         rel="stylesheet">
     <link rel='stylesheet'
         href='https://cdn-uicons.flaticon.com/2.2.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel="stylesheet" href="{{ url('dist\css\sidebar_style.css') }}">
+    <script src="{{ url('dist\js\sidebar.js') }}"></script>
 </head>
 <style>
     .nav-link {
         height: 44px;
     }
+
     .navbar .nav-link.active {
         background-color: #69A5DD;
         color: white;
+    }
+
+    .overflow-container {
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-height: 87vh;
+        /* กำหนดความสูงสูงสุดของเนื้อหา */
     }
 </style>
 
@@ -29,7 +39,7 @@
     <div class="d-flex flex-row">
         {{-- sidebar --}}
         <div class="d-flex flex-column flex-shrink-0 p-3 text-white"
-            style="width: 350; height: 100vh; background-color: #242038">
+            style="width: 350px; height: 100vh; background-color: #242038;">
             <a href="/"
                 class="d-flex align-items-center mb-3 mb-md-0 me-md-auto mx-auto text-white text-decoration-none">
                 <img src="logo_bmrs.jpg" class="img-fluid" alt="" width="73px" height="65.39px"
@@ -114,7 +124,7 @@
                 </div>
                     จัดการบัญชีผู้ใช้งาน
             </div>
-            <div class="d-flex">
+            <div class="overflow-container">
                 @yield('content')
             </div>
         </div>
