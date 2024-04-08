@@ -30,7 +30,7 @@
                         <p>ขนาดของห้อง : กลาง</p>
                         <p>หมายเลขการจอง :XXXXXXXXXXXXX</p>
                         <div class="container; d-flex justify-content-end align-items-end "
-                            style="width:100% ; margin-top:7%;">
+                            style="width:100% ; margin-top:9rem;">
                             <button class="btn cancle"
                                 style="width: 30% ; height : 55px; color : white; border-radius : 9px;background-color: #FF0000 ; box-shadow : 4px 3px  rgba(50,50,50,.2); font-size:20px;">
                                 ยกเลิกการจอง
