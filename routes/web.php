@@ -79,4 +79,6 @@ Route::get('/confirm_cancel_booking', function () {
     return view('other.confirm_cancel_booking');
 });
 
-
+Route::get('/home_officer', function () {
+    return view('officer.home');
+});
