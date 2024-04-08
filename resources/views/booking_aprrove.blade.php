@@ -107,7 +107,7 @@
                 title: 'ยกเลิกการจอง',
                 html: '<div style="display: flex; align-items: center;">' +
                     '<div style="flex: 1;">' +
-                    '<img src="https://www.ananda.co.th/blog/thegenc/wp-content/uploads/2023/09/business-meeting-working-room-office-building-FI.jpg" style="max-width: 300px;">' +
+                    '<img src="https://www.ananda.co.th/blog/thegenc/wp-content/uploads/2023/09/business-meeting-working-room-office-building-FI.jpg" style="max-width: 400px;">' +
                     '<p style="margin-top: 10px;">ห้อง G108</p>' +
                     '</div>' +
                     '<div style="flex: 1; margin-left: 20px;">' +
