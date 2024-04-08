@@ -24,3 +24,11 @@ inner-addon.css
 .right-addon input {
     padding-right: 30px;
 }
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: none;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    background: none;
+}
