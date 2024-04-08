@@ -9,7 +9,17 @@ class booking_information_model extends Model
 {
     protected $table = 'booking_information';
     protected $primaryKey = 'bkg_id';
+    public $incrementing = true;
     public $timestamps = false;
+
+    public function room_size()
+    {
+        return $this->belongsTo(Room_size_model::class);
+    }
+    public function room()
+    {
+        return $this->belongsTo(Room::class);
+    }
 
     protected $fillable = [
         'bkg_tracking_pin',
