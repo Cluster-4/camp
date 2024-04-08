@@ -48,4 +48,6 @@ Route::get('/edit_size_room', function () {
     return view('edit_size_room');
 });
 Route::get('/approve', [RoomBookingController::class, 'index'])->name('approvement');
-
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
