@@ -5,27 +5,29 @@
 body {
     background: #dbdbdb;
 }
+.Name{
+    font-size: 44px;
+    color: #000C6A;
+}
 .container{
-    width: 1250px;
-    height: 593px;
-    border-radius: 10px;
-    margin-top: 90px;
-    margin-right: 15px;
-    margin-left: 270px;
+    border-radius: 15px;
+    height: auto;
+    min-width: 100%;
+    margin-left: 3px;
+    margin-top: 15px;
+    margin-bottom: -25px;
 }
-.Set{
-    margin-left: 440px;
-}
-.Set .text{
+.input{
     border-radius: 10px;
-    background-color: #b9b9b9;
+    background-color: #C1C1C1;
     color: #ffffff;
     border-color: #b9b9b9;
-    width: 210px;
-    height: 23px;
+    width: 220px;
+    height: 30px;
     border-style: double;
+    margin-bottom: 5%;
 }
-.Set .drop{
+.drop{
     border-radius: 10px;
     background-color: #acacac;
     color: #ffffff;
@@ -33,44 +35,34 @@ body {
     height: 30px;
     width: 130px;
     border-style: double;
+    margin-bottom: 5%;
+    margin-right: 90px;
 }
 h1{
     margin-left: 350px;
 }
-.Im{
-    margin-left: 100px;
- }
-.Set .btn1 {
+
+.btn1 {
     color: #ffffff;
     float: right;
     font-size: 20px;
     background: #566787;
     border-radius: 10px;
-    margin-top: 60px;
     margin-right: 20px;
-    margin-left: 450px;
-}
-.Set .btn1 span {
-    float: left;
-    margin-top: 10px;
-    margin-left: 50px;
-    margin-right: 50px;
+    min-width: 25%;
     margin-bottom: 10px;
+    margin-top: 100px;
+
 }
-.Set .btn2 {
+.btn2 {
     color: #ffffff;
     float: right;
     font-size: 20px;
     background: #172c94;
     border-radius: 10px;
-    margin-top: 90px;
     margin-right: 15px;
+    min-width: 25%;
+    margin-top: 100px;
 }
-.Set .btn2 span {
-    float: left;
-    margin-top: 10px;
-    margin-left: 60px;
-    margin-right: 60px;
-    margin-bottom: 10px;
-}
+
 

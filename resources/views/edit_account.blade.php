@@ -15,10 +15,9 @@
     <body>
         <div class="shadow container container" style="background-color :#ffffff;">
             <div class="container text-center">
-                <label for="text" class="Name mt-5 front-size: ">เพิ่มบัญชีผู้ใช้</label>
+                <label for="text" class="Name mt-5 front-size: ">เเก้ไขบัญชีผู้ใช้</label>
                 <div class="row">
                     <div class="col-sm-5 col-md-6">
-                        {{-- style="margin-left:25%" --}}
                         <div class="col+10 mage mb-3 mt-4" >
                             <img id="selectedImage" src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
                                 alt="example placeholder" style="width: 350px;" />

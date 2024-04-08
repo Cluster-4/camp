@@ -104,8 +104,8 @@
                                 </div>
                             </div>
                             <div>
-                                <button type="btn" class="btn2 btn-primary">ถัดไป</button>
-                                <button type="btn" class="btn1 btn-primary">ยกเลิก</button>
+                                <button type="btn" class="btn2 btn-secondary">ถัดไป</button>
+                                <a href="/manage_account"><button type="button" class="btn1 ">ยกเลิก</button></a>
                             </div>
                         </form>
                     </div>
