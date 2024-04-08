@@ -29,7 +29,7 @@
             width: 293px;
             height: 450px;
             border-radius: 20px;
-            margin: 50px 90px 40px 150px;
+            margin: 50px 6% 40px 6.5%;
             background-color: #EDEDED;
             padding: 0;
         }
@@ -149,10 +149,9 @@
                     // Start a new row if $i is divisible by 3 (starting from 0)
                 ?>
             {{-- card  --}}
-            <div class="card card-room">
+            <div class="card card-room ms">
                 <!-- card content -->
-                <img src="https://i.pinimg.com/236x/5a/1b/12/5a1b126a63df80e79d63ab5554276b98.jpg" width="293px"
-                    height="182px" class="card-img-top" alt="..." style="border-radius: 20px 20px 0px 0px;">
+                <img src="https://i.pinimg.com/236x/5a/1b/12/5a1b126a63df80e79d63ab5554276b98.jpg" width="293px" height="182px" class="card-img-top" alt="..." style="border-radius: 20px 20px 0px 0px;">
                 <div class="card-body d-flex flex-column">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">
@@ -166,8 +165,7 @@
                 </div>
                 <div class="d-flex justify-content-end align-items-end">
                     {{-- เปลี่ยนด่านหลัง fi fi-sr- เท่านั้น --}}
-                    <a href="" class="nav-link mb-2"><i class="fi fi-sr-trash"
-                            style="font-size: 30px; color: red;"></i></a>
+                    <a href="" class="nav-link mb-2"><i class="fi fi-sr-trash" style="font-size: 30px; color: red;"></i></a>
                     <a href="edit_room" class="nav-link mb-2"><i class="fi fi-sr-pencil" style="font-size: 30px"></i></a>
                 </div>
             </div>
@@ -201,15 +199,17 @@
 
                     // Show the SweetAlert2 confirmation dialog
                     Swal.fire({
+
                         title: 'ยืนยันการลบห้องประชุม',
+
                         html:
 
                             '<div style="display: flex; align-items: center; class="row">' +
                                 '<div style="flex: 1;" class="col">' +
                                     '<img src="https://i.pinimg.com/236x/5a/1b/12/5a1b126a63df80e79d63ab5554276b98.jpg" style="max-width: 300px;">' +
-                                    '<p style="margin-top: 10px;">ห้อง Gt-200</p>' +
                                 '</div>' +
-                                '<div style="flex: 1; margin-left: 20px;" class="col">' +
+                                '<br>' +
+                                '<div style="flex: 1;" class="col ">' +
                                     '<p>ชื่อ : </p>' +
                                     '<p>ขนาด : </p>' +
                                     '<p>แบ่งครึ่งห้อง : </p>' +
@@ -217,33 +217,60 @@
                                     '<p>สถานะ : </p>' +
                                     '<p>ประเภทห้อง : </p>' +
                                 '</div>' +
-                            '</div>'+
-                            '<div class="row" style=" align-items: center;">' +
-                                '<div >' +
-                                    '<button class="button-cancel">ย้อนกลับ</button>' +
-                                '</div>' +
-                                '<div>' +
-                                    '<button class="button-con">ยืนยัน</button>' +
-                                '</div>' +
-                            '</div>',
-                        width: '50%',
-
+                            '</div>' +
+                            '<br>',
+                            // '<div class="row" style="align-items: center;">' +
+                            //     '<div class="col">' +
+                            //         '<button class="button-cancel modal-b-cancel shadow">ย้อนกลับ</button>' +
+                            //     '</div>' +
+                            //     '<div class="col">' +
+                            //         '<button class="button-con modal-b-condelete shadow">ยืนยัน</button>' +
+                            //     '</div>' +
+                            // '</div>',
+                        width: '50%' ,
+                        showCancelButton: true ,
+                        cancelButton: 'order-1' ,
+                        confirmButton: 'order-2',
+                        confirmButtonColor: '#FC1C1C',
+                        cancelButtonColor: '#9B9B9B',
+                        confirmButtonText: 'ยืนยัน',
+                        cancelButtonText: 'ย้อนกลับ',
                         customClass: {
                             actions: 'swal-actions-styled' // ใส่ class สำหรับปรับแต่งตำแหน่งปุ่ม
                         }
                     }).then((result) => {
                         if (result.isConfirmed) {
                             Swal.fire({
-                                title: 'อนุมัติสำเร็จ',
-                                text: 'คำขอจองห้องได้รับการอนุมัติแล้ว',
+                                title: 'การลบห้องเสร็จสิ้น',
                                 icon: 'success',
-                                width: '50%' // กำหนดความกว้างเป็น 50% ของหน้าจอ
+                                width: '50%' , // กำหนดความกว้างเป็น 50% ของหน้าจอ
+                                showCancelButton: false ,
+                                showConfirmButton: false ,
+                                timer: 2000,
                             })
                         }
                     })
                 });
             });
         </script>
+        <style>
+            .modal-b-condelete{
+                background-color: #FC1C1C;
+                color: white;
+                border: none;
+                width: 150px;
+                height: 40px;
+                border-radius: 10px;
+            }
+            .modal-b-cancel{
+                background-color: #9B9B9B;
+                color: white;
+                border: none;
+                width: 150px;
+                height: 40px;
+                border-radius: 10px;
+            }
+        </style>
 
     </body>
 
