@@ -15,6 +15,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Days+One&family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.2.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.2.0/uicons-regular-straight/css/uicons-regular-straight.css'>
 </head>
 <style>
     body {
@@ -98,8 +100,8 @@
         </div>
 
         <div class="d-flex flex-row justify-content-center mt-4 form-floating" style="margin-top: 4%;">
-            <img src="img\profileicon.jpg" alt="" style="width: 45px; height: 45px;" class="">
-            <div class="form-floating ms-4">
+            <i class="fi fi-rs-circle-user"style="font-size: 45px;" ></i>
+            <div class="form-floating ms-2">
             <input type="text" class="form-control ms-1" id="floatingInput" placeholder="Username" style="width: 459px">
             <label  style="color: #9B9B9B" for="floatingInput">Username</label>
         </div>
@@ -107,8 +109,8 @@
 
 
         <div class="d-flex flex-row justify-content-center mt-4 form-floating">
-            <img src="img\lockicon.jpg" alt="" style="width: 45px; height: 45px;">
-            <div class="form-floating ms-4">
+            <i class="fi fi-sr-lock" style="font-size: 45px;" ></i>
+            <div class="form-floating ms-2">
             <input type="password" class="form-control " id="floatingPassword" placeholder="Password" style="width: 459px ">
             <label style="color:#9B9B9B "  for="floatingPassword">Password</label>
             </div>
