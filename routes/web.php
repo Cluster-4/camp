@@ -17,19 +17,23 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/sidebar_norm_officer', function () {
-    return view('layout.norm_officer_layout');
+Route::get('/manage_room', function () {
+    return view('manage_room');
 });
 Route::get('/edit_room', function () {
+    return view('edit_room');
+});
+Route::get('/add_room', function () {
+    return view('add_room');
+});
+Route::get('/setting_size_room', function () {
+    return view('setting_size_room');
+});
+Route::get('/test', function () {
+    return view('test');
+});
+Route::get('/edit_size_room', function () {
     return view('edit_size_room');
 });
-Route::get('/sidebar_admin_room', function () {
-    return view('layout.room_admin_layout');
-});
-Route::get('/system_admin', function () {
-    return view('layout.system_admin_layout');
-});
-Route::get('/sidebar', function () {
-    return view('layout.system_admin_sidebar');
-});
 Route::get('/approve', [RoomBookingController::class, 'index'])->name('approvement');
+

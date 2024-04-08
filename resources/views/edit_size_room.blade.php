@@ -70,4 +70,18 @@
             </div>
         </form>
     </div>
+    <style>
+        .buttom-sumit{
+            width: 15%;
+            height: 15%;
+            border-radius: 10px;
+            background-color: #000C6A;
+            color: #ffffff;
+        }
+        .buttom-cancel{
+            width: 15%;
+            height: 15%;
+            border-radius: 10px;
+        }
+    </style>
 @endsection
