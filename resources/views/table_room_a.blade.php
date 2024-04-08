@@ -8,6 +8,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <link rel="stylesheet" href="CSS/tebleRoom.css">
+        <script>
+            function goTableRoomA() {
+                window.location.href = "/table_a";
+            }
+
+            function goTableRoomB() {
+                window.location.href = "/table_b";
+            }
+
+            function goTableRoomFull() {
+                window.location.href = "/table_full";
+            }
+
+            function returnTemp() {
+                window.location.href = "/table";
+            }
+        </script>
     </head>
 
     <div class="shadow container" style="background-color :#ffffff">
@@ -28,21 +45,24 @@
                         <div class="wrap-selected " style="width:48%; ">
                             <div style="margin-left:4%">
                                  <button
-                                    style="font-size:16px; color:black; border-radius: 10px;  ; background-color: white ;height: 55px;
+                                    style="font-size:16px; color:black; border-radius: 10px;  ; background-color: #6FA0FF ;height: 55px;
                     width: 130px;"
-                                    class="ml-4 btn btn-secondary btn-lg " type="button">ครึ่งห้องส่วน A</button>
+                                    class="ml-4 btn btn-primary btn-lg " type="button"
+                                    onclick="goTableRoomA()">ครึ่งห้องส่วน A</button>
                             </div>
                             <div style="margin-left:4%">
                                 <button
                                     style="font-size:16px; color:black; border-radius: 10px; background-color: white ;height: 55px;
                     width: 130px;"
-                                    class="btn btn-secondary btn-lg " type="button">ครึ่งห้องส่วน B</button>
+                                    class="btn btn-secondary btn-lg " type="button"
+                                    onclick="goTableRoomB()">ครึ่งห้องส่วน B</button>
                             </div>
                             <div style="margin-left:4%">
                                 <button
-                                    style="font-size:16px; color:black; border-radius: 10px; background-color: #6FA0FF ;height: 55px;
+                                    style="font-size:16px; color:black; border-radius: 10px; background-color: white ;height: 55px;
                     width: 130px;"
-                                    class="btn btn-primary btn-lg" type="button">เต็มห้อง</button>
+                                    class="btn btn-secondary btn-lg" type="button"
+                                    onclick="goTableRoomFull()">เต็มห้อง</button>
                             </div>
                         </div>
                         <div style="display: flex;justify-content: end;width:100%  ">
@@ -188,7 +208,7 @@
                 </div>
                 <hr style="visibility: hidden;">
                 <div class = "just">
-                    <button type="button" class="btn btn-return buttomBack">ย้อนกลับ</button>
+                    <button type="button" class="btn btn-return buttomBack" onclick="returnTemp()">ย้อนกลับ</button>
                 </div>
                 <hr style="visibility: hidden;">
             </section>
