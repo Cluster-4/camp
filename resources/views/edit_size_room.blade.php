@@ -1,6 +1,6 @@
-@extends('layout.norm_officer_layout')
+@extends('layout.new_sidebar')
 @section('content')
-    <div class="shadow mt-3 d-flex py-3" style="border-radius: 18px; width: 100%; height: 85vh;"> {{-- ถ้าต้องการให้หน้าจอ overflow ได้ให้ปรับ height: 100%; --}}
+    <div class="shadow mt-3 d-flex py-3" style="border-radius: 18px; width: 100%; height: 100%;"> {{-- ถ้าต้องการให้หน้าจอ overflow ได้ให้ปรับ height: 100%; --}}
         <div class="container">
             <form action="">
                 <div class="row">

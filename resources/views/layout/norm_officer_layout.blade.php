@@ -13,6 +13,8 @@
         rel="stylesheet">
     <link rel='stylesheet'
         href='https://cdn-uicons.flaticon.com/2.2.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel="stylesheet" href="{{ url('dist\css\sidebar_style.css') }}">
+    <script src="{{ url('dist\js\sidebar.js') }}"></script>
 </head>
 <style>
     .nav-link {
@@ -24,14 +26,12 @@
     }
 
     .overflow-container {
-        overflow-y: auto;
-        overflow-x: hidden;
-        max-height: 87vh; /* กำหนดความสูงสูงสุดของเนื้อหา */
+        max-height: 87vh;
+        /* กำหนดความสูงสูงสุดของเนื้อหา */
     }
 </style>
 
 <body style="font-family: Noto Sans Thai, DM Sans;">
-    <div class="d-flex flex-row">
         {{-- sidebar --}}
         <div class="d-flex flex-column flex-shrink-0 p-3 text-white"
             style="width: 350px; height: 100vh; background-color: #242038;">
@@ -50,8 +50,7 @@
                     </a>
                 </li>
                 <li class="nav-item mt-2">
-                    <a href="#" class="d-flex nav-link text-white align-items-center"
-                        aria-current="track status">
+                    <a href="#" class="d-flex nav-link text-white align-items-center" aria-current="track status">
                         <i class="fi fi-sr-time-past me-2" style="font-size: 30px"></i>
                         ติดตามสถานะการจอง
                     </a>
