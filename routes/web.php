@@ -67,7 +67,7 @@ Route::get('/wait', function () {
     return view('other.wait');
 });
 
-Route::get('/cancel', function () {
+Route::get('/cancel_finish', function () {
     return view('other.cancel_finish');
 });
 
@@ -76,7 +76,7 @@ Route::get('/notfound', function () {
 });
 
 Route::get('/confirm_cancel_booking', function () {
-    return view('confirm_cancel_booking');
+    return view('other.confirm_cancel_booking');
 });
 
 
