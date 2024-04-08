@@ -76,7 +76,7 @@
     <div class="shadow div-backgrund mt-4">
         <div class="container">
             <div class="row">
-                <h1 class="text-center mt-5 head-page">เพิ่มห้องประชุม</h1>
+                <h1 class="text-center mt-5 head-page">ตรวจสอบรายละเอียด</h1>
 
                 {{-- ซ้าย --}}
                 <div class="col-6 mt-5">
@@ -104,7 +104,7 @@
                             <label for="roomName" class="form-label">ชื่อห้อง</label>
                           </div>
                           <div class="col-6">
-                            <input type="text" class="form-control div-input" id="roomName" placeholder="G105">
+                            <label for="name">G101</label>
                           </div>
                           <div class="col">
                             
@@ -119,11 +119,7 @@
                                 <label for="floor" class="form-label">ขนาดห้อง</label>
                             </div>
                             <div class="col-6">
-                                <select class="form-select div-input" id="floor">
-                                    <option value="1">เล็ก</option>
-                                    <option value="2">กลาง</option>
-                                    <option value="3">ใหญ่</option>
-                                </select>
+                                <label for="">กลาง</label>
                             </div>
                             <div class="col">
                                 <label for="capacity" class="form-label">ความจุ 50 คน</label>
@@ -156,10 +152,7 @@
                                 <label for="facilities" class="form-label">สถานะ</label>
                             </div>
                             <div class="col-6">
-                                <select class="form-select div-input" id="facilities">
-                                    <option value="available">พร้อมใช้</option>
-                                    <option value="unavailable">ไม่พร้อมใช้</option>
-                                </select>
+                                <label for="">พร้อมใช้</label>
                             </div>
                             <div class="col">
                                 
@@ -174,7 +167,7 @@
                                 <label for="price" class="form-label">ราคา</label>
                             </div>
                             <div class="col-6">
-                                <input type="number" class="form-control div-input" id="price" placeholder="75">
+                                <label for="">75</label>
                             </div>
                             <div class="col">
                                 <label for="price" class="form-label">บาท/ชั่วโมง</label>
@@ -189,7 +182,10 @@
                                 <label for="capacity" class="form-label">คำอธิบายเพิ่มเติม</label>
                             </div>
                             <div class="col-6">
-                                <input type="text" class="form-control div-input" id="other" style="height: 100px;">
+                                <label for="">1. <br>
+                                    2. <br>
+                                    3.
+                                </label>
                             </div>
                             <div class="col">
                                 
@@ -204,10 +200,7 @@
                                 <label for="resources" class="form-label">ประเภทห้อง</label>
                             </div>
                             <div class="col-6">
-                                <select class="form-select div-input" id="resources">
-                                    <option value="pub">ห้องทั่วไป</option>
-                                    <option value="pri">ห้องภายใน</option>
-                                </select>
+                                <label for="">ห้องทั่วไป</label>
                             </div>
                             <div class="col">
                                 
@@ -217,8 +210,8 @@
                         <br><br>
 
                         <div class="justify-content-end div-button mt-5" id="button-haft-room">
-                            <a href="manage_room"><button type="button" class="btn btn-secondary custom-button">ย้อนกลับ</button></a>
-                            <a href="examine_add_room"><button class="btn btn-primary ms-2 custom-button" type="button">ถัดไป</button></a>
+                            <a href="add_room"><button type="button" class="btn btn-secondary custom-button">ย้อนกลับ</button></a>
+                            <button class="btn btn-primary ms-2 custom-button" type="button" onclick="con()">ยืนยัน</button>
                         </div>
                     </div>    
                 </div>
@@ -231,7 +224,7 @@
     <div class="shadow div-backgrund mt-4" id="haft-room1">
         <div class="container">
             <div class="row">
-                <h1 class="text-center mt-5 head-page">เพิ่มครึ่งห้องส่วน A</h1>
+                <h1 class="text-center mt-5 head-page">ครึ่งห้องส่วน A</h1>
 
                 {{-- ซ้าย --}}
                 <div class="col-6 mt-5">
@@ -260,11 +253,7 @@
                                 <label for="floor" class="form-label">ขนาดห้อง</label>
                             </div>
                             <div class="col-6">
-                                <select class="form-select div-input" id="floor">
-                                    <option value="1">เล็ก</option>
-                                    <option value="2">กลาง</option>
-                                    <option value="3">ใหญ่</option>
-                                </select>
+                                <label for="">กลาง</label>
                             </div>
                             <div class="col">
                                 <label for="capacity" class="form-label">ความจุ 50 คน</label>
@@ -279,7 +268,7 @@
                                 <label for="price" class="form-label">ราคา</label>
                             </div>
                             <div class="col-6">
-                                <input type="number" class="form-control div-input" id="price" placeholder="75">
+                                <label for="">75</label>
                             </div>
                             <div class="col">
                                 <label for="price" class="form-label">บาท/ชั่วโมง</label>
@@ -294,7 +283,10 @@
                                 <label for="capacity" class="form-label">คำอธิบายเพิ่มเติม</label>
                             </div>
                             <div class="col-6">
-                                <input type="text" class="form-control div-input" id="other" style="height: 100px;">
+                                <label for="">1. <br>
+                                    2. <br>
+                                    3.
+                                </label>
                             </div>
                             <div class="col">
                                 
@@ -309,7 +301,7 @@
     <div class="shadow div-backgrund mt-4" id="haft-room2">
         <div class="container">
             <div class="row">
-                <h1 class="text-center mt-5 head-page">เพิ่มครึ่งห้องส่วน B</h1>
+                <h1 class="text-center mt-5 head-page">ครึ่งห้องส่วน B</h1>
 
                 {{-- ซ้าย --}}
                 <div class="col-6 mt-5">
@@ -338,11 +330,7 @@
                                 <label for="floor" class="form-label">ขนาดห้อง</label>
                             </div>
                             <div class="col-6">
-                                <select class="form-select div-input" id="floor">
-                                    <option value="1">เล็ก</option>
-                                    <option value="2">กลาง</option>
-                                    <option value="3">ใหญ่</option>
-                                </select>
+                                <label for="">กลาง</label>
                             </div>
                             <div class="col">
                                 <label for="capacity" class="form-label">ความจุ 50 คน</label>
@@ -357,7 +345,7 @@
                                 <label for="price" class="form-label">ราคา</label>
                             </div>
                             <div class="col-6">
-                                <input type="number" class="form-control div-input" id="price" placeholder="75">
+                                <label for="">75</label>
                             </div>
                             <div class="col">
                                 <label for="price" class="form-label">บาท/ชั่วโมง</label>
@@ -372,7 +360,10 @@
                                 <label for="capacity" class="form-label">คำอธิบายเพิ่มเติม</label>
                             </div>
                             <div class="col-6">
-                                <input type="text" class="form-control div-input" id="other" style="height: 100px;">
+                                <label for="">1. <br>
+                                    2. <br>
+                                    3.
+                                </label>
                             </div>
                             <div class="col">
                                 
@@ -382,8 +373,8 @@
                         <br><br>
 
                         <div class="d-flex justify-content-end div-button mt-5">
-                            <a href="manage_room"><button type="button" class="btn btn-secondary custom-button">ย้อนกลับ</button></a>
-                            <a href="examine_add_room"><button class="btn btn-primary ms-2 custom-button" type="button">ถัดไป</button></a>
+                            <a href="add_room"><button type="button" class="btn btn-secondary custom-button">ย้อนกลับ</button></a>
+                            <button class="btn btn-primary ms-2 custom-button" type="button" onclick="con()">ยืนยัน</button>
                         </div>
                     </div>    
                 </div>
@@ -428,6 +419,17 @@
                 document.getElementById("haft-room2").style.display = "none";
                 document.getElementById("button-haft-room").style.display = "flex"
             }
+        }
+
+        function con() {
+            console.log("test");
+            Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "เพิ่มห้องเสร็จสิ้น",
+                showConfirmButton: false,
+                timer: 3000
+            });
         }
     </script>
 @endsection

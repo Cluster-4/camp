@@ -34,3 +34,9 @@ Route::get('/test', function () {
 Route::get('/edit_size_room', function () {
     return view('edit_size_room');
 });
+Route::get('/examine_edit_room', function () {
+    return view('examine_edit_room');
+});
+Route::get('/examine_add_room', function () {
+    return view('examine_add_room');
+});
