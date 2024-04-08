@@ -33,5 +33,6 @@
                 <button type="button" onclick="window.location.href='{{ url('/home') }}'">ยืนยัน</button>
             </div>
         </div>
+    
     </body>
 @endsection

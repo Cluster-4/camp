@@ -25,9 +25,6 @@ Route::get('/tracking', function () {
     return view('other.tracking');
 });
 
-Route::get('/pcf', function () {
-    return view('other.process_finish');
-});
 
 Route::get('/login', function () {
     return view('login');
@@ -52,6 +49,18 @@ Route::get('/booking', function () {
 
 Route::get('/process_first', function () {
     return view('other.process_first');
+});
+
+Route::get('/process_second', function () {
+    return view('other.process_second');
+});
+
+Route::get('/process_third', function () {
+    return view('other.process_third');
+});
+
+Route::get('/process_finish', function () {
+    return view('other.process_finish');
 });
 
 Route::get('/wait', function () {

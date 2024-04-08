@@ -18,7 +18,7 @@
                     </div>
 
                 </div>
-                <div style="display : flex ;flex-direction: row ; justify-content-start; width:90vw; margin-top:3%; ">
+                <div style="display : flex ;flex-direction: row ;justify-content-start; width:90vw; margin-top:3%;">
                     <img src="https://omo-oss-image.thefastimg.com/portal-saas/new2022071417205406509/cms/image/903d1009-961d-41d9-a07f-2074bf00ec78.jpg"
                         alt="" style="border-radius : 4%; width:43% ; height:60%">
                     <div style="font-size:30px; color : black ; width:55% ; margin-left : 10%">
