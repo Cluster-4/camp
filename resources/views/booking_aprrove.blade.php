@@ -1,5 +1,4 @@
 @extends('layout.room_admin_sidebar')
-
 @section('page_name', 'Booking_approvement')
 @section('content')
 
@@ -15,7 +14,7 @@
         </style>
     </head>
     <!-- CODE HERE -->
-    <div class="shadow container my-3" style="border-radius: 18px; width:100%">
+    <div class="shadow my-3" style="border-radius: 18px; width:100%; height: 83vh;">
         <div class="table-container" style="background-color: #ffffff;">
             <table id="mytable" class="table table-responsive">
                 <thead>
