@@ -19,3 +19,6 @@ Route::get('/', function () {
 Route::get('/test', function () {
     return view('layout.norm_officer_layout');
 });
+Route::get('/table', function () {
+    return view('tableRoom');
+});
