@@ -1,0 +1,180 @@
+/* th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+  td {
+    counter-increment: row-number;
+  } */
+
+
+
+.header {
+    background-image: url("{{ asset('storage/images/Rectangle 53 (1).png') }}");
+    background-color: #0077b6;
+    color: white;
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+}
+
+.table-container {
+    border: 1px solid #fcfdff;
+    border-radius: 10px;
+    padding: 20px;
+    max-height: 610px;
+    /* Set the maximum height of the table container */
+    overflow-y: auto;
+    overflow-x: auto;
+    /* Add vertical scrollbar if the content exceeds the height */
+}
+
+table {
+    border-spacing: 1;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+
+    * {
+        position: relative
+    }
+
+    td,
+    th {
+        padding-left: 8px
+    }
+
+    thead tr {
+        height: 60px;
+        background: #dededd;
+        font-size: 16px;
+    }
+
+    tbody tr {
+        height: 48px;
+        border-bottom: 1px solid #3b3b3b;
+
+        &:last-child {
+            border: 1;
+        }
+    }
+
+    td,
+    th {
+        text-align: left;
+
+        &.l {
+            text-align: right
+        }
+
+        &.c {
+            text-align: center
+        }
+
+        &.r {
+            text-align: center
+        }
+    }
+}
+
+
+@media #{$gl-xs} {
+
+    table {
+        display: block;
+
+        >*,
+        tr,
+        td,
+        th {
+            display: block
+        }
+
+        thead {
+            display: none
+        }
+
+        tbody tr {
+            height: auto;
+            padding: 8px 0;
+
+            td {
+                padding-left: 45%;
+                margin-bottom: 12px;
+
+                &:last-child {
+                    margin-bottom: 0
+                }
+
+                &:before {
+                    position: absolute;
+                    font-weight: 700;
+                    width: 40%;
+                    left: 10px;
+                    top: 0
+                }
+
+                &:nth-child(1):before {
+                    content: "Code";
+                }
+
+                &:nth-child(2):before {
+                    content: "Stock";
+                }
+
+                &:nth-child(3):before {
+                    content: "Cap";
+                }
+
+                &:nth-child(4):before {
+                    content: "Inch";
+                }
+
+                &:nth-child(5):before {
+                    content: "Box Type";
+                }
+            }
+        }
+    }
+}
+
+
+
+
+// body style
+
+html,
+body {
+    background: #ffffff;
+    /* สีอิฐสีอ่อน */
+    /* หรือ background: #008000; สำหรับสีเขียว */
+    font: 400 14px 'Calibri', 'Arial';
+    padding: 0;
+    height: 100%;
+    margin: 0;
+}
+
+
+blockquote {
+    color: white;
+    text-align: center;
+}
+
+
+.swal-actions-styled {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.swal-actions-styled button {
+    margin-left: 10px;
+}
