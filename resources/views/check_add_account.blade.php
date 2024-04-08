@@ -37,7 +37,7 @@
                                     <label for="" class="text">ชื่อผู้ใช้ : </label>
                                 </div>
                                 <div class="col-3">
-                                    <input type="text" class="input">
+                                    <label for="">โบ๊ทคุง</label>
                                 </div>
                             </div>
                             <div class="row">
@@ -45,7 +45,7 @@
                                     <label for="" class="text">ชื่อ: </label>
                                 </div>
                                 <div class="col-3">
-                                    <input type="text" class="input">
+                                    <label for="">ธนวันต์</label>
                                 </div>
                             </div>
                             <div class="row">
@@ -53,7 +53,7 @@
                                     <label for="" class="text">ชื่อนามสกุล : </label>
                                 </div>
                                 <div class="col-3">
-                                    <input type="text" class="input">
+                                    <label for="">กล้วยหอม</label>
                                 </div>
                             </div>
                             <div class="row">
@@ -61,10 +61,7 @@
                                     <label for="" class="text">บทบาท :</label>
                                 </div>
                                 <div class="col-3">
-                                    <select name="สถานะ" id="" class="drop ">
-                                        <option value="Active">Active</option>
-                                        <option value="Inactive">Inactive</option>
-                                    </select>
+                                    <label for="">นักบินอวกาศ</label>
                                 </div>
                             </div>
                             <div class="row">
@@ -72,7 +69,7 @@
                                     <label for="" class="text">รหัสผ่าน : </label>
                                 </div>
                                 <div class="col-3">
-                                    <input type="text" class="input">
+                                    <label for="">25478888888</label>
                                 </div>
                             </div>
                             <div class="row">
@@ -80,7 +77,7 @@
                                     <label for="" class="text">เบอร์โทรศัพท์ : </label>
                                 </div>
                                 <div class="col-3">
-                                    <input type="text" class="input">
+                                    <label for="">ๅ/-ภถุึคตจ</label>
                                 </div>
                             </div>
                             <div class="row">
@@ -88,7 +85,7 @@
                                     <label for="" class="text">อีเมลล์ : </label>
                                 </div>
                                 <div class="col-3">
-                                    <input type="text" class="input">
+                                    <label for="">Thanawan@gmail.com</label>
                                 </div>
                             </div>
                             <div class="row">
@@ -96,14 +93,11 @@
                                     <label for="" class="text">สถานะ :</label>
                                 </div>
                                 <div class="col-3">
-                                    <select name="สถานะ" id="" class="drop ">
-                                        <option value="Active">Active</option>
-                                        <option value="Inactive">Inactive</option>
-                                    </select>
+                                    <label for="">โสดเกิน</label>
                                 </div>
                             </div>
                             <div>
-                                <button type="btn" class="btn2 btn-primary">ถัดไป</button>
+                                <button type="btn" class="btn2 btn-primary">บันทึก</button>
                                 <button type="btn" class="btn1 btn-primary">ยกเลิก</button>
                             </div>
 

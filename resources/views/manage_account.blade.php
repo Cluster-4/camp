@@ -16,6 +16,7 @@
         <link rel='stylesheet'
             href='https://cdn-uicons.flaticon.com/2.2.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
         <link rel="stylesheet" href="CSS/manage_account.css">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </head>
 
     <body>
@@ -60,56 +61,8 @@
                             <td>
                                 <a href="/edit" class="edit" title="เเก้ไข" data-toggle="tooltip">
                                     <i class="material-icons">&#xE8B8;</i></a>
-                                <a href="/delete" class="delete" title="ลบบัญชี" data-toggle="tooltip"><i
-                                        class="material-icons">&#xE5C9;</i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td> นายปุ้ยปุ้ย ตัวกลม</a></td>
-                            <td>เจ้าหน้าที่ภายใน</td>
-                            <td><span class="status text-active">&bull;</span> Active</td>
-                            <td>
-                                <a href="/edit" class="edit" title="เเก้ไข" data-toggle="tooltip"><i
-                                        class="material-icons">&#xE8B8;</i></a>
-                                <a href="/delete" class="delete" title="ลบบัญชี" data-toggle="tooltip"><i
-                                        class="material-icons">&#xE5C9;</i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>นายหล่อเท่ เท่าต้นกล้วย</a></td>
-                            <td>เจ้าหน้าที่ภายใน</td>
-                            <td><span class="status text-inactive">&bull;</span> Inactive</td>
-                            <td>
-                                <a href="/edit" class="edit" title="เเก้ไข" data-toggle="tooltip"><i
-                                        class="material-icons">&#xE8B8;</i></a>
-                                <a href="/delete" class="delete" title="ลบบัญชี" data-toggle="tooltip"><i
-                                        class="material-icons">&#xE5C9;</i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>นายงงไปหมด โค้ดก็เยอะ</a></td>
-                            <td>เจ้าหน้าที่ภายใน</td>
-                            <td><span class="status text-active">&bull;</span> Active</td>
-                            <td>
-                                <a href="/edit" class="edit" title="เเก้ไข" data-toggle="tooltip"><i
-                                        class="material-icons">&#xE8B8;</i></a>
-                                <a href="/delete" class="delete" title="ลบบัญชี" data-toggle="tooltip"><i
-                                        class="material-icons">&#xE5C9;</i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>นายไม่สนิทบิดหมด ไม่สลดบิดอีก</a></td>
-                            <td>เจ้าหน้าที่ภายใน</td>
-                            <td><span class="status text-inactive">&bull;</span> Inactive</td>
-                            <td>
-                                <a href="/edit" class="edit" title="เเก้ไข" data-toggle="tooltip"><i
-                                        class="material-icons">&#xE8B8;</i></a>
-                                <a href="/delete" class="delete" title="ลบบัญชี" data-toggle="tooltip"><i
-                                        class="material-icons">&#xE5C9;</i></a>
+                                    <a href="#" class="" onclick="confirmDelete(event)"><i class="material-icons"
+                                        style=" color: red;">&#xE5C9;</i></a>
                             </td>
                         </tr>
                     </tbody>
@@ -119,4 +72,50 @@
     </body>
 
     </html>
+    <script>
+        function confirmDelete(event) {
+            event.preventDefault(); // Prevent the default action of the link
+
+            // Show SweetAlert2 confirmation dialog
+            Swal.fire({
+                title: "ยืนยันการลบรายชื่อผู้ใช้",
+
+                html: '<div style="display: flex; align-items: start;   class="row">' +
+                    '<div style="margin-top:10%">' +
+                    '<img src="https://f.ptcdn.info/336/058/000/pb0qjiitu7Y1aEU7JwW-o.jpg" style="max-width: 350px;">' +
+                    '</div>' +
+                    '<br>' +
+                    '<div   style=" text-align: start; margin-left:100px; margin-top:50px">' +
+                    '<p>ชื่อเล่น : เนส</p>' +
+                    '<p>ชื่อ : นายถิรายุ</p>' +
+                    '<p>นามสกุล : พรหมโคตร</p>' +
+                    '<p>บทบาท : เจ้าหน้าที่ภายใน</p>' +
+                    '<p>รหัสผ่าน : 123456</p>' +
+                    '<p>เบอร์โทรศัพท์ : 0980063225</p>' +
+                    '<p>อีเมล : 132@gmail.com</p>' +
+                    '<p>สถานะ : Active</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '<br>',
+
+                width: '800px',
+                showCancelButton: true,
+                confirmButtonColor: "red",
+                cancelButtonColor: "grey",
+                confirmButtonText: "&nbsp&nbspยืนยันการลบ&nbsp&nbsp",
+                cancelButtonText: "&nbsp&nbsp&nbsp&nbsp&nbsp&nbspย้อนกลับ&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        title: "ลบรายชื่อผู้ใช้เสร็จสิ้น",
+                        icon: "success",
+                        showCancelButton: false,
+                        showConfirmButton: false,
+                        timer: 3000
+                    });
+                }
+            });
+        }
+    </script>
+
 @endsection
