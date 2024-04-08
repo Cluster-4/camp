@@ -1,6 +1,6 @@
 @extends('layout.new_sidebar')
 @section('content')
-    <div class="shadow mt-3 d-flex py-3" style="border-radius: 18px; width: 100%; height: 100%;"> {{-- ถ้าต้องการให้หน้าจอ overflow ได้ให้ปรับ height: 100%; --}}
+    <div class="shadow mt-3 d-flex py-3" style="border-radius: 18px; width: 100%; height: 85vh;"> {{-- ถ้าต้องการให้หน้าจอ overflow ได้ให้ปรับ height: 100%; --}}
         <div class="container">
             <form action="">
                 <div class="row">
@@ -62,7 +62,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="d-flex align-items-end justify-content-end" style="padding-top: 23%">
+                <div class="d-flex align-items-end justify-content-end" style="margin-top: 30%">
                     <button type="button" class="btn me-3 btn-secondary shadow"
                         style="width: 15%; height: 15%; border-radius: 10px;">ย้อนกลับ</button>
                     <button type="submit" class="btn shadow"
