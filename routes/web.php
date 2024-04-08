@@ -74,3 +74,9 @@ Route::get('/cancel', function () {
 Route::get('/notfound', function () {
     return view('other.notfound');
 });
+
+Route::get('/confirm_cancel_booking', function () {
+    return view('confirm_cancel_booking');
+});
+
+
