@@ -46,7 +46,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item" onclick="toggleActive(event)">
-                    <a href="#" class="sidebar-link">
+                    <a href="/approve" class="sidebar-link">
                         <i class="fi fi-rr-checkbox" style="font-size: 30px; display: flex;"></i>
                         <span class="pl-3">อนุมัติคำขอจองห้อง</span>
                     </a>
