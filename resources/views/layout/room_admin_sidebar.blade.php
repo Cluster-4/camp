@@ -26,8 +26,8 @@
             <div class="d-flex">
                 {{-- hamburger-bar --}}
                 <button class="toggle-btn" type="button" style="background-color: transparent; border: 0px;">
-                    {{-- <i class="fi fi-sr-menu-burger text-white"></i> --}}
-                    <i class="fi fi-rr-hamburger text-white"></i>
+                    {{-- <i class="fi fi-sr-menu-burger text-white" style="font-size: 30px;"></i> --}}
+                    <i class="fi fi-rr-hamburger text-white" style="font-size: 30px"></i>
                 </button>
                 {{-- ชื่่อระบบ โลโก้ระบบ --}}
                 <div class="sidebar-logo d-flex flex-row justify-content-center">
@@ -38,16 +38,28 @@
             </div>
 
             <ul class="sidebar-nav">
-                <li class="sidebar-item">
+                <li class="sidebar-item" onclick="toggleActive(event)">
                     <a href="#" class="sidebar-link">
-                        <i class="fi fi-sr-meeting-alt me-2" style="font-size: 30px"></i>
-                        <span>จองห้องประชุม</span>
+                        <i class="fi fi-sr-stats" style="font-size: 30px; display: flex;"></i>
+                        <span class="pl-3">แดชบอร์ด</span>
                     </a>
                 </li>
-                <li class="sidebar-item">
+                <li class="sidebar-item" onclick="toggleActive(event)">
                     <a href="#" class="sidebar-link">
-                        <i class="fi fi-sr-time-past me-2" style="font-size: 30px"></i>
-                        <span>ติดตามสถานะการจอง</span>
+                        <i class="fi fi-rr-checkbox" style="font-size: 30px; display: flex;"></i>
+                        <span class="pl-3">อนุมัติคำขอจองห้อง</span>
+                    </a>
+                </li>
+                <li class="sidebar-item" onclick="toggleActive(event)">
+                    <a href="#" class="sidebar-link">
+                        <i class="fi fi-sr-meeting-alt" style="font-size: 30px; display: flex;"></i>
+                        <span class="pl-3">จองห้องประชุม</span>
+                    </a>
+                </li>
+                <li class="sidebar-item" onclick="toggleActive(event)">
+                    <a href="#" class="sidebar-link">
+                        <i class="fi fi-sr-time-past" style="font-size: 30px; display: flex;"></i>
+                        <span class="pl-3">ติดตามสถานะการจอง</span>
                     </a>
                 </li>
             </ul>
@@ -56,7 +68,7 @@
                     aria-expanded="false">
                     <img src="https://media.discordapp.net/attachments/1209200207963758673/1224255943861080064/a8a6659eb448af110e0eb9cfb83e901d.png?ex=661cd432&is=660a5f32&hm=a4a235e24939438515f682e285e9e1fe9d10fb1ea91b0bf873690fee774c090b&=&format=webp&quality=lossless&width=628&height=585"
                         alt="" width="50px" height="50px" class="rounded-circle me-3">
-                    <span>เจ้าหน้าที่</span>
+                    <span>ผู้ดูแลห้องประชุม</span>
                 </div>
                 <a href="#" class="text-white sidebar-link d-flex justify-content-end">
                     <i class="fi fi-sr-sign-out-alt" style="font-size: 30"></i>
@@ -65,10 +77,9 @@
         </aside>
         <div class="main p-3 overflow-container">
             {{-- navbar --}}
-            <div class="d-flex bg-dark text-white align-items-center p-4 fs-3"
-                style="width: 80; height: 10%; background-image: linear-gradient(to right ,#1E1450 ,#1E3ACC); border-radius: 18px;">
-                <i class="fi fi-sr-meeting-alt me-4" style="font-size: 45px;"></i>
-                จองห้องประชุม
+            <div class="d-flex bg-dark text-white align-items-center p-4 fs-3 sidebar-title">
+                <i class=""></i>
+
             </div>
             @yield('content')
         </div>

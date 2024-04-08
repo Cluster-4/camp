@@ -48,7 +48,7 @@ h1 {
 .toggle-btn {
     cursor: pointer;
     border: 0;
-    padding: 1rem 1.5rem;
+    padding: 1rem 1.25rem;
 }
 
 .toggle-btn i {
@@ -104,13 +104,16 @@ a.sidebar-link {
     border-left: 3px solid transparent;
 }
 
-#sidebar:not(.expand) .sidebar-link i{
+#sidebar:not(.expand) a.sidebar-link i{
     display: flex;
+    width: 100%;
     justify-content: center;
 }
-.sidebar-link{
+
+.sidebar-item a.sidebar-link{
     width: 100%;
 }
+
 .sidebar-link i {
     font-size: 1.1rem;
     margin-right: 0.75rem;
@@ -118,7 +121,6 @@ a.sidebar-link {
 
 a.sidebar-link:hover {
     background-color: rgba(255, 255, 255, .075);
-    border-left: 3px solid #3b7ddd;
 }
 
 .sidebar-item {
@@ -126,7 +128,26 @@ a.sidebar-link:hover {
     display: flex; /* เพิ่มการแสดงผลเป็น flex */
     justify-content: start;
     width: 100%;
+    height: 8%;
+}
+
+.sidebar-link {
+    display: flex !important;
+    align-items: center; /* จัดให้ flex items แสดงผลตามแนวตั้ง */
+    height: 100%;
+}
+
+.sidebar-title{
+    width: 80;
     height: 10%;
+    background-image: linear-gradient(to right ,#1E1450 ,#1E3ACC);
+    border-radius: 18px;
+}
+
+.sidebar-title i{
+    font-size: 45px;
+    display: flex;
+    align-items: center;
 }
 
 #sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
@@ -161,4 +182,8 @@ a.sidebar-link:hover {
     overflow-x: hidden;
     max-height: 87vh;
     /* กำหนดความสูงสูงสุดของเนื้อหา */
+}
+
+.sidebar-item.active {
+    background-color: #69A5DD; /* เปลี่ยนสีพื้นหลังเมื่อ sidebar item เป็น active */
 }
