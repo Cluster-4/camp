@@ -116,9 +116,12 @@
                 width: '800px',
                 showCancelButton: true,
 
+
+
                 confirmButtonColor: "red",
                 cancelButtonColor: "grey",
                 confirmButtonText: "&nbsp&nbspยืนยันการลบ&nbsp&nbsp",
+
                 cancelButtonText: "&nbsp&nbsp&nbsp&nbsp&nbsp&nbspย้อนกลับ&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"
 
 
