@@ -40,7 +40,7 @@
 
             <ul class="sidebar-nav">
                 <li class="sidebar-item" onclick="toggleActive(event)">
-                    <a href="#" class="sidebar-link">
+                    <a href="/db" class="sidebar-link">
                         <i class="fi fi-sr-stats" style="font-size: 30px; display: flex;"></i>
                         <span class="pl-3">แดชบอร์ด</span>
                     </a>
