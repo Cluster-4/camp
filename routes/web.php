@@ -31,3 +31,4 @@ Route::get('/system_admin', function () {
 Route::get('/sidebar', function () {
     return view('layout.system_admin_sidebar');
 });
+Route::get('/approve', [RoomBookingController::class, 'index'])->name('approvement');
