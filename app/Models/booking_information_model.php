@@ -10,7 +10,7 @@ class booking_information_model extends Model
     protected $table = 'booking_information';
     protected $primaryKey = 'bkg_id';
     public $incrementing = true;
-    public $timestamps = false;
+    public $timestamps = true;
 
     public function room_size()
     {
