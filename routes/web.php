@@ -20,6 +20,18 @@ Route::get('/', function () {
 Route::get('/manage_room', function () {
     return view('manage_room');
 });
+Route::get('/table', function () {
+    return view('table_room');
+});
+Route::get('/table_a', function () {
+    return view('table_room_a');
+});
+Route::get('/table_b', function () {
+    return view('table_room_b');
+});
+Route::get('/table_full', function () {
+    return view('table_room_full');
+});
 Route::get('/edit_room', function () {
     return view('edit_room');
 });
