@@ -78,7 +78,7 @@
                     <span>ผู้ดูแลห้องประชุม</span>
                 </div>
 
-                =
+            
                     <a href="{{ url('logout')}}" class="text-white sidebar-link d-flex justify-content-end">
                         <i class="fi fi-sr-sign-out-alt" style="font-size: 30"></i>
                     </a>

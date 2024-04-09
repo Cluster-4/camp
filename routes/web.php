@@ -25,7 +25,7 @@ Route::get('/home',[Login_controller::class,'login_view'])->name('home');
 
 Route::get('/logout',[Login_controller::class,'logout']);
 
-Route::get('/dashboard',[Login_controller::class,'dashboard_view'])->name('viewdashboard');
+Route::get('/dashboard',[Login_controller::class,'dashboard_view'])->name('viewdashboard')->middleware('room_admin_mid');
 Route::get('/edit_room',[Login_controller::class,'viewEditRoom'])->name('viewEditRoom');
 
 
@@ -119,9 +119,7 @@ Route::get('/edit_room',[Login_controller::class,'viewEditRoom'])->name('viewEdi
         return view('edit_size_room');
     });
     Route::get('/approve', [RoomBookingController::class, 'index'])->name('approvement');
-    Route::get('/db', function () {
-        return view('dashboard');
-    });
+   
 
     // Route::get('/home', function () {
     //     return view('other.home');
@@ -138,7 +136,7 @@ Route::get('/edit_room',[Login_controller::class,'viewEditRoom'])->name('viewEdi
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('other/booking');
 });
 
 
