@@ -11,7 +11,7 @@
     <div style="width:100vw; height:100%; display:flex; flex-direction:column; justify-content:start; align-items:center;">
         <div style="width: 15%;height:13%; border-end-start-radius: 15px;border-end-end-radius: 15px; background-color: #000C6A; display: flex;
         justify-content: center; align-items: center; color:white; font-size:180%; margin-bottom:6%">
-            <p class="mt-3">ขั้นตอนที่ 1/3</p>
+            <p class="mt-3">ขั้นตอนที่ 1/2</p>
         </div>
         <div style="display:flex;">
             <div class="col-md-8">
@@ -54,7 +54,7 @@
                     </div>
                     <div class="row">
                         <div class="col-6">
-                            <p class="card-text">อุปกรณ์ภายในห้อง : </p>
+                            <p class="card-text">หมายเหตุ : </p>
                         </div>
                         <div class="col-6">
                             <p class="card-text">1.โปรเจคเตอร์ <br>

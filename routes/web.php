@@ -54,9 +54,9 @@ Route::get('/system_admin', function () {
     return view('layout.system_admin_layout');
 });
 
-// Route::get('/booking', function () {
-//     return view('other.booking');
-// });
+Route::get('/booking', function () {
+    return view('other.booking');
+});
 
 Route::get('/process_first', function () {
     return view('other.process_first');
@@ -66,9 +66,6 @@ Route::get('/process_second', function () {
     return view('other.process_second');
 });
 
-Route::get('/process_third', function () {
-    return view('other.process_third');
-});
 
 Route::get('/process_finish', function () {
     return view('other.process_finish');
@@ -106,4 +103,4 @@ Route::post('/manage_room', [RoomController::class, 'storeRoom'])->name('store_r
 Route::get('/add_room',[RoomController::class,'index_size']);
 Route::get('/manage_room', [RoomController::class, 'index'])->name('manage_room');
 
-Route::get('/booking', [RoomController::class, 'index_booking'])->name('booking_room');
+Route::get('/booking', [RoomController::class, 'index_booking'])->name('booking');

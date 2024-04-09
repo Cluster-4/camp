@@ -6,9 +6,42 @@
             display: flex;
             justify-content: flex-end;
         }
+        .d-flex.justify-content-end {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .my-custom-alert-class {
+            font-size: 20px;
+            width: 50vw;
+            /* ปรับขนาดตามที่ต้องการ */
+        }
     </style>
     <script>
-         function validateForm() {
+        function redirectToHome() {
+            window.location.href = "{{ url('/tracking') }}";
+        }
+
+        function showSuccessMessage() {
+            let message =
+                "หมายเลขการจอง : xxxxxxxxxxxx\nหมายเหตุ : หมายเลขการจองสามารถนำไปตรวจสอบสถานะการจองได้ในเมนูติดตามสถานะการจอง";
+            message = message.replaceAll("\n", "<br>");
+            Swal.fire({
+                title: "จองเสร็จสิ้น",
+                html: message,
+                icon: "success",
+                showConfirmButton: true,
+                confirmButtonText: "ยืนยัน",
+                customClass: {
+                    popup: 'my-custom-alert-class'
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    redirectToHome();
+                }
+            });
+        }
+        function validateForm() {
                 var first_name = document.getElementById('f_name').value;
                 var last_name = document.getElementById('l_name').value;
                 var phone = document.getElementById('phone').value;
@@ -24,7 +57,7 @@
                     return false; // Prevent form submission
                 }
                 // If all fields are filled, allow form submission
-                window.location.href = "/process_third";
+                showSuccessMessage()
                 return true;
             }
     </script>
@@ -32,7 +65,7 @@
         <div
             style="width: 15%;height:13%; border-end-start-radius: 15px;border-end-end-radius: 15px; background-color: #000C6A; display: flex;
         justify-content: center;align-items: center; color:white; font-size:180%; margin-bottom:1%">
-            <p class="mt-3">ขั้นตอนที่ 2/3</p>
+            <p class="mt-3">ขั้นตอนที่ 2/2</p>
         </div>
         <p style="font-size:350%; color: #000C6A; ">กรอกรายละเอียดการจอง</p>
             <div class="mt-2 row d-flex align-item-center justify-content-center" style="width:50%; height:50%;">
@@ -73,7 +106,7 @@
             <button class="btn btn-secondary me-2" style="width: 20%; font-size:20px;"
                 onclick="window.location.href='{{ url('/process_first') }}'">ย้อนกลับ</button>
             <button class="btn btn-primary" style="width: 20%; font-size:20px;"
-            onclick="validateForm()">ถัดไป</button>
+            onclick="validateForm()">ยืนยัน</button>
         </div>
     </div>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
