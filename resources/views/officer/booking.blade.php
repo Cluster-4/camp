@@ -8,37 +8,28 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
         <link rel="stylesheet" href="{{ url('dist\css\inner-addon.css') }}">
         <!--JAVA SCRIPT-->
-
         <script>
-            var currentButton = 'btn-room'; // ตั้งค่าปุ่มที่ถูกเลือกตอนเริ่มต้น
-            function changeRoomImage(option) {
-                var roomImage = document.getElementById('room-image');
-                switch (option) {
-                    case 'room-public':
-                        roomImage.src =
-                            'https://spaces.imgix.net/mediaFiles/ZS82LzUvZS9lNjVlZjNlMTBiYWFkNGRmMTE2ZjAwNjk1ODYxZDk1OTgwOWFmNTY5X1NwYWNlc19DaGFtY2h1cmlfU3F1YXJlX0Jhbmdrb2tfNDgxN19tZWV0aW5nX3Jvb20uanBnL2Rvd25sb2Fk?auto=compress,format&q=30';
-                        toggleButtonClass('btn-half-a');
-                        break;
-                    case 'room-private':
-                        roomImage.src =
-                            'https://cms-media.fda.moph.go.th/438710641696579584/2023/11/9wORcDAgeNJTsW4KvWyPVRgt.png';
-                        toggleButtonClass('btn-half-b');
-                        break;
-                }
-            }
+            var currentButton = null; // เพิ่มตัวแปร currentButton และกำหนดให้เป็น null เพื่อให้เริ่มต้น
 
             function toggleButtonClass(buttonId) {
-                // เปลี่ยนคลาสของปุ่มที่ถูกเลือกใหม่เป็น btn-primary
-                document.getElementById(buttonId).classList.add('btn-primary');
-                document.getElementById(buttonId).classList.remove('btn-outline-primary');
+                // เรียกใช้ jQuery เพื่อเลือกปุ่มที่ถูกคลิก
+                var clickedButton = $("#" + buttonId);
 
-                // เปลี่ยนคลาสของปุ่มที่ไม่ถูกเลือกเป็น btn-outline-primary
-                if (buttonId !== currentButton) {
-                    document.getElementById(currentButton).classList.add('btn-outline-primary');
-                    document.getElementById(currentButton).classList.remove('btn-primary');
+                // ถ้าปุ่มที่ถูกคลิกไม่มีคลาส btn-primary ให้เพิ่มคลาสนี้และลบ btn-outline-primary
+                if (!clickedButton.hasClass('btn-primary')) {
+                    clickedButton.addClass('btn-primary');
+                    clickedButton.removeClass('btn-outline-primary');
                 }
 
-                currentButton = buttonId; // อัปเดตปุ่มที่ถูกเลือกในปัจจุบัน
+                // ถ้ามีปุ่มที่ถูกคลิกก่อนหน้านี้แล้ว (currentButton) และไม่ใช่ปุ่มที่ถูกคลิกในครั้งนี้
+                // ให้กำหนดสีของปุ่มนี้เป็นสีเดิมก่อนหน้า และเปลี่ยนสีของปุ่มก่อนหน้าเป็นสีเริ่มต้น
+                if (currentButton !== null && currentButton !== buttonId) {
+                    $("#" + currentButton).addClass('btn-outline-primary');
+                    $("#" + currentButton).removeClass('btn-primary');
+                }
+
+                // กำหนดค่า currentButton เป็นปุ่มที่ถูกคลิกในครั้งนี้
+                currentButton = buttonId;
             }
 
             function goRoomGenaratePage() {
@@ -77,8 +68,8 @@
     </head>
 
     <body>
-        <div class="shadow mt-3 mx-auto position-relative overflow-y-auto"
-            style=" overflow-x: hidden; width: 100%; height: 88%; border-radius: 15px; ">
+        <div class="shadow mx-auto overflow-y-auto mt-3"
+            style=" overflow-x: hidden; width: 95vw; height: 85vh; border-radius: 15px; ">
             <div class="row" style="margin-top: 1rem;">
                 <div class="col-2 inner-addon left-addon ms-3">
                     <i class="fi fi-rr-search" style="color: black; font-size: 120%; margin-left:5%;"></i>
@@ -92,16 +83,12 @@
                         style="width: 21vw; height: 5vh; border-radius: 10px; display: flex; justify-content: center; align-items: center; font-size: 120%; padding-left:13%;"
                         type="text" name="datetimes" />
                 </div>
-                <div class="col-1">
-                    <div class="row">
-                        <button id="btn-public" class="btn btn-primary"
-                            onclick="changeRoomImage('half_a')">ห้องทั่วไป</button>
-                        <button id="btn-private" class="btn btn-outline-primary"
-                            onclick="changeRoomImage('half_b')">ห้องภายใน</button>
-                    </div>
+                <div class="col-2 d-flex">
+                    <button id="btn-public" class="btn btn-outline-primary" onclick="toggleButtonClass('btn-public')">ห้องทั่วไป</button>
+                    <button id="btn-private" class="btn btn-outline-primary ms-2" onclick="toggleButtonClass('btn-private')">ห้องภายใน</button>
                 </div>
-                <div class="col-3" style="display: flex; justify-content: start;">
-                    <button type="button" class="btn btn-primary" style="width: 15%;"
+                <div class="col-4" style="display: flex; justify-content: start;">
+                    <button type="button" class="btn btn-primary" style="width: 15vw;"
                         onclick="window.location.href='{{ url('/booking') }}'">ค้นหา</button>
                 </div>
 
