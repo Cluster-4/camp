@@ -179,9 +179,16 @@
                             <div class="d-flex justify-content-end align-items-end card-footer">
                 
                                 <a href="edit_room"><button type="button" class="btn btn-primary button-edit">แก้ไขห้อง</button></a>
-                                @csrf
-                                @method('DELETE')
-                                <a href=""><button type="button" class="btn btn-danger button-edit ms-2 button-con_delete">ลบห้อง</button></a>
+                                {{-- @csrf
+                                @method('DELETE') --}}
+                                {{-- <a href=""><button type="button" class="btn btn-danger button-edit ms-2">ลบห้อง</button></a> --}}
+                                <form action="{{ route('delete_room', $room->rm_id) }}" method="POST" class="d-inline">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger button-edit ms-2" onclick="return confirm('คุณแน่ใจว่าต้องการลบห้องพักนี้?')">
+                                        ลบห้อง
+                                    </button>
+                                </form>
 
                             </div>
                         </div>
@@ -199,61 +206,61 @@
         </style>
 
         <script>
-            const trashLinks = document.querySelectorAll('.button-con_delete');
+            // const trashLinks = document.querySelectorAll('.button-con_delete');
 
-            // Add click event listener to each trash icon link
-            trashLinks.forEach(link => {
-                link.addEventListener('click', (event) => {
-                    event.preventDefault(); // Prevent the default link behavior
+            // // Add click event listener to each trash icon link
+            // trashLinks.forEach(link => {
+            //     link.addEventListener('click', (event) => {
+            //         event.preventDefault(); // Prevent the default link behavior
 
-                    // Show the SweetAlert2 confirmation dialog
-                    Swal.fire({
+            //         // Show the SweetAlert2 confirmation dialog
+            //         Swal.fire({
 
-                        title: 'ยืนยันการลบห้องประชุม',
+            //             title: 'ยืนยันการลบห้องประชุม',
 
-                        html:
+            //             html:
 
-                            '<div style="display: flex; align-items: center; class="row">' +
-                            '<div style="flex: 1;" class="col">' +
-                            '<img src="https://i.pinimg.com/236x/5a/1b/12/5a1b126a63df80e79d63ab5554276b98.jpg" style="max-width: 300px;">' +
-                            '</div>' +
-                            '<br>' +
-                            '<div style="flex: 1;" class="col ">' +
-                            '<p>ชื่อ : </p>' +
-                            '<p>ขนาด : </p>' +
-                            '<p>แบ่งครึ่งห้อง : </p>' +
-                            '<p>ราคา : </p>' +
-                            '<p>สถานะ : </p>' +
-                            '<p>ประเภทห้อง : </p>' +
-                            '</div>' +
-                            '</div>' +
-                            '<br>',
+            //                 '<div style="display: flex; align-items: center; class="row">' +
+            //                 '<div style="flex: 1;" class="col">' +
+            //                 '<img src="https://i.pinimg.com/236x/5a/1b/12/5a1b126a63df80e79d63ab5554276b98.jpg" style="max-width: 300px;">' +
+            //                 '</div>' +
+            //                 '<br>' +
+            //                 '<div style="flex: 1;" class="col ">' +
+            //                 '<p>ชื่อ : </p>' +
+            //                 '<p>ขนาด : </p>' +
+            //                 '<p>แบ่งครึ่งห้อง : </p>' +
+            //                 '<p>ราคา : </p>' +
+            //                 '<p>สถานะ : </p>' +
+            //                 '<p>ประเภทห้อง : </p>' +
+            //                 '</div>' +
+            //                 '</div>' +
+            //                 '<br>',
 
-                        width: '50%',
-                        showCancelButton: true,
-                        cancelButton: 'order-1',
-                        confirmButton: 'order-2',
-                        confirmButtonColor: '#FC1C1C',
-                        cancelButtonColor: '#9B9B9B',
-                        confirmButtonText: 'ยืนยัน',
-                        cancelButtonText: 'ย้อนกลับ',
-                        customClass: {
-                            actions: 'swal-actions-styled' // ใส่ class สำหรับปรับแต่งตำแหน่งปุ่ม
-                        }
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            Swal.fire({
-                                title: 'การลบห้องเสร็จสิ้น',
-                                icon: 'success',
-                                width: '50%', // กำหนดความกว้างเป็น 50% ของหน้าจอ
-                                showCancelButton: false,
-                                showConfirmButton: false,
-                                timer: 2000,
-                            })
-                        }
-                    })
-                });
-            });
+            //             width: '50%',
+            //             showCancelButton: true,
+            //             cancelButton: 'order-1',
+            //             confirmButton: 'order-2',
+            //             confirmButtonColor: '#FC1C1C',
+            //             cancelButtonColor: '#9B9B9B',
+            //             confirmButtonText: 'ยืนยัน',
+            //             cancelButtonText: 'ย้อนกลับ',
+            //             customClass: {
+            //                 actions: 'swal-actions-styled' // ใส่ class สำหรับปรับแต่งตำแหน่งปุ่ม
+            //             }
+            //         }).then((result) => {
+            //             if (result.isConfirmed) {
+            //                 Swal.fire({
+            //                     title: 'การลบห้องเสร็จสิ้น',
+            //                     icon: 'success',
+            //                     width: '50%', // กำหนดความกว้างเป็น 50% ของหน้าจอ
+            //                     showCancelButton: false,
+            //                     showConfirmButton: false,
+            //                     timer: 2000,
+            //                 })
+            //             }
+            //         })
+            //     });
+            // });
         </script>
 
     </body>
