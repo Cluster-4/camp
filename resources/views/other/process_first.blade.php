@@ -7,10 +7,11 @@
             justify-content: flex-end;
         }
     </style>
+
     <div style="width:100vw; height:100%; display:flex; flex-direction:column; justify-content:start; align-items:center;">
         <div style="width: 15%;height:13%; border-end-start-radius: 15px;border-end-end-radius: 15px; background-color: #000C6A; display: flex;
         justify-content: center; align-items: center; color:white; font-size:180%; margin-bottom:6%">
-            <p class="mt-3">ขั้นตอนที่ 1/3</p>
+            <p class="mt-3">ขั้นตอนที่ 1/2</p>
         </div>
         <div style="display:flex;">
             <div class="col-md-8">
@@ -33,40 +34,40 @@
                     style="overflow-y: auto; overflow-x: hidden; width: 140%; height: 40vh; background-color: #c7c7c7;border-radius:18px;font-size:20px">
                     <div class="d-flex justify-content-left ">
                         <p class="card-title">ชื่อห้อง : </p>
-                        <p class="card-title">G106</p>
+                        <p class="card-title">{{ $room->rm_name }}</p>
                     </div>
                     <div class="d-flex justify-content-left">
                         <p class="card-text">ขนาด : </p>
-                        <p class="card-text">กลาง (53 คน)</p>
+                        <p class="card-text">{{ $room->room_size->rm_size_name }}</p>
                     </div>
                     <div class="d-flex justify-content-left">
                         <p class="card-text">แบ่งครึ่งห้อง : </p>
-                        <p class="card-text">ได้</p>
+                        <p class="card-text">{{ $room->rm_can_half ? 'ได้' : 'ไม่ได้' }}</p>
                     </div>
                     <div class="d-flex justify-content-left">
                         <p class="card-text">ราคา : </p>
-                        <p class="card-text">75 บาท/ชม.</p>
+                        <p class="card-text">{{ $room->rm_price }}</p>
                     </div>
                     <div class="d-flex justify-content-left">
                         <p class="card-text">ประเภทของห้อง : </p>
-                        <p class="card-text">ทั่วไป</p>
+                        <p class="card-text">{{ $room->rm_status }}</p>
                     </div>
                     <div class="row">
-                        <div class="col-6">
-                            <p class="card-text">อุปกรณ์ภายในห้อง : </p>
+                        <div class="col-4">
+                            <p class="card-text">หมายเหตุ : </p>
+
                         </div>
                         <div class="col-6">
-                            <p class="card-text">1.โปรเจคเตอร์ <br>
-                                2.แอร์ <br>
+                            <p class="card-text">{{ $room->rm_facilities }}</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="d-flex justify-content-end" style="width: 87%; height: 7%; margin-top: 9.3rem;">
-            <button class="btn btn-secondary me-2" style="width: 20%;"
+            <button class="btn btn-secondary me-2" style="width: 20%; font-size:20px;"
                 onclick="window.location.href='{{ url('/booking') }}'">ย้อนกลับ</button>
-            <button class="btn btn-primary" style="width: 20%;"
+            <button class="btn btn-primary" style="width: 20%; font-size:20px;"
                 onclick="window.location.href='{{ url('/process_second') }}'">ถัดไป</button>
         </div>
     </div>

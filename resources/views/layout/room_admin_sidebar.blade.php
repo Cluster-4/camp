@@ -18,6 +18,7 @@
         href='https://cdn-uicons.flaticon.com/2.2.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <link rel="stylesheet" href="{{ url('dist\css\sidebar_style.css') }}">
     <link rel="stylesheet" href="{{ url('dist/css/booking_approve_style.css') }}">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.2.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 

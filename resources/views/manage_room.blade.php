@@ -4,8 +4,8 @@
 @section('content')
 
     <head>
-        <script src="sweetalert2.all.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
         <link rel="stylesheet" href="{{ asset('css/manageRoom.css') }}">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
@@ -34,25 +34,6 @@
             padding: 0;
         }
 
-        .button-search {
-            width: 150px;
-            border-radius: 10px;
-            background-color: #3D7EFC;
-        }
-
-        .button-setting {
-            width: 150px;
-            border-radius: 10px;
-            background-color: 828282;
-        }
-
-        .button-add {
-            background-color: #2EB85C;
-            color: white;
-            width: 150px;
-            border-radius: 10px;
-        }
-
         .search {
             border: none;
             height: 61px;
@@ -77,14 +58,24 @@
             border: none;
             height: 61px;
         }
+
+        .div-backgrund {
+            width: 100%;
+            height: auto;
+        }
+
+        .button-edit {
+            width: 90px;
+        }
     </style>
 
     <body>
 
-        <div class="shadow mt-4 my-3 ms-4 main-container main-div row ">
+        <div class="shadow div-backgrund mt-4">
+            <div class="ms-5 row align-items-start">
 
-            <div class="row align-items-start">
-                <div class="col" style="display: flex">
+                {{-- คอลัมฝังค้นหา --}}
+                <div class="col mt-5" style="display: flex">
 
                     {{-- ช่องค้นหา --}}
                     <div class="div-search">
@@ -134,63 +125,78 @@
 
                     </div>
                 </div>
-                {{-- ปุ่มต่างๆทางขวา --}}
-                <div class="col d-flex justify-content-end">
-                    <div class="d-flex flex-row bd-highlight mb-3">
-                        <div class="p-2 bd-highlight"><button class="btn btn-primary button-search" type="button">ค้นหา</button></div>
-                        <div class="p-2 bd-highlight"><a href="edit_size_room"><button class="btn btn-secondary button-setting" type="button">ตั้งค่าขนาดห้อง</button></a></div>
-                        <div class="p-2 bd-highlight"><a href="add_room"><button class="btn btn button-add" type="button">เพิ่มห้อง</button></a></div>
+
+                {{-- คอลัมฝังปุ่ม --}}
+                <div class="col mt-5 me-5" style="display: flex">
+                    {{-- ปุ่มต่างๆทางขวา --}}
+                    <div class="col d-flex justify-content-end">
+                        <div class="d-flex flex-row bd-highlight">
+                            <div class="p-2 bd-highlight">
+                                <button class="btn btn-primary button-edit" type="button">ค้นหา</button>
+                            </div>
+                            <div class="p-2 bd-highlight">
+                                <a href="edit_size_room">
+                                    <button class="btn btn-secondary" type="button">ตั้งค่าขนาดห้อง</button>
+                                </a>
+                            </div>
+                            <div class="p-2 bd-highlight">
+                                <a href="add_room">
+                                    <button class="btn btn-success button-edit" type="button">เพิ่มห้อง</button>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
             </div>
-            {{-- loop ปริ้น card --}}
-            <?php
-                for ($i = 0; $i < 10; $i++) {
-                    // Start a new row if $i is divisible by 3 (starting from 0)
-                ?>
-            {{-- card  --}}
-            <div class="card card-room ms">
-                <!-- card content -->
-                <img src="https://i.pinimg.com/236x/5a/1b/12/5a1b126a63df80e79d63ab5554276b98.jpg" width="293px" height="182px" class="card-img-top" alt="..." style="border-radius: 20px 20px 0px 0px;">
-                <div class="card-body d-flex flex-column">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                        ชื่อ :
-                        <br>ขนาด :
-                        <br>แบ่งครึ่งห้อง :
-                        <br>ราคา :
-                        <br>สถานะ :
-                        <br>ประเภทห้อง :
-                    </p>
-                </div>
-                <div class="d-flex justify-content-end align-items-end">
-                    {{-- เปลี่ยนด่านหลัง fi fi-sr- เท่านั้น --}}
-                    <a href="" class="nav-link mb-2"><i class="fi fi-sr-trash" style="font-size: 30px; color: red;"></i></a>
-                    <a href="edit_room" class="nav-link mb-2"><i class="fi fi-sr-pencil" style="font-size: 30px"></i></a>
+
+            <div class="d-flex justify-content-center">
+                <div style="margin: 1rem 1.5rem 0 9.5rem; ">
+                    @foreach ($rooms as $room)
+                        <div class="card rounded-4 shadow mt-4"
+                            style="width: 18.3rem;float: left; margin:3rem; border-radius:20px;">
+                            <div class="card-header" style="border-start-start-radius:20px;border-start-end-radius:20px">
+                                {{ $room->rm_name }}
+                            </div>
+                            {{-- <img src="{{asset('storage/room_images') . $room->rm_pic_path }}" height="180px"> --}}
+                            @if ($room->rm_pic_path)
+                                <img src="{{ asset('storage/room_images/' . $room->rm_pic_path) }}" height="180px">
+                            @else
+                                <img src="{{ asset('default_room_image.jpg') }}" height="180px">
+                            @endif
+                            <div class="card-body">
+                                <h5 class="card-title">รายละเอียด</h5>
+                                <p class="card-text">
+                                    ขนาด : {{ $room->room_size->rm_size_name }}<br>
+                                    แบ่งครึ่งห้อง : {{ $room->rm_can_half ? 'ได้' : 'ไม่ได้' }}<br>
+                                    ราคา : {{ $room->rm_price }}<br>
+                                    สถานะ : {{ $room->rm_status }}<br>
+                                    ประเภทห้อง : {{ $room->rm_type }}<br>
+                                    หมายเหตุ : {{ $room->rm_facilities }}
+                                </p>
+                            </div>
+                            <div class="d-flex justify-content-end align-items-end card-footer">
+
+                                <a href="edit_room"><button type="button" class="btn btn-primary button-edit">แก้ไขห้อง</button></a>
+                                <a href=""><button type="button" class="btn btn-danger button-edit ms-2 button-con_delete">ลบห้อง</button></a>
+
+                            </div>
+                        </div>
+                    @endforeach
+
                 </div>
             </div>
-            <?php
-                // Close the row if $i is the last index of the row (or the last index of the loop)
-            }
-            ?>
+
         </div>
 
         <style>
-            .button-cancel{
-                width: 150px;
-                border-radius: 10px;
-                background-color: #9B9B9B;
-                color: white;
-            }
-            .button-con{
-                width: 150px;
-                border-radius: 10px;
-                background-color: #FC1C1C;
-                color: white;
+            .button-con_delete {
+
             }
         </style>
+
         <script>
-            const trashLinks = document.querySelectorAll('.fi.fi-sr-trash');
+            const trashLinks = document.querySelectorAll('.button-con_delete');
 
             // Add click event listener to each trash icon link
             trashLinks.forEach(link => {
@@ -205,31 +211,24 @@
                         html:
 
                             '<div style="display: flex; align-items: center; class="row">' +
-                                '<div style="flex: 1;" class="col">' +
-                                    '<img src="https://i.pinimg.com/236x/5a/1b/12/5a1b126a63df80e79d63ab5554276b98.jpg" style="max-width: 300px;">' +
-                                '</div>' +
-                                '<br>' +
-                                '<div style="flex: 1;" class="col ">' +
-                                    '<p>ชื่อ : </p>' +
-                                    '<p>ขนาด : </p>' +
-                                    '<p>แบ่งครึ่งห้อง : </p>' +
-                                    '<p>ราคา : </p>' +
-                                    '<p>สถานะ : </p>' +
-                                    '<p>ประเภทห้อง : </p>' +
-                                '</div>' +
+                            '<div style="flex: 1;" class="col">' +
+                            '<img src="https://i.pinimg.com/236x/5a/1b/12/5a1b126a63df80e79d63ab5554276b98.jpg" style="max-width: 300px;">' +
+                            '</div>' +
+                            '<br>' +
+                            '<div style="flex: 1;" class="col ">' +
+                            '<p>ชื่อ : </p>' +
+                            '<p>ขนาด : </p>' +
+                            '<p>แบ่งครึ่งห้อง : </p>' +
+                            '<p>ราคา : </p>' +
+                            '<p>สถานะ : </p>' +
+                            '<p>ประเภทห้อง : </p>' +
+                            '</div>' +
                             '</div>' +
                             '<br>',
-                            // '<div class="row" style="align-items: center;">' +
-                            //     '<div class="col">' +
-                            //         '<button class="button-cancel modal-b-cancel shadow">ย้อนกลับ</button>' +
-                            //     '</div>' +
-                            //     '<div class="col">' +
-                            //         '<button class="button-con modal-b-condelete shadow">ยืนยัน</button>' +
-                            //     '</div>' +
-                            // '</div>',
-                        width: '50%' ,
-                        showCancelButton: true ,
-                        cancelButton: 'order-1' ,
+
+                        width: '50%',
+                        showCancelButton: true,
+                        cancelButton: 'order-1',
                         confirmButton: 'order-2',
                         confirmButtonColor: '#FC1C1C',
                         cancelButtonColor: '#9B9B9B',
@@ -243,9 +242,9 @@
                             Swal.fire({
                                 title: 'การลบห้องเสร็จสิ้น',
                                 icon: 'success',
-                                width: '50%' , // กำหนดความกว้างเป็น 50% ของหน้าจอ
-                                showCancelButton: false ,
-                                showConfirmButton: false ,
+                                width: '50%', // กำหนดความกว้างเป็น 50% ของหน้าจอ
+                                showCancelButton: false,
+                                showConfirmButton: false,
                                 timer: 2000,
                             })
                         }
@@ -253,27 +252,8 @@
                 });
             });
         </script>
-        <style>
-            .modal-b-condelete{
-                background-color: #FC1C1C;
-                color: white;
-                border: none;
-                width: 150px;
-                height: 40px;
-                border-radius: 10px;
-            }
-            .modal-b-cancel{
-                background-color: #9B9B9B;
-                color: white;
-                border: none;
-                width: 150px;
-                height: 40px;
-                border-radius: 10px;
-            }
-        </style>
 
     </body>
-
 
     </html>
 @endsection
