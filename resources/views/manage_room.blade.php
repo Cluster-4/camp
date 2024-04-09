@@ -127,7 +127,7 @@
                 </div>
 
                 {{-- คอลัมฝังปุ่ม --}}
-                <div class="col mt-5" style="display: flex">
+                <div class="col mt-5 me-5" style="display: flex">
                     {{-- ปุ่มต่างๆทางขวา --}}
                     <div class="col d-flex justify-content-end">
                         <div class="d-flex flex-row bd-highlight">
@@ -159,7 +159,7 @@
                             <div class="card-header" style="border-start-start-radius:20px;border-start-end-radius:20px">
                                 {{ $room->rm_name }}
                             </div>
-                            <img src="{{ $room->rm_pic_path }}" height="180px" alt="...">
+                            <img src="{{asset('storage/room_images') . $room->rm_pic_path }}" height="180px" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">รายละเอียด</h5>
                                 <p class="card-text">
@@ -172,8 +172,7 @@
                                 </p>
                             </div>
                             <div class="d-flex justify-content-end align-items-end card-footer">
-                                {{-- <a href="{{ route('edit_room', $room->id) }}"><button type="button" class="btn btn-primary button-edit">แก้ไขห้อง</button></a>
-                                <a href="{{ route('delete_room', $room->id) }}"><button type="button" class="btn btn-danger button-edit ms-2 button-con_delete">ลบห้อง</button></a> --}}
+                
                                 <a href="edit_room"><button type="button" class="btn btn-primary button-edit">แก้ไขห้อง</button></a>
                                 <a href=""><button type="button" class="btn btn-danger button-edit ms-2 button-con_delete">ลบห้อง</button></a>
 

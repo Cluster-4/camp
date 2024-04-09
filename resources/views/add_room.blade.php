@@ -71,6 +71,14 @@
             color: #000C6A;
             font-size: 300%;
         }
+
+        .input-picture {
+            border: 0px solid #ffffff;
+            width: auto;
+            height: auto;
+            background-color: aqua;
+            content: '';
+        }
     </style>
 
     <form action="{{ route('store_room') }}" method="POST" enctype="multipart/form-data">
@@ -82,21 +90,24 @@
 
                     {{-- ซ้าย --}}
                     <div class="col-6 mt-5">
+
+                        {{-- <div >
+                            <input type="file" id="rm_pic_path" name="rm_pic_path" class="input-picture">
+                        </div> --}}
+
                         <div>
                             <div class="mb-4 d-flex justify-content-center">
-                                <img id="selectedImage" src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
-                                    alt="example placeholder" style="width: 70%; height:" />
+                                <img id="selectedImage" src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" style="width: 70%; height:" />
                             </div>
                             <div class="d-flex justify-content-center">
                                 <div class="btn btn-primary btn-rounded">
                                     <label class="form-label text-white m-1" for="customFile1">Choose file</label>
-                                    <input type="file" class="form-control d-none" id="customFile1"
-                                        onchange="displaySelectedImage(event, 'selectedImage')" />
+                                    <input type="file" class="" id="rm_pic_path" name="rm_pic_path" onchange="displaySelectedImage(event, 'selectedImage')">
                                 </div>
                             </div>
                         </div>
-                    </div>
 
+                    </div>
 
                     {{-- ขวา --}}
                     <div class="col-6 mt-5">
@@ -108,8 +119,7 @@
                                 </div>
                                 <div class="col-6">
                                     {{-- <input type="text" class="form-control div-input" id="roomName" placeholder="G105"> --}}
-                                    <input type="text" class="form-control div-input" id="rm_name" name="rm_name"
-                                        placeholder="G105">
+                                    <input type="text" class="form-control div-input" id="rm_name" name="rm_name" placeholder="G105">
                                 </div>
                                 <div class="col">
 
@@ -249,14 +259,13 @@
                     <div class="col-6 mt-5">
                         <div>
                             <div class="mb-4 d-flex justify-content-center">
-                                <img id="selectedImage" src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
+                                <img id="s_Image" src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
                                     alt="example placeholder" style="width: 70%;" />
                             </div>
                             <div class="d-flex justify-content-center">
                                 <div class="btn btn-primary btn-rounded">
                                     <label class="form-label text-white m-1" for="customFile1">Choose file</label>
-                                    <input type="file" class="form-control d-none" id="customFile1"
-                                        onchange="displaySelectedImage(event, 'selectedImage')" />
+                                    <input type="file" class="" id="rm_half_a_pic_path" name="rm_half_a_pic_path" onchange="displaySelectedImage(event, 's_Image')">
                                 </div>
                             </div>
                         </div>
@@ -331,14 +340,12 @@
                     <div class="col-6 mt-5">
                         <div>
                             <div class="mb-4 d-flex justify-content-center">
-                                <img id="selectedImage" src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
-                                    alt="example placeholder" style="width: 70%;" />
+                                <img id="select_Image" src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" alt="example placeholder" style="width: 70%;" />
                             </div>
                             <div class="d-flex justify-content-center">
                                 <div class="btn btn-primary btn-rounded">
                                     <label class="form-label text-white m-1" for="customFile1">Choose file</label>
-                                    <input type="file" class="form-control d-none" id="customFile1"
-                                        onchange="displaySelectedImage(event, 'selectedImage')" />
+                                    <input type="file" class="" id="rm_half_b_pic_path" name="rm_half_b_pic_path" onchange="displaySelectedImage(event, 'select_Image')">
                                 </div>
                             </div>
                         </div>
@@ -401,8 +408,7 @@
                             <br><br>
 
                             <div class="d-flex justify-content-end div-button mt-5">
-                                <a href="manage_room"><button type="button"
-                                        class="btn btn-secondary custom-button">ย้อนกลับ</button></a>
+                                <a href="manage_room"><button type="button" class="btn btn-secondary custom-button">ย้อนกลับ</button></a>
                                 <button type="submit" class="btn btn-primary ms-2 custom-button"
                                     onclick="showSuccess()">ยืนยัน</button>
                             </div>
