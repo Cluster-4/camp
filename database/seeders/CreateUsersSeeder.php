@@ -24,7 +24,7 @@ class CreateUsersSeeder extends Seeder
                 'acc_email'=> 'testuser@example.com',
                 'acc_tel' => '458484',
                 'acc_status'=> 1,
-                'acc_pic_path'=> 'http://example.com'
+                'acc_pic_path'=> 'storage\img\IMG_3189.jpg'
 
             ]
 
