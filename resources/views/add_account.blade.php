@@ -10,6 +10,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="{{ asset('CSS/add_account.css') }}">
         <title>Document</title>
+
     </head>
     <body>
         <div class="container" style="background-color :#ffffff;">
