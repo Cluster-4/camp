@@ -12,11 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('bmrs_accounts', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
+            $table->id('acc_id');
+            $table->string('acc_username');
+            $table->string('acc_lname');
+            $table->string('acc_fname');
+            $table->string('acc_position');
+            $table->string('acc_password');
+            $table->string('email')->nullable();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->string('tel');
+            $table->string('status');
+            $table->string('acc_pic_path')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
