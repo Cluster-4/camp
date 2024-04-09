@@ -17,7 +17,6 @@
         <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.2.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
     <script src="{{ url('dist/js/bootstrap.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
     <title>ระบบจองห้องประชุมหน่วยงานราชการ</title>
     <style>
         /* CSS เมื่อข้อมูลเกินแกน y */

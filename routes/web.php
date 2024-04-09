@@ -86,3 +86,7 @@ Route::get('/home_officer', function () {
 Route::get('/tracking_officer', function () {
     return view('officer.tracking');
 });
+
+Route::get('/booking_officer', function () {
+    return view('officer.booking');
+});
