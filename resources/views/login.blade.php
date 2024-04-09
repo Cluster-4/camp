@@ -46,7 +46,7 @@
 
     form {
         text-align: center;
-        margin-left: 15%;
+
         position: absolute;
         top: 50%;
         -ms-transform: translateY(-50%);

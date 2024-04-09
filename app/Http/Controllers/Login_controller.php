@@ -33,14 +33,14 @@ class Login_controller extends Controller
 
 
             if (Auth::attempt($credentials)) {
-
-                if ($credentials['acc_position'] == 'เจ้าหน้าที่') {
-                    return Redirect::to('dashboard');//ไปหน้าหลักของเจ้าหน้าที่
-                } else if ($credentials['acc_position'] == 'ผู้ดูแลห้องประชุม') {
-                    return Redirect::to('edit_room');//ไปหน้าหลักของผู้ดูแลห้องประชุม
-                } else if ($credentials['acc_position'] == 'ผู้ดูแลระบบ') {
-                    return Redirect::to('titles');//ไปหน้าหลักของผู้ดูแลระบบ
-                }
+                return redirect('dashboard');
+                // if ($credentials['acc_position'] == 'เจ้าหน้าที่') {
+                //     return Redirect::to('dashboard');//ไปหน้าหลักของเจ้าหน้าที่
+                // } else if ($credentials['acc_position'] == 'ผู้ดูแลห้องประชุม') {
+                //     return Redirect::to('edit_room');//ไปหน้าหลักของผู้ดูแลห้องประชุม
+                // } else if ($credentials['acc_position'] == 'ผู้ดูแลระบบ') {
+                //     return Redirect::to('titles');//ไปหน้าหลักของผู้ดูแลระบบ
+                // }
 
             }
             return Redirect::to('login')->with('error',' *** Email or password incorrect *** ');

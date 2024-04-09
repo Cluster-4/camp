@@ -18,20 +18,23 @@ use App\Http\Controllers\Login_controller;
 // Login_controller
 Route::get('/login',[Login_controller::class,'login_view'])->name('login_view');
 Route::post('/login',[Login_controller::class,'login_process'])->name('login_process');
+
 Route::get('/home',[Login_controller::class,'login_view'])->name('home');
 
 
 
 Route::get('/logout',[Login_controller::class,'logout']);
 
+Route::get('/dashboard',[Login_controller::class,'dashboard_view'])->name('viewdashboard');
+Route::get('/edit_room',[Login_controller::class,'viewEditRoom'])->name('viewEditRoom');
 
 
 
-Route::middleware(['auth.admin'])->group(function(){
 
-    Route::get('/dashboard',[Login_controller::class,'dashboard_view'])->name('viewdashboard');
-    Route::get('/edit_room',[Login_controller::class,'viewEditRoom'])->name('viewEditRoom');
-});
+
+
+
+
 
     Route::get('/manage_room', function () {
         return view('manage_room');
