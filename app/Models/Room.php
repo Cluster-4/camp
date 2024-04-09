@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Room extends Model
 {
@@ -15,7 +16,7 @@ class Room extends Model
 
     public function room_size()
     {
-        return $this->belongsTo(Room_size_model::class);
+        return $this->belongsTo(Room_size_model::class, 'rm_size_id');
     }
 
     protected $fillable = [
@@ -37,4 +38,5 @@ class Room extends Model
         'rm_half_b_pic_path',
         'rm_half_b_is_half'
     ];
+
 }
