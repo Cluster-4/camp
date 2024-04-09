@@ -87,38 +87,35 @@
         <div class="d-flex justify-content-center" style="width: 100%; height:100%;">
             <div style="margin:1rem 0rem 0rem 9rem;">
                 <!-- card content -->
-                <?php
-            for ($i=0; $i < 9; $i++){
-                ?>
-
-                <div class="card rounded-4 shadow mt-4"
-                    style="width: 18.3rem;float: left; margin:3rem; border-radius:20px;">
-                    <div class="card-header" style="border-start-start-radius:20px;border-start-end-radius:20px">
-                        ชื่อห้อง
+                @foreach ($rooms as $room)
+                    <div class="card rounded-4 shadow mt-4"
+                        style="width: 18.3rem;float: left; margin:3rem; border-radius:20px;">
+                        <div class="card-header" style="border-start-start-radius:20px;border-start-end-radius:20px">
+                            {{ $room->rm_name }}
+                        </div>
+                        @if ($room->rm_pic_path)
+                            <img src="{{ asset('storage/room_images/' . $room->rm_pic_path) }}" height="180px">
+                        @else
+                            <img src="{{ asset('default_room_image.jpg') }}" height="180px">
+                        @endif
+                        <div class="card-body">
+                            <h5 class="card-title">รายละเอียด</h5>
+                            <p class="card-text">
+                                ขนาด : {{ $room->room_size->rm_size_name }}<br>
+                                แบ่งครึ่งห้อง : {{ $room->rm_can_half ? 'ได้' : 'ไม่ได้' }}<br>
+                                ราคา : {{ $room->rm_price }}<br>
+                                สถานะ : {{ $room->rm_status }}<br>
+                                ประเภทห้อง : {{ $room->rm_type }}<br>
+                                หมายเหตุ : {{ $room->rm_facilities }}
+                            </p>
+                        </div>
+                        <div class="card-footer d-flex justify-content-end"
+                            style="border-end-start-radius:20px;border-end-end-radius:20px">
+                            <button type="button" class="btn btn-success" style="width: 40%; font-size:20px;"
+                                onclick="goProcessBooking()">จอง</button>
+                        </div>
                     </div>
-                    <img src="https://i.pinimg.com/236x/5a/1b/12/5a1b126a63df80e79d63ab5554276b98.jpg" height="180px"
-                        alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">รายละเอียด</h5>
-                        <p class="card-text">
-                            ขนาด : A <br>
-                            แบ่งครึ่งห้อง : A <br>
-                            ราคา : A <br>
-                            สถานะ : A <br>
-                            ประเภทห้อง : A <br>
-                            หมายเหตุ : เหนื่อยมากกก
-                        </p>
-                    </div>
-                    <div class="card-footer d-flex justify-content-end"
-                        style="border-end-start-radius:20px;border-end-end-radius:20px">
-                        <button type="button" class="btn btn-success" style="width: 40%; font-size:20px;"
-                            onclick="goProcessBooking()">จอง</button>
-                    </div>
-                </div>
-
-                <?php
-            }
-            ?>
+                @endforeach
                 <div style="clear: both;"></div>
             </div>
         </div>

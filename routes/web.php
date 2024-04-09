@@ -15,7 +15,7 @@ use App\Http\Controllers\RoomController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('manage_room');
 });
 
 Route::get('/home', function () {
@@ -54,9 +54,9 @@ Route::get('/system_admin', function () {
     return view('layout.system_admin_layout');
 });
 
-Route::get('/booking', function () {
-    return view('other.booking');
-});
+// Route::get('/booking', function () {
+//     return view('other.booking');
+// });
 
 Route::get('/process_first', function () {
     return view('other.process_first');
@@ -102,10 +102,8 @@ Route::get('/booking_officer', function () {
     return view('officer.booking');
 });
 
-
-
 Route::post('/manage_room', [RoomController::class, 'storeRoom'])->name('store_room');
-
 Route::get('/add_room',[RoomController::class,'index_size']);
-
 Route::get('/manage_room', [RoomController::class, 'index'])->name('manage_room');
+
+Route::get('/booking', [RoomController::class, 'index_booking'])->name('booking_room');
