@@ -17,6 +17,9 @@ class Account extends Authenticatable
      *
      * @var array<int, string>
      */
+    protected $table = "bmrs_accounts";
+
+
     protected $fillable = [
         'acc_username',
         'acc_fname',
@@ -26,7 +29,9 @@ class Account extends Authenticatable
         'acc_email',
         'acc_tel',
         'acc_status',
-        'acc_pic_path'
+        'acc_pic_path',
+        'created_at',
+        'updated_at'
     ];
 
     /**
@@ -48,4 +53,5 @@ class Account extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    public $timestamps = false;
 }
