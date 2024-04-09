@@ -5,6 +5,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/crud', function () {
+    return view('crud');
+});
+
 Route::get('/sidebar_norm_officer', function () {
     return view('layout.norm_officer_layout');
 });
@@ -18,7 +23,7 @@ Route::get('/add_account', function () {
 });
 
 Route::get('/check_add_account', function () {
-    return view('add_account');
+    return view('check_add_account');
 });
 
 Route::get('/edit_account', function () {

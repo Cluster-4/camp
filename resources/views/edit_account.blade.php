@@ -32,7 +32,7 @@
                     </div>
                     <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0 mt-4">
                         <form action="" class="" style="text-align: start" >
-                            <div class="row">
+                            <div class="row mb-1">
                                 <div class="col-3">
                                     <label for="" class="text">ชื่อผู้ใช้ : </label>
                                 </div>
@@ -40,7 +40,7 @@
                                     <input type="text" class="input">
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mb-1">
                                 <div class="col-3">
                                     <label for="" class="text">ชื่อ: </label>
                                 </div>
@@ -48,7 +48,7 @@
                                     <input type="text" class="input">
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mb-1">
                                 <div class="col-3">
                                     <label for="" class="text">ชื่อนามสกุล : </label>
                                 </div>
@@ -56,7 +56,7 @@
                                     <input type="text" class="input">
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mb-1">
                                 <div class="col-3">
                                     <label for="" class="text">บทบาท :</label>
                                 </div>
@@ -67,7 +67,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mb-1">
                                 <div class="col-3">
                                     <label for="" class="text">รหัสผ่าน : </label>
                                 </div>
@@ -75,7 +75,7 @@
                                     <input type="text" class="input">
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mb-1">
                                 <div class="col-3">
                                     <label for="" class="text">เบอร์โทรศัพท์ : </label>
                                 </div>
@@ -83,7 +83,7 @@
                                     <input type="text" class="input">
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mb-1">
                                 <div class="col-3">
                                     <label for="" class="text">อีเมลล์ : </label>
                                 </div>
@@ -103,8 +103,8 @@
                                 </div>
                             </div>
                             <div>
-                                <button type="btn" class="btn2 btn-primary">ถัดไป</button>
-                                <button type="btn" class="btn1 btn-primary">ยกเลิก</button>
+                                <a href="/check_edit_account"><button type="button" class="btn btn-primary btn-save ">ถัดไป</button></a>
+                                <a href="/manage_account"><button type="button" class="btn btn-secondary btn-back">ยกเลิก</button></a>
                             </div>
 
                         </form>
