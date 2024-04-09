@@ -21,15 +21,13 @@ class Login_controller extends Controller
     }
 
     function login_process(Request $request){
-
         $credentials = [
-            'username'=>$request->acc_username,
-            'password'=>$request->acc_password,
+            'acc_username'=>$request->acc_username,
+            'acc_password'=>$request->acc_password,
         ];
         if(Auth::attempt($credentials)) {
             return redirect('edit_room');
         }
-
         return redirect()->route('home')->with('error','Email or password invalid.');
     }
     public function logout()

@@ -108,7 +108,7 @@
                 <i class="fi fi-rs-circle-user"style="font-size: 45px;"></i>
                 <div class="form-floating ms-2">
                     <input type="text" class="form-control ms-1" id="floatingInput" placeholder="Username"
-                        style="width: 459px" name=username>
+                        style="width: 459px" name=acc_username>
                     <label style="color: #9B9B9B" for="floatingInput">Username</label>
                 </div>
             </div>
@@ -119,7 +119,7 @@
                 <div class="form-floating ms-2">
                     <input type="password" class="form-control " id="floatingPassword" placeholder="Password"
                         style="width: 459px ">
-                    <label style="color:#9B9B9B " for="floatingPassword" name=password>Password</label>
+                    <label style="color:#9B9B9B " for="floatingPassword" name=acc_password>Password</label>
                 </div>
             </div>
 

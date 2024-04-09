@@ -21,6 +21,8 @@ Route::post('/login',[Login_controller::class,'login_process'])->name('login_pro
 Route::get('/home',[Login_controller::class,'viewlogin'])->name('home');
 Route::get('/dashboard',[Login_controller::class,'viewdashboard'])->name('viewdashboard');
 Route::get('/edit_room',[Login_controller::class,'edit_size_room'])->name('edit_room');
+Route::get('/home',[Login_controller::class,'viewlogin'])->name('home');
+
 
 
 
