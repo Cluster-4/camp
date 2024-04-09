@@ -173,8 +173,8 @@
                                 </div>
                                 <div class="col-6">
                                     <select class="form-select div-input" id="rm_status" name="rm_status">
-                                        <option value="available">พร้อมใช้</option>
-                                        <option value="unavailable">ไม่พร้อมใช้</option>
+                                        <option value="พร้อมใช้">พร้อมใช้</option>
+                                        <option value="ไม่พร้อมใช้">ไม่พร้อมใช้</option>
                                     </select>
                                 </div>
                                 <div class="col">
@@ -191,8 +191,7 @@
                                 </div>
                                 <div class="col-6">
                                     {{-- <input type="number" class="form-control div-input" id="price" placeholder="75"> --}}
-                                    <input type="number" class="form-control div-input" id="rm_price" name="rm_price"
-                                        placeholder="75">
+                                    <input type="number" class="form-control div-input" id="rm_price" name="rm_price" placeholder="75">
                                 </div>
                                 <div class="col">
                                     <label for="price" class="form-label">บาท/ชั่วโมง</label>
@@ -208,8 +207,7 @@
                                 </div>
                                 <div class="col-6">
                                     {{-- <input type="text" class="form-control div-input" id="other" style="height: 100px;"> --}}
-                                    <input type="text" class="form-control div-input" id="rm_facilities"
-                                        name="rm_facilities" style="height: 100px;">
+                                    <input type="text" class="form-control div-input" id="rm_facilities" name="rm_facilities" style="height: 100px;">
                                 </div>
                                 <div class="col">
 
@@ -225,8 +223,8 @@
                                 </div>
                                 <div class="col-6">
                                     <select class="form-select div-input" id="rm_type" name="rm_type">
-                                        <option value="pub">ห้องทั่วไป</option>
-                                        <option value="pri">ห้องภายใน</option>
+                                        <option value="ห้องทั่วไป">ห้องทั่วไป</option>
+                                        <option value="ห้องภายใน">ห้องภายใน</option>
                                     </select>
                                 </div>
                                 <div class="col">
@@ -318,8 +316,7 @@
                                     <label for="capacity" class="form-label">คำอธิบายเพิ่มเติม</label>
                                 </div>
                                 <div class="col-6">
-                                    <input type="text" class="form-control div-input" id="rm_half_a_facilities"
-                                        name="rm_half_a_facilities" style="height: 100px;">
+                                    <input type="text" class="form-control div-input" id="rm_half_a_facilities" name="rm_half_a_facilities" style="height: 100px;">
                                 </div>
                                 <div class="col">
 

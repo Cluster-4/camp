@@ -45,7 +45,7 @@ class RoomController extends Controller
         $room = new Room();
         $room->rm_name = $request->input('rm_name');
         $room->rm_type = $request->input('rm_type');
-        $room->rm_status = (int) $request->input('rm_status');
+        $room->rm_status = $request->input('rm_status');
         $room->rm_price = $request->input('rm_price');
         $room->rm_facilities = $request->input('rm_facilities');
         // $room->rm_can_half = $request->input('rm_can_half');
@@ -56,31 +56,35 @@ class RoomController extends Controller
 
         $room->rm_half_a_size_id = $request->input('rm_half_a_size_id');
         $room->rm_half_a_facilities = $request->input('rm_half_a_facilities');
+
         $room->rm_half_a_pic_path = $request->input('rm_half_a_pic_path');
+
         $room->rm_half_a_is_half = $request->input('rm_half_a_is_half');
         $room->rm_half_b_size_id = $request->input('rm_half_b_size_id');
         $room->rm_half_b_facilities = $request->input('rm_half_b_facilities');
+
         $room->rm_half_b_pic_path = $request->input('rm_half_b_pic_path');
+
         $room->rm_half_b_is_half = $request->input('rm_half_b_is_half');
 
         if ($request->hasFile('rm_pic_path')) {
-            $imagePath = $request->file('rm_pic_path')->store('room_images', 'public');
-            $room->rm_pic_path = $imagePath;
+            $imagePath = $request->file('rm_pic_path')->store('public/room_images');
+            $room->rm_pic_path = basename($imagePath);
         }
+        
 
         // บันทึกรูปภาพของครึ่งห้อง A
         if ($request->hasFile('rm_half_a_pic_path')) {
-            $imagePath = $request->file('rm_half_a_pic_path')->store('room_images', 'public');
+            $imagePath = $request->file('rm_half_a_pic_path')->store('public/room_images');
             $room->rm_half_a_pic_path = $imagePath;
         }
 
         // บันทึกรูปภาพของครึ่งห้อง B
         if ($request->hasFile('rm_half_b_pic_path')) {
-            $imagePath = $request->file('rm_half_b_pic_path')->store('room_images', 'public');
+            $imagePath = $request->file('rm_half_b_pic_path')->store('public/room_images');
             $room->rm_half_b_pic_path = $imagePath;
         }
-        
-            
+
         $room->save();
     
         return redirect()->to('/manage_room');

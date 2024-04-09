@@ -159,7 +159,12 @@
                             <div class="card-header" style="border-start-start-radius:20px;border-start-end-radius:20px">
                                 {{ $room->rm_name }}
                             </div>
-                            <img src="{{asset('storage/room_images') . $room->rm_pic_path }}" height="180px" alt="...">
+                            {{-- <img src="{{asset('storage/room_images') . $room->rm_pic_path }}" height="180px"> --}}
+                            @if ($room->rm_pic_path)
+                                <img src="{{ asset('storage/room_images/' . $room->rm_pic_path) }}" height="180px">
+                            @else
+                                <img src="{{ asset('default_room_image.jpg') }}" height="180px">
+                            @endif
                             <div class="card-body">
                                 <h5 class="card-title">รายละเอียด</h5>
                                 <p class="card-text">
@@ -179,6 +184,7 @@
                             </div>
                         </div>
                     @endforeach
+
                 </div>
             </div>
 
