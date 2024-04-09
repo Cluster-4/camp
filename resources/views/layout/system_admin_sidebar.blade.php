@@ -17,9 +17,9 @@
     <link rel='stylesheet'
         href='https://cdn-uicons.flaticon.com/2.2.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <link rel="stylesheet" href="{{ url('dist\css\sidebar_style.css') }}">
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.2.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
+
 <body style="font-family: Noto Sans Thai, DM Sans;">
     <div class="wrapper">
         <aside id="sidebar" onclick="sidebar_open()" onmouseover="sidebar_open()" onmouseout="sidebar_close()">
@@ -38,7 +38,7 @@
 
             <ul class="sidebar-nav">
                 <li class="sidebar-item" onclick="toggleActive(event)">
-                    <a href="/manage_room" class="sidebar-link">
+                    <a href="#" class="sidebar-link">
                         <i class="fi fi-rr-pencil" style="font-size: 30px; display: flex;"></i>
                         <span class="pl-3">จัดการห้องประชุม</span>
                     </a>

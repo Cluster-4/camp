@@ -110,9 +110,11 @@ Route::get('/manage_room', [RoomController::class, 'index'])->name('manage_room'
 Route::get('/booking', [RoomController::class, 'index_booking'])->name('booking');
 
 Route::get('/process_first', [RoomController::class, 'index_process_first'])->name('process_1');
+
 Route::get('/process_first/{room_id}', [RoomController::class, 'index_process_first'])->name('process_1');
 
 Route::post('/store/booking/information', [Booking_info_controller::class, 'store'])->name('store.booking.information');
+
 Route::delete('/manage_room/{id}', [RoomController::class, 'deleteRoom'])->name('delete_room');
 
 Route::post('/manage_room/{id}/edit', [RoomController::class, 'updateRoom'])->name('update_room');
