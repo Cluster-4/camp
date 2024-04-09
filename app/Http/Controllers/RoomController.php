@@ -20,6 +20,11 @@ class RoomController extends Controller
         return view('add_room', compact('sizes'));
     }
 
+    public function index_booking() {
+        $rooms = Room::all();
+        return view('other.booking', compact('rooms'));
+    }
+
     public function storeRoom(Request $request) {
         // Validate input data
         // $request->validate([
@@ -41,7 +46,7 @@ class RoomController extends Controller
         //     'rm_half_b_pic_path' => 'nullable|string',
         //     'rm_half_b_is_half' => 'nullable|boolean'
         // ]);
-        
+
         $room = new Room();
         $room->rm_name = $request->input('rm_name');
         $room->rm_type = $request->input('rm_type');
@@ -71,7 +76,7 @@ class RoomController extends Controller
             $imagePath = $request->file('rm_pic_path')->store('public/room_images');
             $room->rm_pic_path = basename($imagePath);
         }
-        
+
 
         // บันทึกรูปภาพของครึ่งห้อง A
         if ($request->hasFile('rm_half_a_pic_path')) {
@@ -86,7 +91,7 @@ class RoomController extends Controller
         }
 
         $room->save();
-    
+
         return redirect()->to('/manage_room');
     }
 

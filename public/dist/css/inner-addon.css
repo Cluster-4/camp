@@ -1,0 +1,35 @@
+.inner-addon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.inner-addon .fi {
+    position: absolute;
+    padding: 2%;
+    pointer-events: none;
+}
+
+.left-addon .fi {
+    left: 0px;
+}
+
+.right-addon .fi {
+    right: 0px;
+}
+
+.left-addon input {
+    padding-left: 30px;
+}
+
+.right-addon input {
+    padding-right: 30px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: none;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    background: none;
+}

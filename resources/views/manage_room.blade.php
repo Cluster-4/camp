@@ -151,8 +151,7 @@
             </div>
 
             <div class="d-flex justify-content-center">
-                <div style="margin: 1rem 1.5rem 0 9.5rem;">
-
+                <div style="margin: 1rem 1.5rem 0 9.5rem; ">
                     @foreach ($rooms as $room)
                         <div class="card rounded-4 shadow mt-4"
                             style="width: 18.3rem;float: left; margin:3rem; border-radius:20px;">
@@ -177,7 +176,7 @@
                                 </p>
                             </div>
                             <div class="d-flex justify-content-end align-items-end card-footer">
-                
+
                                 <a href="edit_room"><button type="button" class="btn btn-primary button-edit">แก้ไขห้อง</button></a>
                                 {{-- @csrf
                                 @method('DELETE') --}}
