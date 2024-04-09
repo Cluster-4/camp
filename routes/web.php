@@ -30,7 +30,11 @@ Route::get('/edit_room',[Login_controller::class,'viewEditRoom'])->name('viewEdi
 
 
 Route::middleware(['room_admin_mid'])->group(function(){
-    Route::get('/dashboard',[Login_controller::class,'dashboard_view'])->middleware('room_admin_mid');
+    Route::get('/dashboard',[Login_controller::class,'dashboard_view']);
+});
+
+Route::middleware(['system_admin_mid'])->group(function(){
+    Route::get('/edit_room',[Login_controller::class,'viewEditRoom']);
 });
 
 

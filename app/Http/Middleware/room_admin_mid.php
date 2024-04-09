@@ -15,10 +15,10 @@ class room_admin_mid
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth()->user()->acc_position=='ผู้ดูแลห้องประชุม')
+
+        if(Auth()->user()->acc_position == 'ผู้ดูแลห้องประชุม')
         {
             return $next($request);
-
         }
         abort(404);
     }
