@@ -16,13 +16,13 @@ class CreateUsersSeeder extends Seeder
         //
         $bmrs_accounts = [
             [
-                'acc_username' => 'testuser',
+                'acc_username' => 'testuser2',
                 'acc_fname' => 'testusefnamer',
                 'acc_lname' => 'testlastname',
-                'acc_position' => 'เจ้าหน้าที่',
+                'acc_position' => 'ผู้ดูแลระบบ',
                'acc_password'=> bcrypt('123456'),
-                'acc_email'=> 'testuser@example.com',
-                'acc_tel' => '458484',
+                'acc_email'=> 'testusser@example.com',
+                'acc_tel' => '458dada484',
                 'acc_status'=> 1,
                 'acc_pic_path'=> 'storage\img\IMG_3189.jpg'
 
