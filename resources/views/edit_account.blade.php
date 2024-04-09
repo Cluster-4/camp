@@ -18,7 +18,7 @@
                 <label for="text" class="Name mt-5 front-size: ">เเก้ไขบัญชีผู้ใช้</label>
                 <div class="row">
                     <div class="col-sm-5 col-md-6">
-                        <div class="col+10 mage mb-3 mt-4" >
+                        <div class="col+10 mage mb-3 mt-4">
                             <img id="selectedImage" src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
                                 alt="example placeholder" style="width: 350px;" />
                         </div>
@@ -31,7 +31,7 @@
                         </div>
                     </div>
                     <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0 mt-4">
-                        <form action="" class="" style="text-align: start" >
+                        <form action="" class="" style="text-align: start">
                             <div class="row mb-1">
                                 <div class="col-3">
                                     <label for="" class="text">ชื่อผู้ใช้ : </label>
@@ -50,7 +50,7 @@
                             </div>
                             <div class="row mb-1">
                                 <div class="col-3">
-                                    <label for="" class="text">ชื่อนามสกุล : </label>
+                                    <label for="" class="text">นามสกุล : </label>
                                 </div>
                                 <div class="col-3">
                                     <input type="text" class="input">
@@ -61,9 +61,11 @@
                                     <label for="" class="text">บทบาท :</label>
                                 </div>
                                 <div class="col-3">
-                                    <select name="สถานะ" id="" class="drop ">
-                                        <option value="Active">Active</option>
-                                        <option value="Inactive">Inactive</option>
+                                    <select name="บทบาท" id="" class="drop">
+                                        <option value="บทบาท">บทบาท</option>
+                                        <option value="saab">เจ้าหน้าที่</option>
+                                        <option value="mercedes">ผู้ดูเเลห้องประชุม</option>
+                                        <option value="audi">ผู้ดูเเลระบบ</option>
                                     </select>
                                 </div>
                             </div>
@@ -103,8 +105,10 @@
                                 </div>
                             </div>
                             <div>
-                                <a href="/check_edit_account"><button type="button" class="btn btn-primary btn-save ">ถัดไป</button></a>
-                                <a href="/manage_account"><button type="button" class="btn btn-secondary btn-back">ยกเลิก</button></a>
+                                <a href="/check_edit_account"><button type="button"
+                                        class="btn btn-primary btn-save ">ถัดไป</button></a>
+                                <a href="/manage_account"><button type="button"
+                                        class="btn btn-secondary btn-back">ยกเลิก</button></a>
                             </div>
 
                         </form>

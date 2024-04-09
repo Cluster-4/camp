@@ -6,10 +6,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/crud', function () {
-    return view('crud');
-});
-
 Route::get('/sidebar_norm_officer', function () {
     return view('layout.norm_officer_layout');
 });
