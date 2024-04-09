@@ -43,3 +43,6 @@ Route::get('/system_admin', function () {
 Route::get('/sidebar', function () {
     return view('layout.system_admin_sidebar');
 });
+Route::get('/test', function () {
+    return view('table_full');
+});

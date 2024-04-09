@@ -7,11 +7,6 @@ main> {
     border: 1px solid;
 }
 
-table {
-
-    font-family: helvetica
-}
-
 td,
 th {
     border: 1px solid;
@@ -28,6 +23,8 @@ th {
     max-height: 800px;
     width: 1720px;
     overflow: scroll;
+    width: 100%;
+    overflow-x: auto;
 }
 
 th {

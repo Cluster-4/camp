@@ -63,7 +63,6 @@
                     width: 130px;"
                                     class="btn btn-primary btn-lg" type="button"
                                     onclick="goTableRoomFull()">เต็มห้อง</button>
-
                             </div>
                         </div>
                         <div style="display: flex;justify-content: end;width:100%  ">

@@ -59,7 +59,7 @@
             <div class="dropdown; col-2 inner-addon left-addon" style="width: 12vw;">
                 <i class="fi fi-ss-meeting-alt" style="color: black; font-size: 120%; margin-left:10%;"></i>
                 <button class="btn btn-secondary dropdown-toggle shadow" type="button" id="dropdownMenuButton1"
-                    data-bs-toggle="dropdown" aria-expanded="false" style="border:none ;border-radius: 10px; background-color: white; color: black;width: 300px; overflow-y: auto;">
+                    data-bs-toggle="dropdown" aria-expanded="false" style="border:none ;border-radius: 10px; background-color: white; color: black;width: 300px; overflow-y: auto;font-size: 120%;">
                     ประเภทห้องประชุม
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1"  style="width: 300px; overflow-y: auto;">
