@@ -24,6 +24,20 @@ function toggleActive(event) {
     updateSidebarTitle(text, icon); // เรียกใช้ฟังก์ชัน updateSidebarTitle() เพื่อปรับเปลี่ยนข้อความและไอคอนใน sidebar title
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    var sidebarItems = document.querySelectorAll('.sidebar-item');
+    sidebarItems.forEach(function(item) {
+        item.addEventListener('click', function(event) {
+            toggleActive(event);
+            // อัพเดต sidebar title โดยใช้ข้อมูลจาก sidebar item ที่ถูกคลิก
+            var text = event.currentTarget.querySelector('.sidebar-link span').textContent;
+            var icon = event.currentTarget.querySelector('.sidebar-link i').cloneNode(true);
+            icon.removeAttribute('style');
+            updateSidebarTitle(text, icon);
+        });
+    });
+});
+
 function updateSidebarTitle(text, icon) {
     var sidebarTitle = document.querySelector('.sidebar-title');
     sidebarTitle.innerHTML = ''; // ล้างเนื้อหาเดิมใน sidebar title

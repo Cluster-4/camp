@@ -26,8 +26,7 @@
             <div class="d-flex">
                 {{-- hamburger-bar --}}
                 <button class="toggle-btn" type="button" style="background-color: transparent; border: 0px;">
-                    {{-- <i class="fi fi-sr-menu-burger text-white" style="font-size: 30px;"></i> --}}
-                    <i class="fi fi-rr-hamburger text-white" style="font-size: 30px"></i>
+                    <i class="fi fi-sr-menu-burger text-white" style="font-size: 30px;"></i>
                 </button>
                 {{-- ชื่่อระบบ โลโก้ระบบ --}}
                 <div class="sidebar-logo d-flex flex-row justify-content-center">
