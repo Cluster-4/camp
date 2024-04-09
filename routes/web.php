@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoomController;
-
+use App\Http\Controllers\Booking_info_controller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -58,9 +58,9 @@ Route::get('/booking', function () {
     return view('other.booking');
 });
 
-Route::get('/process_first', function () {
-    return view('other.process_first');
-});
+// Route::get('/process_first', function () {
+//     return view('other.process_first');
+// });
 
 Route::get('/process_second', function () {
     return view('other.process_second');
@@ -104,3 +104,8 @@ Route::get('/add_room',[RoomController::class,'index_size']);
 Route::get('/manage_room', [RoomController::class, 'index'])->name('manage_room');
 
 Route::get('/booking', [RoomController::class, 'index_booking'])->name('booking');
+
+Route::get('/process_first', [RoomController::class, 'index_process_first'])->name('process_1');
+Route::get('/process_first/{room_id}', [RoomController::class, 'index_process_first'])->name('process_1');
+
+Route::post('/store/booking/information', [Booking_info_controller::class, 'store'])->name('store.booking.information');

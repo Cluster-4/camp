@@ -13,8 +13,8 @@
                 window.location.href = "/booking";
             }
 
-            function goProcessBooking() {
-                window.location.href = "/process_first";
+            function goProcessBooking(roomId) {
+                window.location.href = "/process_first?room_id=" + roomId;
             }
             $(function() {
                 $('input[name="datetimes"]').daterangepicker({
@@ -112,7 +112,7 @@
                         <div class="card-footer d-flex justify-content-end"
                             style="border-end-start-radius:20px;border-end-end-radius:20px">
                             <button type="button" class="btn btn-success" style="width: 40%; font-size:20px;"
-                                onclick="goProcessBooking()">จอง</button>
+                                onclick="goProcessBooking({{ $room->rm_id }})">จอง</button>
                         </div>
                     </div>
                 @endforeach
