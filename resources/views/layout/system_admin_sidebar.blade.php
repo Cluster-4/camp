@@ -17,7 +17,7 @@
     <link rel='stylesheet'
         href='https://cdn-uicons.flaticon.com/2.2.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <link rel="stylesheet" href="{{ url('dist\css\sidebar_style.css') }}">
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body style="font-family: Noto Sans Thai, DM Sans;">

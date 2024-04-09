@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RoomController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,17 +15,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/manage_room', function () {
     return view('manage_room');
 });
+// Route::get('/manage_room', function () {
+//     return view('manage_room');
+// });
 Route::get('/edit_room', function () {
     return view('edit_room');
 });
-Route::get('/add_room', function () {
-    return view('add_room');
-});
+
 Route::get('/setting_size_room', function () {
     return view('setting_size_room');
 });
@@ -37,6 +36,11 @@ Route::get('/edit_size_room', function () {
 Route::get('/examine_edit_room', function () {
     return view('examine_edit_room');
 });
-Route::get('/examine_add_room', function () {
-    return view('examine_add_room');
-});
+
+
+
+Route::post('/manage_room', [RoomController::class, 'storeRoom'])->name('store_room');
+
+Route::get('/add_room',[RoomController::class,'index_size']);
+
+Route::get('/manage_room', [RoomController::class, 'index'])->name('manage_room');
