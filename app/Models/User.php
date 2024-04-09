@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class Account extends Authenticatable
+class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -17,25 +17,21 @@ class Account extends Authenticatable
      *
      * @var array<int, string>
      */
-
     protected $table = "bmrs_accounts";
     public function getAuthPassword()
     {
         return $this->acc_password;
     }
-
-
-
     protected $fillable = [
         'acc_username',
         'acc_fname',
         'acc_lname',
         'acc_position',
-        'acc_password',
-        'acc_email',
         'acc_tel',
         'acc_status',
-        'acc_pic_path',
+        'acc_email',
+        'acc_password',
+        'acc_pic_path'
     ];
 
     /**
@@ -55,7 +51,6 @@ class Account extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'password' => 'hashed',
+        'acc_password' => 'hashed',
     ];
-    public $timestamps = false;
 }

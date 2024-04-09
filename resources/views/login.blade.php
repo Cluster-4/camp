@@ -96,7 +96,9 @@
 <body>
     <form action="{{ route('login_view') }}" method="POST">
         @csrf
+
         <div class="wrap-login100">
+
             <div style="margin-top: 4%;">
                 <img src="img/Meethig icon.jpg" alt="" width="288" height="299">
             </div>
@@ -108,19 +110,26 @@
                 <i class="fi fi-rs-circle-user"style="font-size: 45px;"></i>
                 <div class="form-floating ms-2">
                     <input type="text" class="form-control ms-1" id="floatingInput" placeholder="Username"
-                        style="width: 459px" name=acc_username>
+                        style="width: 459px" name="acc_username">
                     <label style="color: #9B9B9B" for="floatingInput">Username</label>
                 </div>
-            </div>
 
+            </div>
 
             <div class="d-flex flex-row justify-content-center mt-4 form-floating">
                 <i class="fi fi-sr-lock" style="font-size: 45px;"></i>
                 <div class="form-floating ms-2">
                     <input type="password" class="form-control " id="floatingPassword" placeholder="Password"
-                        style="width: 459px ">
-                    <label style="color:#9B9B9B " for="floatingPassword" name=acc_password>Password</label>
+                        style="width: 459px " name="password">
+                    <label style="color:#9B9B9B " for="floatingPassword" >Password</label>
                 </div>
+
+            </div>
+            <div class="">
+                @if ($message = Session::get('error'))
+                <h1 class="ml" style="font-size:16px; color:red">{{ $message }}</h1>
+                @endif
+
             </div>
 
             <div class="form-check text-start my-3  d-flex align-items-start  " style="width: 100%; padding-left:31%">
@@ -136,7 +145,11 @@
                     class="btn btn-primary py-2 btn-lg" type="submit" onclick="">Login</button>
             </div>
 
-            <div class="d-flex align-items-start mt-5" style="width:100%; ">
+
+
+            <div class="d-flex align-items-start mt-3" style="width:100%; ">
+
+
                 <footer class="text-center py-3  my-4 border-top d-flex align-items-start pr-6"
                     style="font-size: 0.8rem; width: 100%; ">
 
@@ -154,7 +167,9 @@
 
 
 
+
                 </footer>
+
 
             </div>
 
@@ -162,6 +177,6 @@
         </div>
     </form>
 
-</body>
 
+</body>
 </html>

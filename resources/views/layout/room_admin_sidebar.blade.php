@@ -77,9 +77,13 @@
                         alt="" width="50px" height="50px" class="rounded-circle me-3">
                     <span>ผู้ดูแลห้องประชุม</span>
                 </div>
-                <a href="#" class="text-white sidebar-link d-flex justify-content-end">
-                    <i class="fi fi-sr-sign-out-alt" style="font-size: 30"></i>
-                </a>
+
+                =
+                    <a href="{{ url('logout')}}" class="text-white sidebar-link d-flex justify-content-end">
+                        <i class="fi fi-sr-sign-out-alt" style="font-size: 30"></i>
+                    </a>
+                </form>
+
             </div>
         </aside>
         <div class="main p-3 overflow-container">

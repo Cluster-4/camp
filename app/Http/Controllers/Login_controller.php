@@ -10,58 +10,77 @@ use Illuminate\Support\Facades\Redirect;
 
 class Login_controller extends Controller
 {
-    function login_view(){
+    function login_view()
+    {
         return view('login');
     }
-    function dashboard_view(){
+    function dashboard_view()
+    {
         return view('dashboard');
     }
-    public function viewEditRoom(){
+    public function viewEditRoom()
+    {
         return view('edit_room');
     }
 
-    function login_process(Request $request){
-        $credentials = [
-            'acc_username'=>$request->acc_username,
-            'acc_password'=>$request->acc_password,
-        ];
-        if(Auth::attempt($credentials)) {
-            return redirect('edit_room');
-        }
-        return redirect()->route('home')->with('error','Email or password invalid.');
-    }
-    public function logout()
+    function login_process(Request $request)
     {
-        Auth::logout();
+        $request->session()->regenerate();
+            $credentials = [
+                'acc_username' => $request->acc_username,
+                'password' => $request->password
+            ];
 
-        return redirect()->route('home');
+
+            if (Auth::attempt($credentials)) {
+                return redirect('dashboard');
+                // if ($credentials['acc_position'] == 'เจ้าหน้าที่') {
+                //     return Redirect::to('dashboard');//ไปหน้าหลักของเจ้าหน้าที่
+                // } else if ($credentials['acc_position'] == 'ผู้ดูแลห้องประชุม') {
+                //     return Redirect::to('edit_room');//ไปหน้าหลักของผู้ดูแลห้องประชุม
+                // } else if ($credentials['acc_position'] == 'ผู้ดูแลระบบ') {
+                //     return Redirect::to('titles');//ไปหน้าหลักของผู้ดูแลระบบ
+                // }
+
+            }
+            return Redirect::to('login')->with('error',' *** Email or password incorrect *** ');
+
     }
-    //     $req->validate([
-    //     'username' => 'required',
-    //     'password' => 'required',
-    //     ]);
+    // $request->validate([
+    // 'username' => 'required',
+    // 'password' => 'required',
+    // ]);
 
-    //     $data = $req->all();
+    // $data = $request->all();
 
-    //     if(
-    //         Auth::attempt(['username' => $data['acc_username'], 'password' => $data['acc_password']])){
+    // if(Auth::attempt(['acc_username' => $data['username'], 'password' => $data['password']])){
 
-    //             if($data['acc_position'] == 'เจ้าหน้าที่'){
-    //             return Redirect::to('dashboard');//ไปหน้าหลักของเจ้าหน้าที่
-    //         }
-    //         else if($data['acc_position'] == 'ผู้ดูแลห้องประชุม'){
-    //             return Redirect::to('titles');//ไปหน้าหลักของผู้ดูแลห้องประชุม
-    //         }
-    //         else if($data['acc_position'] == 'ผู้ดูแลระบบ'){
-    //             return Redirect::to('titles');//ไปหน้าหลักของผู้ดูแลระบบ
-    //         }
-    //     }else{
-    //         return Redirect::to('login');
+    //         if($data['acc_position'] == 'เจ้าหน้าที่'){
+    //         return Redirect::to('dashboard');//ไปหน้าหลักของเจ้าหน้าที่
     //     }
+    //     else if($data['acc_position'] == 'ผู้ดูแลห้องประชุม'){
+    //         return Redirect::to('titles');//ไปหน้าหลักของผู้ดูแลห้องประชุม
+    //     }
+    //     else if($data['acc_position'] == 'ผู้ดูแลระบบ'){
+    //         return Redirect::to('titles');//ไปหน้าหลักของผู้ดูแลระบบ
+    //     }
+
+    // }else{
+    //     return Redirect::to('login');
     // }
 
-    function logout_process(){
-        Auth::logout();
+
+    public function logout()
+    {
+        Auth()->logout();
+        session()->invalidate();
+        session()->regenerateToken();
         return Redirect::to('login');
     }
+
+    public function username()
+    {
+        return 'acc_username';
+    }
+
 }
