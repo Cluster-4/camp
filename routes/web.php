@@ -44,3 +44,5 @@ Route::post('/manage_room', [RoomController::class, 'storeRoom'])->name('store_r
 Route::get('/add_room',[RoomController::class,'index_size']);
 
 Route::get('/manage_room', [RoomController::class, 'index'])->name('manage_room');
+
+Route::delete('/delete-room/{id}', [RoomController::class, 'deleteRoom'])->name('delete.room');

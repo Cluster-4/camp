@@ -179,6 +179,8 @@
                             <div class="d-flex justify-content-end align-items-end card-footer">
                 
                                 <a href="edit_room"><button type="button" class="btn btn-primary button-edit">แก้ไขห้อง</button></a>
+                                @csrf
+                                @method('DELETE')
                                 <a href=""><button type="button" class="btn btn-danger button-edit ms-2 button-con_delete">ลบห้อง</button></a>
 
                             </div>

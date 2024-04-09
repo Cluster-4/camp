@@ -90,4 +90,10 @@ class RoomController extends Controller
         return redirect()->to('/manage_room');
     }
 
+    public function deleteRoom($id) {
+        $room = Room::findOrFail($id);
+        $room->delete();
+
+        return redirect()->to('/manage_room');
+    }
 }
