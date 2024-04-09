@@ -14,8 +14,10 @@ class Account_controller extends Controller
     public function index()
     {
         $data["bmrs_accounts"] = AccountModel::all();
-        return view('manage_account',$data);
+        return view('manage_account', $data);
     }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -75,10 +77,10 @@ class Account_controller extends Controller
         $acc_data = AccountModel::find($id);
         $accounts = AccountModel::all();
 
-        if($acc_data === null){
+        if ($acc_data === null) {
             return Redirect::to("/manage_account");
-        } else{
-            return view("edit_account",compact("acc_data"));
+        } else {
+            return view("edit_account", compact("acc_data"));
         }
     }
 
@@ -109,7 +111,7 @@ class Account_controller extends Controller
         $accountModelId->acc_status = $status;
         $accountModelId->acc_pic_path = $pic;
 
-        $accountModelId -> save();
+        $accountModelId->save();
 
         return Redirect::to("/manage_account");
     }
@@ -121,7 +123,26 @@ class Account_controller extends Controller
     {
         $AccountModelId = AccountModel::find($id);
 
-        $AccountModelId -> delete();
+        $AccountModelId->delete();
         return Redirect::to("/manage_account");
+    }
+
+    public function search(Request $request)
+    {
+        $searchName = $request->input('searchName');
+        $searchRole = $request->input('searchRole');
+
+        $query = AccountModel::query();
+
+        if ($searchName) {
+            $query->where('acc_fname', 'like', '%' . $searchName . '%');
+        }
+
+        if ($searchRole) {
+            $query->where('acc_position', $searchRole);
+        }
+
+        $data["bmrs_accounts"] = $query->get();
+        return view('manage_account', $data);
     }
 }

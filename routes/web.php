@@ -121,6 +121,7 @@ Route::get('/confirm_cancel_booking', function () {
 
 Route::resource("/manage_account",Account_controller::class);
 
+Route::get('/manage_account/search', [Account_controller::class, 'search'])->name('manage_account.search');
 
 
 
