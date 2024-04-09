@@ -10,22 +10,26 @@ use Illuminate\Support\Facades\Redirect;
 
 class RoomController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         $rooms = Room::all();
         return view('manage_room', compact('rooms'));
     }
 
-    public function index_size() {
+    public function index_size_add()
+    {
         $sizes = Room_size_model::all();
         return view('add_room', compact('sizes'));
     }
 
-    public function index_booking() {
-        $rooms = Room::all();
-        return view('other.booking', compact('rooms'));
+    public function index_size_edit()
+    {
+        $sizes = Room_size_model::all();
+        return view('edit_room', compact('sizes'));
     }
 
-    public function storeRoom(Request $request) {
+    public function storeRoom(Request $request)
+    {
         // Validate input data
         // $request->validate([
         //     'rm_name' => 'required|string|max:255',
@@ -96,9 +100,65 @@ class RoomController extends Controller
     }
 
     public function deleteRoom($id)
-{
-    $room = Room::findOrFail($id);
-    $room->delete();
-    return redirect()->route('manage_room')->with('success', 'ห้องพักถูกลบเรียบร้อยแล้ว');
-}
+    {
+        $room = Room::findOrFail($id);
+        $room->delete();
+        return redirect()->route('manage_room')->with('success', 'ห้องพักถูกลบเรียบร้อยแล้ว');
+    }
+
+    public function editRoom($id)
+    {
+        $room = Room::findOrFail($id);
+        $sizes = Room_size_model::all();
+        return view('edit_room', compact('room', 'sizes'));
+    }
+
+    public function updateRoom(Request $request, $id)
+    {
+        $room = Room::findOrFail($id);
+        // Update room properties
+        $room->rm_name = $request->input('rm_name');
+        $room->rm_type = $request->input('rm_type');
+        $room->rm_status = $request->input('rm_status');
+        $room->rm_price = $request->input('rm_price');
+        $room->rm_facilities = $request->input('rm_facilities');
+        // $room->rm_can_half = $request->input('rm_can_half');
+        $room->rm_size_id = (int) $request->input('rm_size_id');
+        $room->rm_is_half = $request->input('rm_is_half');
+
+        $room->rm_pic_path = $request->input('rm_pic_path');
+
+        $room->rm_half_a_size_id = $request->input('rm_half_a_size_id');
+        $room->rm_half_a_facilities = $request->input('rm_half_a_facilities');
+
+        $room->rm_half_a_pic_path = $request->input('rm_half_a_pic_path');
+
+        $room->rm_half_a_is_half = $request->input('rm_half_a_is_half');
+        $room->rm_half_b_size_id = $request->input('rm_half_b_size_id');
+        $room->rm_half_b_facilities = $request->input('rm_half_b_facilities');
+
+        $room->rm_half_b_pic_path = $request->input('rm_half_b_pic_path');
+
+        $room->rm_half_b_is_half = $request->input('rm_half_b_is_half');
+
+        // Update room images if new ones are provided
+        if ($request->hasFile('rm_pic_path')) {
+            $imagePath = $request->file('rm_pic_path')->store('public/room_images');
+            $room->rm_pic_path = basename($imagePath);
+        }
+
+        if ($request->hasFile('rm_half_a_pic_path')) {
+            $imagePath = $request->file('rm_half_a_pic_path')->store('public/room_images');
+            $room->rm_half_a_pic_path = $imagePath;
+        }
+
+        if ($request->hasFile('rm_half_b_pic_path')) {
+            $imagePath = $request->file('rm_half_b_pic_path')->store('public/room_images');
+            $room->rm_half_b_pic_path = $imagePath;
+        }
+
+        $room->save();
+
+        return redirect()->route('manage_room')->with('success', 'Room updated successfully');
+    }
 }

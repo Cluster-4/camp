@@ -103,6 +103,7 @@
                                 <div class="btn btn-primary btn-rounded">
                                     <label class="form-label text-white m-1" for="customFile1">Choose file</label>
                                     <input type="file" class="" id="rm_pic_path" name="rm_pic_path" onchange="displaySelectedImage(event, 'selectedImage')">
+                                    {{-- form-control d-none --}}
                                 </div>
                             </div>
                         </div>
@@ -141,7 +142,7 @@
                                     </select>
                                 </div>
                                 <div class="col">
-                                    <label for="capacity" class="form-label">ความจุ 50 คน</label>
+                                    
                                 </div>
                             </div>
 
@@ -287,7 +288,7 @@
                                     </select>
                                 </div>
                                 <div class="col">
-                                    <label for="capacity" class="form-label">ความจุ 50 คน</label>
+                                    
                                 </div>
                             </div>
 
@@ -366,7 +367,7 @@
                                     </select>
                                 </div>
                                 <div class="col">
-                                    <label for="capacity" class="form-label">ความจุ 50 คน</label>
+                                    
                                 </div>
                             </div>
 

@@ -168,7 +168,7 @@
                                 <h5 class="card-title">รายละเอียด</h5>
                                 <p class="card-text">
                                     ขนาด : {{ $room->room_size->rm_size_name }}<br>
-                                    แบ่งครึ่งห้อง : {{ $room->rm_can_half ? 'ได้' : 'ไม่ได้' }}<br>
+                                    แบ่งครึ่งห้อง : {{ $room->rm_is_half }}<br>
                                     ราคา : {{ $room->rm_price }}<br>
                                     สถานะ : {{ $room->rm_status }}<br>
                                     ประเภทห้อง : {{ $room->rm_type }}<br>
@@ -177,16 +177,17 @@
                             </div>
                             <div class="d-flex justify-content-end align-items-end card-footer">
 
-                                <a href="edit_room"><button type="button" class="btn btn-primary button-edit">แก้ไขห้อง</button></a>
+                                <a href="{{ route('edit_room', $room->rm_id) }}">
+                                    <button type="button" class="btn btn-primary button-edit">แก้ไขห้อง</button>
+                                </a>
+                                
                                 {{-- @csrf
                                 @method('DELETE') --}}
                                 {{-- <a href=""><button type="button" class="btn btn-danger button-edit ms-2">ลบห้อง</button></a> --}}
                                 <form action="{{ route('delete_room', $room->rm_id) }}" method="POST" class="d-inline">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger button-edit ms-2" onclick="return confirm('คุณแน่ใจว่าต้องการลบห้องพักนี้?')">
-                                        ลบห้อง
-                                    </button>
+                                    <button type="submit" class="btn btn-danger button-edit ms-2" onclick="return confirm('คุณแน่ใจว่าต้องการลบห้องพักนี้?')">ลบห้อง</button>
                                 </form>
 
                             </div>
