@@ -15,7 +15,7 @@ use App\Http\Controllers\Booking_info_controller;
 |
 */
 
-Route::get('/', function () {
+Route::get('/manage_room', function () {
     return view('manage_room');
 });
 
@@ -100,7 +100,11 @@ Route::get('/booking_officer', function () {
 });
 
 Route::post('/manage_room', [RoomController::class, 'storeRoom'])->name('store_room');
-Route::get('/add_room',[RoomController::class,'index_size']);
+
+Route::get('/add_room',[RoomController::class,'index_size_add']);
+
+Route::get('/edit_room',[RoomController::class,'index_size_edit']);
+
 Route::get('/manage_room', [RoomController::class, 'index'])->name('manage_room');
 
 Route::get('/booking', [RoomController::class, 'index_booking'])->name('booking');
@@ -109,3 +113,8 @@ Route::get('/process_first', [RoomController::class, 'index_process_first'])->na
 Route::get('/process_first/{room_id}', [RoomController::class, 'index_process_first'])->name('process_1');
 
 Route::post('/store/booking/information', [Booking_info_controller::class, 'store'])->name('store.booking.information');
+Route::delete('/manage_room/{id}', [RoomController::class, 'deleteRoom'])->name('delete_room');
+
+Route::post('/manage_room/{id}/edit', [RoomController::class, 'updateRoom'])->name('update_room');
+
+Route::get('/manage_room/{id}/edit', [RoomController::class, 'editRoom'])->name('edit_room');
