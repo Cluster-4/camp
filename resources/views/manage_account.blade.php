@@ -101,14 +101,48 @@
                     '</div>' +
                     '<br>' +
                     '<div   style=" text-align: start; margin-left:100px; margin-top:50px">' +
-                    '<p>ชื่อเล่น : เนส</p>' +
-                    '<p>ชื่อ : นายถิรายุ</p>' +
-                    '<p>นามสกุล : พรหมโคตร</p>' +
-                    '<p>บทบาท : เจ้าหน้าที่ภายใน</p>' +
-                    '<p>รหัสผ่าน : 123456</p>' +
-                    '<p>เบอร์โทรศัพท์ : 0980063225</p>' +
-                    '<p>อีเมล : 132@gmail.com</p>' +
-                    '<p>สถานะ : Active</p>' +
+
+                    '<p>' +
+                    '<td>ชื่อเล่น : </td>' +
+                    '<td>เนส</td>' +
+                    '</p>' +
+
+                    '<p>' +
+                    '<td>ชื่อ : </td>' +
+                    '<td>นายถิรายุ</td>' +
+                    '</p>' +
+
+                    '<p>' +
+                    '<td>นามสกุล : </td>' +
+                    '<td>พรหมโคตร</td>' +
+                    '</p>' +
+
+                    '<p>' +
+                    '<td>บทบาท : </td>' +
+                    '<td>เจ้าหน้าที่ภายใน</td>' +
+                    '</p>' +
+
+                    '<p>' +
+                    '<td>รหัสผ่าน : </td>' +
+                    '<td>123456</td>' +
+                    '</p>' +
+
+                    '<p>' +
+                    '<td>เบอร์โทรศัพท์ : </td>' +
+                    '<td>0980063225</td>' +
+                    '</p>' +
+
+                    '<p>' +
+                    '<td>อีเมล : </td>' +
+                    '<td>132@gmail.com</td>' +
+                    '</p>' +
+
+                    '<p>' +
+                    '<td>สถานะ : </td>' +
+                    '<td>Active</td>' +
+                    '</p>' +
+
+                    
                     '</div>' +
                     '</div>' +
                     '<br>',
@@ -121,7 +155,6 @@
                 confirmButtonColor: "red",
                 cancelButtonColor: "grey",
                 confirmButtonText: "&nbsp&nbspยืนยันการลบ&nbsp&nbsp",
-
                 cancelButtonText: "&nbsp&nbsp&nbsp&nbsp&nbsp&nbspย้อนกลับ&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"
 
 
@@ -130,6 +163,7 @@
                     Swal.fire({
                         title: "ลบรายชื่อผู้ใช้เสร็จสิ้น",
                         icon: "success"
+
                     });
                 }
             });
