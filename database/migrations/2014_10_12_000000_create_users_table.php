@@ -18,10 +18,10 @@ return new class extends Migration
             $table->string('acc_fname');
             $table->string('acc_position');
             $table->string('acc_password');
-            $table->string('email')->nullable();
+            $table->string('acc_email')->nullable();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('tel');
-            $table->string('status');
+            $table->string('acc_tel');
+            $table->string('acc_status');
             $table->string('acc_pic_path')->nullable();
             $table->rememberToken();
             $table->timestamps();
