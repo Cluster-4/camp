@@ -30,22 +30,23 @@
                     </div>
                   </div>
                   <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0 mt-5">
-                    <form action="">
+                    <form action="/manage_account" method="POST">
+                        @csrf
                         <label for="" class="">ชื่อผู้ใช้ :
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                        <input type="เนส" class="text" ><br>
+                        <input type="เนส" name="username" class="text" ><br>
                         <br>
                         <label for="" class="justify-content-start">ชื่อ :
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                        <input type="text" class="text">
+                        <input type="text" name="fname" class="text">
                         <br>
                         <br>
                         <label for="">นามสกุล : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                        <input type="text" class="text">
+                        <input type="text" name="lname" class="text">
                         <br>
                         <br>
                         <label for="บทบาท">บทบาท : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                        <select name="บทบาท" name="บทบาท" class="drop">
+                        <select name="position"  class="drop">
                             <option value="เจ้าหน้าที่">เจ้าหน้าที่</option>
                             <option value="ผู้ดูเเลห้องประชุม">ผู้ดูเเลห้องประชุม</option>
                             <option value="ผู้ดูเเลระบบ">ผู้ดูเเลระบบ</option>
@@ -54,28 +55,28 @@
                         <br>
                         <br>
                         <label for="">รหัสผ่าน : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                        <input type="text" class="text">
+                        <input type="text" class="text" name="password">
                         <br>
                         <br>
                         <label for="">เบอร์โทรศัพท์ : </label>
-                        <input type="text" class="text">
+                        <input type="text" class="text" name="tel">
                         <br>
                         <br>
                         <label for="">อีเมล :
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                        <input type="text" class="text">
+                        <input type="text" class="text" name="email">
                         <br>
                         <br>
                         <label for="">สถานะ :
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                        <select name="สถานะ" id="" class="drop">
+                        <select name="status" id="" class="drop">
                             <option value="Active">Active</option>
                             <option value="Inactive">Inactive</option>
                         </select>
                         <br>
                         <br>
                         <button type="button" class="btn btn-primary">ยกเลิก</button>
-                        <button type="button" class="btn btn-primary">ถัดไป</button>
+                        <button type="submit" class="btn btn-primary">ถัดไป</button>
                     </form>
                   </div>
                 </div>

@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\RoomBookingController;
+use App\Http\Controllers\Account_controller;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -73,9 +76,6 @@ Route::get('/manage_account', function () {
     return view('manage_account');
 });
 
-Route::get('/add_account', function () {
-    return view('add_account');
-});
 Route::get('/sidebar_admin_room', function () {
     return view('layout.room_admin_layout');
 });
@@ -118,6 +118,8 @@ Route::get('/notfound', function () {
 Route::get('/confirm_cancel_booking', function () {
     return view('other.confirm_cancel_booking');
 });
+
+Route::resource("/manage_account",Account_controller::class);
 
 
 

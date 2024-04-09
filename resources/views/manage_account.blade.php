@@ -33,7 +33,7 @@
                         <div class="search " style="position: relative">
                             <i class="fi fi-rr-search"
                                 style="font-size: 20px; color:black; position:absolute; top:8px; left:55px; "></i>
-                            <input type="text" class="shadow text me-4" placeholder="ค้นหาผู้ใช้"
+                            <input type="text" name="searchAcc" class="shadow text me-4" placeholder="ค้นหาผู้ใช้"
                                 style="padding-left: 40px">
                             <svg style="font-size: 20px; color:black; position:absolute; top:8px; margin-left:8px"
                                 width="25" height="22" viewBox="0 0 30 27" fill="none"
@@ -49,12 +49,14 @@
                                 <option value="mercedes">Mercedes</option>
                                 <option value="audi">Audi</option>
                             </select>
-                            <a href="/add_account"><button type="button" class="btn1 btn-success">เพิ่มบัญชี</button></a>
+                            <a href="/manage_account/create"><button type="button"
+                                    class="btn1 btn-success">เพิ่มบัญชี</button></a>
                             <a href=""></a><button type="button" class="btn2 btn-primary">ค้นหา</button></a>
                         </div>
                     </div>
                 </div>
                 <table class="table">
+
                     <thead>
                         <tr class="trrr text-center">
                             <td style="border-top-left-radius: 20px">#</td>
@@ -64,23 +66,45 @@
                             <td style="border-top-right-radius: 20px">จัดการบัญชี</td>
                         </tr>
                     </thead>
-                    <tbody class="text-center ">
+
+
+                    <thead class="text-center">
+                        <?php
+                        foreach ($bmrs_accounts as $index => $accounts) { ?>
                         <tr>
-                            <td>1</td>
-                            <td> นายถิรายุ พรหมดโครต</a></td>
-                            <td>เจ้าหน้าที่ภายในผู้ดูเเล/บริหารจัดการห้องประชุม</td>
-                            <td><span class="status text-active">&bull;</span> Active</td>
-                            <td class="dl-and-edit_btn">
-                                <a href="/edit" class="edit" title="เเก้ไข" data-toggle="tooltip">
+                            <td>{{ $index + 1 }}</td>
+                            <td>{{ $accounts->acc_fname }} {{ $accounts->acc_lname }}</td>
+                            <td>{{ $accounts->acc_position }}</td>
+
+                            @if ($accounts->acc_status == 'Inactive')
+                                <td><span class="status text-inactive">&bull;</span>{{ $accounts->acc_status }}</td>
+                            @else
+                                <td><span class="status text-active">&bull;</span>{{ $accounts->acc_status }}</td>
+                            @endif
+
+                            <td class="dl-and-edit_btn" >
+                                <a href="manage_account/{{ $accounts->acc_id }}/edit" class="edit" title="เเก้ไข" data-toggle="tooltip">
                                     <i class="material-icons">&#xE8B8;</i></a>
 
-                                <a href="#" class="" onclick="confirmDelete(event)"><i class="material-icons"
+
+
+                                <form class="delete-form" action="manage_account/{{ $accounts->acc_id }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class=""><i class="material-icons"
                                         style=" color: red;">&#xE5C9;</i></a>
+                                </form>
+
+
+
+
                             </td>
-
                         </tr>
+                        <?php } ?>
 
-                    </tbody>
+
+                    </thead>
+
                 </table>
             </div>
         </div>
@@ -142,7 +166,7 @@
                     '<td>Active</td>' +
                     '</p>' +
 
-                    
+
                     '</div>' +
                     '</div>' +
                     '<br>',
@@ -158,9 +182,13 @@
                 cancelButtonText: "&nbsp&nbsp&nbsp&nbsp&nbsp&nbspย้อนกลับ&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"
 
 
+
             }).then((result) => {
                 if (result.isConfirmed) {
+
                     Swal.fire({
+
+
                         title: "ลบรายชื่อผู้ใช้เสร็จสิ้น",
                         icon: "success"
 
