@@ -15,7 +15,7 @@ class officer_mid
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth()->user()->usertype== 'เจ้าหน้าที่')
+        if(Auth()->user()->acc_position== 'เจ้าหน้าที่')
         {
             return $next($request);
 

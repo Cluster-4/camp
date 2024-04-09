@@ -15,7 +15,7 @@ class system_admin_mid
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth()->user()->usertype=='ผู้ดูแลระบบ')
+        if(Auth()->user()->acc_position=='ผู้ดูแลระบบ')
         {
             return $next($request);
 
