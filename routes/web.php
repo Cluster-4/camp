@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/sidebar_norm_officer', function () {
-    return view('layout.norm_officer_layout');
+Route::get('/manage_room', function () {
+    return view('manage_room');
 });
 Route::get('/table', function () {
     return view('table_room');
@@ -32,16 +32,25 @@ Route::get('/table_full', function () {
     return view('table_room_full');
 });
 Route::get('/edit_room', function () {
+    return view('edit_room');
+});
+Route::get('/add_room', function () {
+    return view('add_room');
+});
+Route::get('/setting_size_room', function () {
+    return view('setting_size_room');
+});
+Route::get('/test', function () {
+    return view('test');
+});
+Route::get('/edit_size_room', function () {
     return view('edit_size_room');
 });
-Route::get('/sidebar_admin_room', function () {
-    return view('layout.room_admin_layout');
+Route::get('/examine_edit_room', function () {
+    return view('examine_edit_room');
 });
-Route::get('/system_admin', function () {
-    return view('layout.system_admin_layout');
-});
-Route::get('/sidebar', function () {
-    return view('layout.system_admin_sidebar');
+Route::get('/examine_add_room', function () {
+    return view('examine_add_room');
 });
 Route::get('/test', function () {
     return view('table_full');
