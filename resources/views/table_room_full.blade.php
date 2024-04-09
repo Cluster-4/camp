@@ -1,86 +1,71 @@
 @extends('layout.room_admin_sidebar')
 @section('content')
-    <!DOCTYPE html>
-    <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="CSS/tebleRoom.css">
-        <script>
-            function goTableRoomA() {
-                window.location.href = "/table_a";
-            }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/tebleRoom.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function goTableRoomA() {
+            window.location.href = "/table_a";
+        }
 
-            function goTableRoomB() {
-                window.location.href = "/table_b";
-            }
+        function goTableRoomB() {
+            window.location.href = "/table_b";
+        }
 
-            function goTableRoomFull() {
-                window.location.href = "/table_full";
-            }
+        function goTableRoomFull() {
+            window.location.href = "/table_full";
+        }
 
-            function returnTemp() {
-                window.location.href = "/table";
-            }
-        </script>
-    </head>
+        function returnTemp() {
+            window.location.href = "/table";
+        }
+    </script>
+</head>
 
-    <div class="shadow container" style="background-color :#ffffff">
-
-        <body>
-
-            <section style="">
-                <div class="container-fluid " style="">
-                    <div id="room-availability" class="pt-4">
-                        <div class=" d-flex justify-content: start; pt-4 " style="margin-left: 4%">
-                            <div>
-                                <h1 style="color:#6FA0FF; font-size:32px">ห้อง</h1>
-                            </div>
-                            <div style="margin-left: 8%">
-                                <h1 style="magin-left:10px; font-size:32px">G104</h1>
-                            </div>
-                        </div>
-                        <div class="wrap-selected " style="width:48%; ">
-                            <div style="margin-left:4%">
-                                 <button
-                                    style="font-size:16px; color:black; border-radius: 10px;  ; background-color: white ;height: 55px;
-                    width: 130px;"
-                                    class="ml-4 btn btn-secondary btn-lg " type="button"
-                                    onclick="goTableRoomA()">ครึ่งห้องส่วน A</button>
-                            </div>
-                            <div style="margin-left:4%">
-                                <button
-                                    style="font-size:16px; color:black; border-radius: 10px; background-color: white ;height: 55px;
-                    width: 130px;"
-                                    class="btn btn-secondary btn-lg " type="button"
-                                    onclick="goTableRoomB()">ครึ่งห้องส่วน B</button>
-                            </div>
-                            <div style="margin-left:4%">
-                                <button
-                                    style="font-size:16px; color:black; border-radius: 10px; background-color: #6FA0FF ;height: 55px;
-                    width: 130px;"
-                                    class="btn btn-primary btn-lg" type="button"
-                                    onclick="goTableRoomFull()">เต็มห้อง</button>
-                            </div>
-                        </div>
-                        <div style="display: flex;justify-content: end;width:100%  ">
-                            <div class="mt-4">
-                                <h1 style="font-size:32px"> ระหว่าง&nbsp; &nbsp;</h1>
-                            </div>
-                            <div class="button-left mt-3">
-                            </div>
-                            <div class="mt-4">
-                                <h1 style="font-size:32px"> &nbsp;18/03/2567 - 24/03/2567&nbsp; </h1>
-                            </div>
-                            <div class="button-right mt-3">
-
-                            </div>
-                        </div>
-                    </div>
-            </section>
-            <section>
+<body>
+    <div class="container-fluid">
+        <div id="room-availability" class="pt-4">
+            <div class="row justify-content-start pt-4">
+                <div class="col-md-auto">
+                    <h1 style="color:#6FA0FF; font-size:32px">ห้อง</h1>
+                </div>
+                <div class="col-md-auto">
+                    <h1 style="magin-left:10px; font-size:32px">G104</h1>
+                </div>
+            </div>
+            <div class="row justify-content-start">
+                <div class="col-md-auto">
+                    <button style="font-size:16px; color:black; border-radius: 10px; background-color: white; height: 55px; width: 130px;" class="ml-4 btn btn-secondary btn-lg" type="button" onclick="goTableRoomA()">ครึ่งห้องส่วน A</button>
+                </div>
+                <div class="col-md-auto">
+                    <button style="font-size:16px; color:black; border-radius: 10px; background-color: white; height: 55px; width: 130px;" class="btn btn-secondary btn-lg" type="button" onclick="goTableRoomB()">ครึ่งห้องส่วน B</button>
+                </div>
+                <div class="col-md-auto">
+                    <button style="font-size:16px; color:black; border-radius: 10px; background-color: #6FA0FF; height: 55px; width: 130px;" class="btn btn-primary btn-lg" type="button" onclick="goTableRoomFull()">เต็มห้อง</button>
+                </div>
+            </div>
+            <div class="row justify-content-end mt-4">
+                <div class="col-md-auto">
+                    <h1 style="font-size:32px"> ระหว่าง&nbsp; &nbsp;</h1>
+                </div>
+                <div class="col-md-auto">
+                    <h1 style="font-size:32px"> &nbsp;18/03/2567 - 24/03/2567&nbsp; </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="table-container pt-4">
+            <table>
                 <div class="table-container pt-4">
                     <table>
                         <tr style="height:92.63px">
@@ -204,18 +189,15 @@
                             <td></td>
                         </tr>
                     </table>
+            </table>
+        </div>
+        <hr style="visibility: hidden;">
+        <div class="just">
+            <button type="button" class="btn btn-return buttomBack" onclick="returnTemp()">ย้อนกลับ</button>
+        </div>
+        <hr style="visibility: hidden;">
+    </section>
+</body>
 
-                </div>
-                <hr style="visibility: hidden;">
-                <div class = "just">
-                    <button type="button" class="btn btn-return buttomBack" onclick="returnTemp()">ย้อนกลับ</button>
-                </div>
-                <hr style="visibility: hidden;">
-            </section>
-
-        </body>
-    </div>
-
-
-    </html>
+</html>
 @endsection

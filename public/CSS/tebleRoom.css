@@ -14,7 +14,7 @@ th {
     min-width: 180px;
     background: rgb(255, 255, 255);
     box-sizing: border-box;
-    text-align: center;
+    text-align: center !important;
     position: center;
 }
 
@@ -23,8 +23,6 @@ th {
     max-height: 800px;
     width: 1720px;
     overflow: scroll;
-    width: 100%;
-    overflow-x: auto;
 }
 
 th {
