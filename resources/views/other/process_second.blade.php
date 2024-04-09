@@ -7,6 +7,27 @@
             justify-content: flex-end;
         }
     </style>
+    <script>
+         function validateForm() {
+                var first_name = document.getElementById('f_name').value;
+                var last_name = document.getElementById('l_name').value;
+                var phone = document.getElementById('phone').value;
+                var captcha = grecaptcha.getResponse();
+                console.log(first_name, last_name, phone, captcha);
+                // Check if any of the required fields are empty
+                if (first_name === '' || last_name === '' || phone === ''|| captcha === '') {
+                    Swal.fire({
+                        icon: "error",
+                        title: "กรุณากรอกข้อมูลให้ครบถ้วน",
+                        confirmButtonText: "ยืนยัน"
+                    });
+                    return false; // Prevent form submission
+                }
+                // If all fields are filled, allow form submission
+                window.location.href = "/process_third";
+                return true;
+            }
+    </script>
     <div style="width:100vw; height:100%; display:flex; flex-direction:column; justify-content:start; align-items:center;">
         <div
             style="width: 15%;height:13%; border-end-start-radius: 15px;border-end-end-radius: 15px; background-color: #000C6A; display: flex;
@@ -18,10 +39,10 @@
                 <div class="shadow  mt-2" style="background-color: #c7c7c7; border-radius: 18px; font-size: 150%; width:100%; margin-bottom:1%;  padding:5%;">
                     <div class="form-group row mb-3 mt-3">
                         <div class="col-3">
-                            <label for="name" class="card-text me-2">ชื่อ :</label>
+                            <label for="f_name" class="card-text me-2">ชื่อ :</label>
                         </div>
                         <div class="col-9">
-                            <input type="text" class="shadow form-control" id="name" placeholder="กรอกชื่อจริง"
+                            <input type="text" class="shadow form-control" id="f_name" placeholder="กรอกชื่อจริง"
                                 style="width: 100%; border: none; margin-left:auto; font-size: 100%">
                         </div>
                     </div>
@@ -30,7 +51,7 @@
                             <label for="surname" class="card-text me-1">นามสกุล :</label>
                         </div>
                         <div class="col-9">
-                            <input type="text" class="shadow form-control" id="surname" placeholder="กรอกนามสกุล"
+                            <input type="text" class="shadow form-control" id="l_name" placeholder="กรอกนามสกุล"
                                 style="width: 100%; border: none; margin-left:auto; font-size: 100%">
                         </div>
                     </div>
@@ -49,12 +70,10 @@
                 </div>
         </div>
         <div class="d-flex justify-content-end " style="width: 87%; height: 7%; margin-top: 7rem">
-            <button class="btn btn-secondary me-2" style="width: 20%;"
+            <button class="btn btn-secondary me-2" style="width: 20%; font-size:20px;"
                 onclick="window.location.href='{{ url('/process_first') }}'">ย้อนกลับ</button>
-            <button class="btn btn-primary" style="width: 20%;"
-            onclick="if (document.getElementById('name').value.trim() !== '' && document.getElementById('surname').value.trim() !== ''
-            && document.getElementById('phone').value.trim() !== '' && grecaptcha.getResponse() !== ''){ window.location.href='{{ url('/process_third') }}'; } else {
-                alert('กรอกข้อมูลให้ครบด้วยพี่และตอบ Captcha'); }">ถัดไป</button>
+            <button class="btn btn-primary" style="width: 20%; font-size:20px;"
+            onclick="validateForm()">ถัดไป</button>
         </div>
     </div>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>

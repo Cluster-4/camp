@@ -1,4 +1,4 @@
-@extends('layout.norm_other_layout')
+@extends('layout.norm_officer_sidebar')
 @section('content')
 
     <head>
@@ -40,37 +40,11 @@
     </head>
 
     <body>
-        <div class="row d-flex justify-content-end align-items-end mt-4" style="margin-right: 1rem;">
-            <div class="col-10"></div>
-            <button type="button" class="btn btn-primary"
-                style="width:10%; height:20%; display: flex; justify-content: center; align-items: center; background-color: #0420B6; "
-                onclick="window.location.href='{{ url('/login') }}'">ลงชื่อเข้าใช้</button>
-        </div>
         <div style=" display: flex; flex-direction: column; justify-content: center; align-items: center; height:78vh;">
-            <!-- เมนู -->
-            <div class="shadow row"
-                style="width: 58vw; height: 11vh; border-radius: 15px; background-color: #D9D9D9; display: flex; justify-content: center; align-items: center;">
-                <!-- จองห้อง -->
-                <div class="col-6" id="booking" style="color:#000C6A; border-right: 1px solid #C2C2C2;"
-                    onclick="goBookingPage()">
-                    <div class="row" style="display: flex; justify-content: center;">
-                        <div class="col-10"
-                        style="padding:2%; font-size: 30px; font-weight:600; display: flex; justify-content: center; align-items: center;">
-                        <a href="#" class="nav-link" style="color: #5F5F5F" onclick="goBoookingPage()"
-                            onmouseover="this.style.color='#000C6A'" onmouseout="this.style.color='#5F5F5F'">
-                            จองห้องประชุม</a>
-                    </div>
-                    </div>
-                </div>
-                <!-- ติดตามสถานะการจอง -->
-                <div class="col-6" id="tracking">
-                    <div class="row" style="display: flex; justify-content: center;">
-                        <div class="col-10"
-                            style="color:#000C6A; padding:2%; border-bottom: 1px solid #000C6A; font-size: 30px; font-weight:600; display: flex; justify-content: center; align-items: center;">
-                            ติดตามสถานะการจอง
-                        </div>
-                    </div>
-                </div>
+
+            <div
+                style="font-size:70px; font-weight:800; color : #000C6A ; display: flex ; justify-content : start; align-item: start; ">
+                ติดตามสถานะการจอง
             </div>
             <!-- กรอบ input ข้อมูล -->
             <div class="shadow mt-3"

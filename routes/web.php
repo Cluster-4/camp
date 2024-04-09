@@ -25,7 +25,6 @@ Route::get('/tracking', function () {
     return view('other.tracking');
 });
 
-
 Route::get('/login', function () {
     return view('login');
 });
@@ -33,6 +32,7 @@ Route::get('/login', function () {
 Route::get('/test', function () {
     return view('layout.norm_officer_layout');
 });
+
 Route::get('/edit_room', function () {
     return view('edit_size_room');
 });
@@ -63,8 +63,8 @@ Route::get('/process_finish', function () {
     return view('other.process_finish');
 });
 
-Route::get('/wait', function () {
-    return view('other.wait');
+Route::get('/process_tracking', function () {
+    return view('other.process_tracking');
 });
 
 Route::get('/cancel_finish', function () {
@@ -81,4 +81,8 @@ Route::get('/confirm_cancel_booking', function () {
 
 Route::get('/home_officer', function () {
     return view('officer.home');
+});
+
+Route::get('/tracking_officer', function () {
+    return view('officer.tracking');
 });

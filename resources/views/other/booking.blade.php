@@ -2,32 +2,11 @@
 @section('content')
 
     <head>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
         <link rel="stylesheet" href="{{ url('dist\css\inner-addon.css') }}">
-        <!-- CSS BTN HOVER-->
-        <style>
-            .booking:hover{
-                background-color: #11ad40;
-            }
-            .booking{
-                background-color:green;
-                border-radius: 20px;
-            }
-
-            button:hover {
-                background-color: #2838af;
-            }
-
-            button {
-                width: 6vw;
-                height: 5vh;
-                border-radius: 10px;
-                font-size: 20px;
-                background-color: #3D7EFC;
-                color: white;
-                box-shadow: 0 5px 10px #00000080;
-                border: 0;
-            }
-        </style>
         <!--JAVA SCRIPT-->
         <script>
             function goRoomGenaratePage() {
@@ -37,78 +16,111 @@
             function goProcessBooking() {
                 window.location.href = "/process_first";
             }
+            $(function() {
+                $('input[name="datetimes"]').daterangepicker({
+                    singleDatePicker: false, // กำหนดให้เลือกวันได้ 2 วัน
+                    timePicker: true,
+                    timePicker24Hour: true, // ตั้งค่าให้แสดงเวลาในรูปแบบ 24 ชั่วโมง
+                    timePickerIncrement: 60, // กำหนดระยะห่างของนาทีที่เลือกได้เป็น 15 นาที
+                    startDate: moment().startOf('hour').add(543, 'years'), // เพิ่ม 543 ปี
+                    endDate: moment().startOf('hour').add(543, 'years'), // เพิ่ม 543 ปี
+                    locale: {
+                        format: 'M/DD/YYYY HH:mm',
+                        "separator": " - ",
+                        "applyLabel": "ยืนยัน",
+                        "cancelLabel": "ยกเลิก",
+                        "fromLabel": "จาก",
+                        "toLabel": "ถึง",
+                        "customRangeLabel": "กำหนดเอง",
+                        "daysOfWeek": [
+                            "อา",
+                            "จ",
+                            "อ",
+                            "พ",
+                            "พฤ",
+                            "ศ",
+                            "ส"
+                        ],
+                        "monthNames": [
+                            "มกราคม",
+                            "กุมภาพันธ์",
+                            "มีนาคม",
+                            "เมษายน",
+                            "พฤษภาคม",
+                            "มิถุนายน",
+                            "กรกฎาคม",
+                            "สิงหาคม",
+                            "กันยายน",
+                            "ตุลาคม",
+                            "พฤศจิกายน",
+                            "ธันวาคม"
+                        ],
+                        "firstDay": 1,
+                    }
+                });
+            });
         </script>
     </head>
 
     <body>
-        <div class="row mt-4">
+        <div class="row" style="margin-top: 1rem;">
             <div class="col-2 inner-addon left-addon ms-3">
                 <i class="fi fi-rr-search" style="color: black; font-size: 120%; margin-left:5%;"></i>
                 <input type="text" class="form-control shadow"
                     style="height: 5vh; border-radius: 10px; display: flex; justify-content: center; align-items: center; font-size: 120%; padding-left:15%;"
                     id="name_room" placeholder="ค้นหาห้องประชุม">
             </div>
-            <div class="col-2 inner-addon left-addon" style="width: 12vw;">
-                <i class="fi fi-rr-calendar " style="color: black; font-size: 120%; margin-right:5%; padding-left:10%;"></i>
-                <input required="" type="text" id="date_in" class="form-control input-date shadow"
-                    style="height: 5vh; border-radius: 10px; font-size: 120%; padding-left:20%;" placeholder="วันที่เข้าใช้"
-                    onfocus="(this.type='date')" />
+            <div class="col-3 inner-addon left-addon">
+                <i class="fi fi-br-calendar-clock" style="color: black; font-size: 120%; margin-left:5%;"></i>
+                <input class="form-control shadow"
+                    style="width: 21vw; height: 5vh; border-radius: 10px; display: flex; justify-content: center; align-items: center; font-size: 120%; padding-left:13%;"
+                    type="text" name="datetimes" />
             </div>
-            <div class="col-2 inner-addon left-addon" style="width: 12vw;">
-                <i class="fi fi-rr-calendar" style="color: black; font-size: 120%; margin-right:5%; padding-left:10%;"></i>
-                <input required="" type="text" id="date_in" class="form-control input-date shadow"
-                    style="height: 5vh; border-radius: 10px; font-size: 120%; padding-left:20%;"
-                    placeholder="วันที่สิ้นสุดการใช้" onfocus="(this.type='date')" />
+
+            <div class="col-5" style="display: flex; justify-content: start;">
+                <button type="button" class="btn btn-primary" style="width: 15%;"
+                    onclick="window.location.href='{{ url('/booking') }}'">ค้นหา</button>
             </div>
-            <div class="col-2 inner-addon left-addon " style="width: 12vw;">
-                <i class="fi fi-rr-clock-three"
-                    style="color: black; font-size: 120%; margin-right:5%; padding-left:10%;"></i>
-                <input required="" type="text" id="time_in" class="form-control shadow"
-                    style="height: 5vh; border-radius: 10px; font-size: 120%; padding-left:20%;" placeholder="เวลาเข้าใช้"
-                    onfocus="(this.type='time')" />
-            </div>
-            <div class="col-2 inner-addon left-addon" style="width: 12vw;">
-                <i class="fi fi-rr-clock-three"
-                    style="color: black; font-size: 120%; margin-right:5%; padding-left:10%;"></i>
-                <input required="" type="text" id="time_in" class="form-control shadow"
-                    style="height: 5vh; border-radius: 10px; font-size: 120%; padding-left:20%;"
-                    placeholder="เวลาที่สิ้นสุดการใช้" onfocus="(this.type='time')" />
-            </div>
-            <div class="col-1">
-                <button type="submit" onclick="goRoomGenaratePage()">
-                    ค้นหา
-                </button>
-            </div>
+
         </div>
-        <div style="margin-left:4rem; margin-top:1rem;">
-             <!-- card content -->
-            <?php
+
+        <div class="d-flex justify-content-center" style="width: 100%; height:100%;">
+            <div style="margin:1rem 0rem 0rem 9rem;">
+                <!-- card content -->
+                <?php
             for ($i=0; $i < 9; $i++){
                 ?>
-                <div class="card shadow mt-4" style="width: 18.3rem; border: 20px; border-radius: 20px; float: left; margin: 4rem;">
-                <img src="https://i.pinimg.com/236x/5a/1b/12/5a1b126a63df80e79d63ab5554276b98.jpg" width="293px"
-                    height="182px" alt="..." style="border-radius: 20px 20px 0px 0px;">
-                <div class="card-body" style="border: 20px;">
-                    <p class="card-text">
-                        ชื่อห้อง : A<br>
-                        ขนาด : A <br>
-                        แบ่งครึ่งห้อง : A <br>
-                        ราคา : A <br>
-                        สถานะ : A <br>
-                        ประเภทห้อง : A <br>
-                        หมายเหตุ : เหนื่อยมากกก
-                    </p>
-                    <div style="display: flex; justify-content: center;">
-                        <button type="submit" class="booking" onclick="goProcessBooking()">
-                            จอง
-                        </button>
+
+                <div class="card rounded-4 shadow mt-4"
+                    style="width: 18.3rem;float: left; margin:3rem; border-radius:20px;">
+                    <div class="card-header" style="border-start-start-radius:20px;border-start-end-radius:20px">
+                        ชื่อห้อง
+                    </div>
+                    <img src="https://i.pinimg.com/236x/5a/1b/12/5a1b126a63df80e79d63ab5554276b98.jpg" height="180px"
+                        alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">รายละเอียด</h5>
+                        <p class="card-text">
+                            ขนาด : A <br>
+                            แบ่งครึ่งห้อง : A <br>
+                            ราคา : A <br>
+                            สถานะ : A <br>
+                            ประเภทห้อง : A <br>
+                            หมายเหตุ : เหนื่อยมากกก
+                        </p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-end"
+                        style="border-end-start-radius:20px;border-end-end-radius:20px">
+                        <button type="button" class="btn btn-success" style="width: 40%; font-size:20px;"
+                            onclick="goProcessBooking()">จอง</button>
                     </div>
                 </div>
-            </div>
-            <?php
+
+                <?php
             }
             ?>
-            <div style="clear: both;"></div>
+                <div style="clear: both;"></div>
+            </div>
         </div>
     </body>
 @endsection

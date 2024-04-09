@@ -7,6 +7,7 @@
             justify-content: flex-end;
         }
     </style>
+
     <div style="width:100vw; height:100%; display:flex; flex-direction:column; justify-content:start; align-items:center;">
         <div style="width: 15%;height:13%; border-end-start-radius: 15px;border-end-end-radius: 15px; background-color: #000C6A; display: flex;
         justify-content: center; align-items: center; color:white; font-size:180%; margin-bottom:6%">
@@ -64,9 +65,9 @@
             </div>
         </div>
         <div class="d-flex justify-content-end" style="width: 87%; height: 7%; margin-top: 9.3rem;">
-            <button class="btn btn-secondary me-2" style="width: 20%;"
+            <button class="btn btn-secondary me-2" style="width: 20%; font-size:20px;"
                 onclick="window.location.href='{{ url('/booking') }}'">ย้อนกลับ</button>
-            <button class="btn btn-primary" style="width: 20%;"
+            <button class="btn btn-primary" style="width: 20%; font-size:20px;"
                 onclick="window.location.href='{{ url('/process_second') }}'">ถัดไป</button>
         </div>
     </div>

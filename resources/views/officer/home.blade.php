@@ -4,6 +4,35 @@
     <head>
         <link rel="stylesheet" href="{{ url('dist\css\inner-addon.css') }}">
         <!-- CSS BTN HOVER-->
+        <script>
+            function goTrackingPage() {
+                window.location.href = "/tracking"
+            }
+
+            function goBookingPage() {
+                window.location.href = "/home"
+            }
+
+            function validateForm() {
+                var dateIn = document.getElementById('date_in').value;
+                var dateOut = document.getElementById('date_out').value;
+                var timeIn = document.getElementById('time_in').value;
+                var timeOut = document.getElementById('time_out').value;
+                console.log(dateIn, dateOut, timeIn, timeOut);
+                // Check if any of the required fields are empty
+                if (dateIn === '' || dateOut === '' || timeIn === '' || timeOut === '') {
+                    Swal.fire({
+                        icon: "error",
+                        title: "กรุณากรอกข้อมูลให้ครบถ้วน",
+                        confirmButtonText: "ยืนยัน",
+                    });
+                    return false; // Prevent form submission
+                }
+                // If all fields are filled, allow form submission
+                window.location.href = "/booking";
+                return true;
+            }
+        </script>
         <style>
             button:hover {
                 background-color: #2838af;
@@ -26,7 +55,8 @@
         <div class="shadow mt-3 mx-auto position-relative overflow-y-auto"
             style=" overflow-x: hidden; width: 100%; height: 88%; border-radius: 15px; ">
             <div style=" display: flex; flex-direction: column; justify-content: center; align-items: center; height:100%;">
-                <div style="margin-top:5% ; font-size:70px; font-weight:800; color : #000C6A ; display: flex ; justify-content : start; align-item: start; ">
+                <div
+                    style="font-size:70px; font-weight:800; color : #000C6A ; display: flex ; justify-content : start; align-item: start; ">
                     จองห้องประชุม
                 </div>
                 <!-- กรอบ input ข้อมูล -->
@@ -79,9 +109,8 @@
                         <!-- ปุ่มค้นหา -->
                         <div class="row">
                             <div class="col-12 mt-5" style="display: flex; justify-content: center; align-items: center;">
-                                <button type="button" onclick="window.location.href='{{ url('/booking') }}'">
-                                    ค้นหา
-                                </button>
+                                <button onclick="return validateForm()" type="button" class="btn btn-primary"
+                                    style="width: 20%; height:120%;font-size:27px;">ค้นหา</button>
                             </div>
                         </div>
                     </form>
