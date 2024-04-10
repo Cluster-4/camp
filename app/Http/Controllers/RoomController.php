@@ -63,6 +63,9 @@ class RoomController extends Controller
 
         $room->rm_pic_path = $request->input('rm_pic_path');
 
+        $room->rm_a_price = $request->input('rm_a_price');
+        $room->rm_b_price = $request->input('rm_b_price');
+
         $room->rm_half_a_size_id = $request->input('rm_half_a_size_id');
         $room->rm_half_a_facilities = $request->input('rm_half_a_facilities');
 
@@ -113,6 +116,7 @@ class RoomController extends Controller
         return view('edit_room', compact('room', 'sizes'));
     }
 
+
     public function updateRoom(Request $request, $id)
     {
         $room = Room::findOrFail($id);
@@ -125,6 +129,9 @@ class RoomController extends Controller
         // $room->rm_can_half = $request->input('rm_can_half');
         $room->rm_size_id = (int) $request->input('rm_size_id');
         $room->rm_is_half = $request->input('rm_is_half');
+
+        $room->rm_a_price = $request->input('rm_a_price');
+        $room->rm_b_price = $request->input('rm_b_price');
 
         $room->rm_pic_path = $request->input('rm_pic_path');
 

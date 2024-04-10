@@ -28,6 +28,8 @@ class Room extends Model
         'rm_can_half',
         'rm_size_id',
         'rm_is_half',
+        'rm_a_price', // Add this line
+        'rm_b_price', // Add this line
         'rm_pic_path',
         'rm_half_a_size_id',
         'rm_half_a_facilities',
