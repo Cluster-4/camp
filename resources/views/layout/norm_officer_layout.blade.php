@@ -18,7 +18,6 @@
     .nav-link {
         height: 44px;
     }
-
     .navbar .nav-link.active {
         background-color: #69A5DD;
         color: white;

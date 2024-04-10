@@ -1,3 +1,4 @@
+inner-addon.css
 .inner-addon {
     position: relative;
     display: flex;
@@ -17,11 +18,9 @@
 .right-addon .fi {
     right: 0px;
 }
-
 .left-addon input {
     padding-left: 30px;
 }
-
 .right-addon input {
     padding-right: 30px;
 }

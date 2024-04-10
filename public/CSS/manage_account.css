@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+}
+
+body {
+    overflow: hidden;
+    color: #c3cbd8;
+    background: #FFFFFF;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.container {
+    overflow: auto;
+    border-radius: 15px;
+    height: auto;
+    min-width: 100%;
+    margin-left: 1px;
+    margin-top: 14px;
+}
+
+.table .thead {
+    color: #000;
+}
+.tabletop {
+    background: linear-gradient(135deg, #1E1450,  #1E3ACC);
+    color: #ffffff;
+    margin-top: 1%;
+    height: 50px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.container2 {
+    overflow: auto;
+    min-width: 100%;
+    margin-left: 1px;
+    width: 350px;
+    /* กำหนดความกว้างของคอนเทนเนอร์ */
+    height: 460px;
+    /* กำหนดความสูงของคอนเทนเนอร์ */
+    overflow: auto;
+    /* ใช้ในการเลื่อนเนื้อหาเมื่อเกินขนาดคอนเทนเนอร์ */
+
+}
+
+.table-wrapper {
+    overflow: y;
+    background: #fff;
+    border-radius: 10px;
+}
+.table {
+    overflow-y: auto;
+    margin-top: 20px;
+}
+
+.btn1 {
+    color: #ffffff;
+    float: right;
+    font-size: 16px;
+    border-radius: 5px;
+    height: 40px;
+    width: 100px;
+    margin-right: 30px;
+    border-style: double;
+    margin-top: 15px;
+}
+
+.btn2 {
+    color: #ffffff;
+    float: right;
+    font-size: 16px;
+    border-radius: 5px;
+    height: 40px;
+    width: 100px;
+    margin-right: 10px;
+    border-style: double;
+    margin-top: 15px;
+}
+.text-center tr{
+    border: 1px slategrey;
+}
+
+.text {
+    border-radius: 8px;
+    border-color: #b9b9b9;
+    height: 40px;
+    width: 250px;
+    border-style: double;
+    border: 0px;
+    margin-left: 45px;
+    border: 1px solid #A4A4A4;
+    margin-top: 15px;
+}
+
+.Status {
+    background-color: #fff;
+    color: #9B9B9B;
+    border-radius: 8px;
+    border-color: #b9b9b9;
+    height: 40px;
+    width: 130px;
+    border: 1px solid #A4A4A4;
+}
+
+.trrr {
+    background-color: #EEEEEE;
+    border: 0px;
+
+}
+
+.trrr td {
+    border: 0px;
+}
+
+.table {
+    border-top-left-radius: 50%;
+}
+
+.input-group {
+    color: #b42d2d;
+}
+
+table.table th i {
+    font-size: 13px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+table.table td:last-child i {
+    opacity: 0.9;
+    font-size: 22px;
+    margin: 0 5px;
+}
+
+table.table td a.edit {
+    color: #172c94;
+}
+
+table.table td a.delete {
+    color: #F44336;
+}
+
+table.table td i {
+    font-size: 19px;
+}
+
+table.table .avatar {
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.status {
+    font-size: 30px;
+    margin: 2px 2px 0 0;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 10px;
+}
+
+.text-active {
+    color: #10c469;
+}
+
+.text-inactive {
+    color: #ff5b5b;
+}
+

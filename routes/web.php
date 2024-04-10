@@ -5,6 +5,10 @@ use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\Booking_info_controller;
+use App\Http\Controllers\Account_controller;
+use Illuminate\Support\Facades\Redirect;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -56,6 +60,10 @@ Route::get('/test', function () {
 Route::get('/edit_size_room', function () {
     return view('edit_size_room');
 });
+Route::get('/manage_account', function () {
+    return view('manage_account');
+});
+
 Route::get('/sidebar_admin_room', function () {
     return view('layout.room_admin_layout');
 });
@@ -134,3 +142,9 @@ Route::post('/store/booking/information', [Booking_info_controller::class, 'stor
 
 Route::post('/booking',[Booking_info_controller::class, 'filter'])->name ('filter');
 Route::get('/booking',[Booking_info_controller::class, 'filter'])->name ('filter');
+Route::resource("/manage_account",Account_controller::class);
+
+Route::get('/manage_account/search', [Account_controller::class, 'search'])->name('manage_account.search');
+
+
+

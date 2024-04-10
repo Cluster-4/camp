@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Account;
+use App\Models\AccountModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -13,15 +13,18 @@ class Account_controller extends Controller
      */
     public function index()
     {
-        //
+        $data["bmrs_accounts"] = AccountModel::all();
+        return view('manage_account', $data);
     }
+
+
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        return view("add_account");
     }
 
     /**
@@ -30,29 +33,35 @@ class Account_controller extends Controller
     public function store(Request $request)
     {
         //สร้างบัญชี
-        $username = $request->input('acc_username');
-        $fname = $request->input('acc_fname');
-        $lname = $request->input('acc_lname');
-        $position = $request->input('acc_position');
-        $email = $request->input('acc_email');
-        $password = $request->input('acc_password');
-        $tel = $request->input('acc_tel');
-        $status = $request->input('acc_status');
+        $username = $request->input("username");
+        $fname = $request->input("fname");
+        $lname = $request->input("lname");
+        $position = $request->input("position");
+        $email = $request->input("email");
+        $password = $request->input("password");
+        $tel = $request->input("tel");
+        $status = $request->input("status");
+        $pic = $request->input("pic");
 
-        $user = new Account();
-        $user->acc_username = $username;
-        $user->acc_fname = $fname;
-        $user->acc_lname = $lname;
-        $user->acc_position = $position;
-        $user->acc_email = $email;
-        $user->acc_password = $password;
-        $user->acc_tel = $tel;
-        $user->acc_status = $status;
-        if ($request->hasFile('acc_pic_path')) {
-            $user->avatar = $request->file('acc_pic_path')->store('public/user_img');
-        }
-        $user->save();
-        return Redirect::to('/');
+
+        $AccountModel = new AccountModel();
+
+        $AccountModel->acc_username = $username;
+        $AccountModel->acc_fname = $fname;
+        $AccountModel->acc_lname = $lname;
+        $AccountModel->acc_position = $position;
+        $AccountModel->acc_email = $email;
+        $AccountModel->acc_password = $password;
+        $AccountModel->acc_tel = $tel;
+        $AccountModel->acc_status = $status;
+        $AccountModel->acc_pic_path = $pic;
+        
+
+
+
+
+        $AccountModel->save();
+        return Redirect::to('/manage_account');
     }
 
     /**
@@ -68,7 +77,14 @@ class Account_controller extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $acc_data = AccountModel::find($id);
+        $accounts = AccountModel::all();
+
+        if ($acc_data === null) {
+            return Redirect::to("/manage_account");
+        } else {
+            return view("edit_account", compact("acc_data"));
+        }
     }
 
     /**
@@ -76,7 +92,34 @@ class Account_controller extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $username = $request->input("username");
+        $fname = $request->input("fname");
+        $lname = $request->input("lname");
+        $position = $request->input("position");
+        $email = $request->input("email");
+        $password = $request->input("password");
+        $tel = $request->input("tel");
+        $status = $request->input("status");
+        $pic = $request->input("pic");
+
+        $accountModelId = AccountModel::find($id);
+
+        $accountModelId->acc_username = $username;
+        $accountModelId->acc_fname = $fname;
+        $accountModelId->acc_lname = $lname;
+        $accountModelId->acc_position = $position;
+        $accountModelId->acc_email = $email;
+        $accountModelId->acc_password = $password;
+        $accountModelId->acc_tel = $tel;
+        $accountModelId->acc_status = $status;
+        if ($request->hasFile('acc_pic_path')) {
+            $imagePath = $request->file('acc_pic_path')->store('public/acc_images');
+            $AccountModel->acc_pic_path = basename($imagePath);
+        }
+
+        $accountModelId->save();
+
+        return Redirect::to("/manage_account");
     }
 
     /**
@@ -84,6 +127,28 @@ class Account_controller extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $AccountModelId = AccountModel::find($id);
+
+        $AccountModelId->delete();
+        return Redirect::to("/manage_account");
+    }
+
+    public function search(Request $request)
+    {
+        $searchName = $request->input('searchName');
+        $searchRole = $request->input('searchRole');
+
+        $query = AccountModel::query();
+
+        if ($searchName) {
+            $query->where('acc_fname', 'like', '%' . $searchName . '%');
+        }
+
+        if ($searchRole) {
+            $query->where('acc_position', $searchRole);
+        }
+
+        $data["bmrs_accounts"] = $query->get();
+        return view('manage_account', $data);
     }
 }
