@@ -16,8 +16,56 @@
         <link rel='stylesheet'
             href='https://cdn-uicons.flaticon.com/2.2.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
         <link rel="stylesheet" href="CSS/manage_account.css">
+
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     </head>
+    <style>
+        .table-striped tbody tr:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
+
+        .table-striped tbody tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+
+        .tabletop td,
+        .container2 td {
+            padding: 15px;
+            /* ระยะห่างของข้อความภายในเซลล์ */
+        }
+
+        .tabletop td:nth-child(1),
+        .container2 td:nth-child(1) {
+            width: 5%;
+            /* กำหนดความกว้างของคอลัมน์แรกใน tabletop และ table */
+        }
+
+        .tabletop td:nth-child(2),
+        .container2 td:nth-child(2) {
+            width: 30%;
+            /* กำหนดความกว้างของคอลัมน์ที่สองใน tabletop และ table */
+        }
+
+        .tabletop td:nth-child(3),
+        .container2 td:nth-child(3) {
+            width: 30%;
+            /* กำหนดความกว้างของคอลัมน์ที่สามใน tabletop และ table */
+        }
+
+        .tabletop td:nth-child(4),
+        .container2 td:nth-child(4) {
+            width: 16%;
+            /* กำหนดความกว้างของคอลัมน์ที่สี่ใน tabletop และ table */
+        }
+
+        .tabletop td:nth-child(5),
+        .container2 td:nth-child(5) {
+            width: 30%;
+            /* กำหนดความกว้างของคอลัมน์ที่ห้าใน tabletop และ table */
+        }
+    </style>
+
     <style>
         .table-striped tbody tr:nth-child(odd) {
             background-color: #f2f2f2;
@@ -85,7 +133,8 @@
                             <option value="mercedes">ผู้ดูเเลห้องประชุม</option>
                             <option value="audi">ผู้ดูเเลระบบ</option>
                         </select>
-                        <a href="/add_account"><button type="button" class="btn1 btn-success">เพิ่มบัญชี</button></a>
+                        <a href="/manage_account/create"><button type="button"
+                                class="btn1 btn-success">เพิ่มบัญชี</button></a>
                         <a href=""></a><button type="button" class="btn2 btn-primary">ค้นหา</button></a>
                     </div>
                 </form>
@@ -100,112 +149,50 @@
                         </tr>
                     </table>
                 </div>
+
                 <div class="container2 " style="background-color :#ffffff; ">
                     <table style="width: 100%">
                         <table class="table text-center table-striped table-hover " style=" margin-top: 0% ">
                             <tbody class="Text ">
+                                <?php
+                        foreach ($bmrs_accounts as $index => $accounts) { ?>
                                 <tr>
-                                    <td>1</td>
-                                    <td> นายถิรายุ พรหมดโครต</a></td>
-                                    <td>ผู้ดูเเล/บริหารจัดการห้องประชุม</td>
-                                    <td><span class="status text-active">&bull;</span> Active</td>
-                                    <td>
-                                        <a href="/edit_account" class="edit" title="เเก้ไข" data-toggle="tooltip"><button
-                                                type="button" class="btn btn-primary">เเก้ไขบัญชี</button></a>
-                                        <a href="#" class="" onclick="confirmDelete(event)"><button
-                                                type="button" class="btn btn-danger">ลบบัญชี</button></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td> นายถิรายุ พรหมดโครต</a></td>
-                                    <td>ผู้ดูเเล/บริหารจัดการห้องประชุม</td>
-                                    <td><span class="status text-active">&bull;</span> Active</td>
-                                    <td>
-                                        <a href="/edit_account" class="edit" title="เเก้ไข" data-toggle="tooltip"><button
-                                                type="button" class="btn btn-primary">เเก้ไขบัญชี</button></a>
-                                        <a href="#" class="" onclick="confirmDelete(event)"><button
-                                                type="button" class="btn btn-danger">ลบบัญชี</button></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td> นายถิรายุ พรหมดโครต</a></td>
-                                    <td>ผู้ดูเเล/บริหารจัดการห้องประชุม</td>
-                                    <td><span class="status text-active">&bull;</span> Active</td>
-                                    <td>
-                                        <a href="/edit_account" class="edit" title="เเก้ไข" data-toggle="tooltip"><button
-                                                type="button" class="btn btn-primary">เเก้ไขบัญชี</button></a>
-                                        <a href="#" class="" onclick="confirmDelete(event)"><button
-                                                type="button" class="btn btn-danger">ลบบัญชี</button></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td> นายถิรายุ พรหมดโครต</a></td>
-                                    <td>ผู้ดูเเล/บริหารจัดการห้องประชุม</td>
-                                    <td><span class="status text-active">&bull;</span> Active</td>
-                                    <td>
-                                        <a href="/edit_account" class="edit" title="เเก้ไข"
-                                            data-toggle="tooltip"><button type="button"
-                                                class="btn btn-primary">เเก้ไขบัญชี</button></a>
-                                        <a href="#" class="" onclick="confirmDelete(event)"><button
-                                                type="button" class="btn btn-danger">ลบบัญชี</button></a>
-                                    </td>
-                                </tr>
+                                    <td>{{ $index + 1 }}</td>
+                                    <td>{{ $accounts->acc_fname }} {{ $accounts->acc_lname }}</td>
+                                    <td>{{ $accounts->acc_position }}</td>
 
+                                    @if ($accounts->acc_status == 'Inactive')
+                                        <td><span class="status text-inactive">&bull;</span>{{ $accounts->acc_status }}</td>
+                                    @else
+                                        <td><span class="status text-active">&bull;</span>{{ $accounts->acc_status }}</td>
+                                    @endif
+
+                                    <td class="dl-and-edit_btn">
+                                        <a href="manage_account/{{ $accounts->acc_id }}/edit" class="edit"
+                                            title="เเก้ไข"data-toggle="tooltip"><button type="button"
+                                                class="btn btn-primary">เเก้ไขบัญชี</button>
+                                        </a>
+
+
+                                        <form class="delete-form" action="manage_account/{{ $accounts->acc_id }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button  type="submit" class="btn btn-danger">ลบบัญชี</button>
+                                        </form>
+                                    </td>
+
+                                </tr>
+                                <?php } ?>
                             </tbody>
                         </table>
                 </div>
+
+
             </div>
+        </div>
         </div>
     </body>
 
-    </html>
-    <script>
-        function confirmDelete(event) {
-            event.preventDefault(); // Prevent the default action of the link
 
-            // Show SweetAlert2 confirmation dialog
-            Swal.fire({
-                title: "ยืนยันการลบรายชื่อผู้ใช้",
-
-                html: '<div style="display: flex; align-items: start;   class="row">' +
-                    '<div style="margin-top:10%">' +
-                    '<img src="https://f.ptcdn.info/336/058/000/pb0qjiitu7Y1aEU7JwW-o.jpg" style="max-width: 350px;">' +
-                    '</div>' +
-                    '<br>' +
-                    '<div   style=" text-align: start; margin-left:100px; margin-top:50px">' +
-                    '<p>ชื่อเล่น : เนส</p>' +
-                    '<p>ชื่อ : นายถิรายุ</p>' +
-                    '<p>นามสกุล : พรหมโคตร</p>' +
-                    '<p>บทบาท : เจ้าหน้าที่ภายใน</p>' +
-                    '<p>รหัสผ่าน : 123456</p>' +
-                    '<p>เบอร์โทรศัพท์ : 0980063225</p>' +
-                    '<p>อีเมล : 132@gmail.com</p>' +
-                    '<p>สถานะ : Active</p>' +
-                    '</div>' +
-                    '</div>' +
-                    '<br>',
-
-                width: '800px',
-                showCancelButton: true,
-                confirmButtonColor: "red",
-                cancelButtonColor: "grey",
-                confirmButtonText: "&nbsp&nbspยืนยันการลบ&nbsp&nbsp",
-                cancelButtonText: "&nbsp&nbsp&nbsp&nbsp&nbsp&nbspย้อนกลับ&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    Swal.fire({
-                        title: "ลบรายชื่อผู้ใช้เสร็จสิ้น",
-                        icon: "success",
-                        showCancelButton: false,
-                        showConfirmButton: false,
-                        timer: 3000
-                    });
-                }
-            });
-        }
-    </script>
 
 @endsection

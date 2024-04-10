@@ -17,7 +17,8 @@
     <link rel='stylesheet'
         href='https://cdn-uicons.flaticon.com/2.2.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <link rel="stylesheet" href="{{ url('dist\css\sidebar_style.css') }}">
-
+    <link rel="stylesheet" href="{{ url('dist/css/booking_approve_style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body style="font-family: Noto Sans Thai, DM Sans;">
@@ -39,15 +40,21 @@
 
             <ul class="sidebar-nav">
                 <li class="sidebar-item" onclick="toggleActive(event)">
-                    <a href="#" class="sidebar-link">
+                    <a href="/db" class="sidebar-link">
                         <i class="fi fi-sr-stats" style="font-size: 30px; display: flex;"></i>
                         <span class="pl-3">แดชบอร์ด</span>
                     </a>
                 </li>
                 <li class="sidebar-item" onclick="toggleActive(event)">
-                    <a href="#" class="sidebar-link">
+                    <a href="/approve" class="sidebar-link">
                         <i class="fi fi-rr-checkbox" style="font-size: 30px; display: flex;"></i>
                         <span class="pl-3">อนุมัติคำขอจองห้อง</span>
+                    </a>
+                </li>
+                <li class="sidebar-item" onclick="toggleActive(event)">
+                    <a href="/table" class="sidebar-link">
+                        <i class="fi fi-rr-table-list" style="font-size: 30px; display: flex;"></i>
+                        <span class="pl-3">ตารางการใช้ห้อง</span>
                     </a>
                 </li>
                 <li class="sidebar-item" onclick="toggleActive(event)">
