@@ -1,5 +1,9 @@
 @extends('layout.system_admin_sidebar')
 @section('content')
+    <div class="d-flex bg-dark text-white align-items-center p-4 fs-3 sidebar-title">
+        <i class="fi fi-rr-pencil me-4" style="font-size: "></i>
+        จัดการห้องประชุม
+    </div>
     <div class="shadow mt-3 d-flex py-3 justify-content-center" style="border-radius: 18px; width: 100%; height: 85vh;">
         {{-- ถ้าต้องการให้หน้าจอ overflow ได้ให้ปรับ height: > 86vh; --}}
         <form action="">
@@ -71,14 +75,15 @@
         </form>
     </div>
     <style>
-        .buttom-sumit{
+        .buttom-sumit {
             width: 15%;
             height: 15%;
             border-radius: 10px;
             background-color: #000C6A;
             color: #ffffff;
         }
-        .buttom-cancel{
+
+        .buttom-cancel {
             width: 15%;
             height: 15%;
             border-radius: 10px;

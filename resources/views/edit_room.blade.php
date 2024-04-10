@@ -80,7 +80,11 @@
             content: '';
         }
     </style>
-
+    <div class="d-flex bg-dark text-white align-items-center p-4 fs-3 sidebar-title">
+        <i class="fi fi-rr-pencil me-4" style="font-size: "></i>
+        จัดการห้องประชุม
+    </div>
+    
     <form action="{{ route('update_room', [$room->rm_id]) }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="shadow div-backgrund mt-4">
@@ -144,7 +148,7 @@
                                     </select>
                                 </div>
                                 <div class="col">
-                                    
+
                                 </div>
                             </div>
 
@@ -292,7 +296,7 @@
                                     </select>
                                 </div>
                                 <div class="col">
-                                    
+
                                 </div>
                             </div>
 
@@ -374,7 +378,7 @@
                                     </select>
                                 </div>
                                 <div class="col">
-                                    
+
                                 </div>
                             </div>
 

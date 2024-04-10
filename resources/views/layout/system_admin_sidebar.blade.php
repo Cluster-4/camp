@@ -38,7 +38,7 @@
 
             <ul class="sidebar-nav">
                 <li class="sidebar-item" onclick="toggleActive(event)">
-                    <a href="#" class="sidebar-link">
+                    <a href="/manage_room" class="sidebar-link">
                         <i class="fi fi-rr-pencil" style="font-size: 30px; display: flex;"></i>
                         <span class="pl-3">จัดการห้องประชุม</span>
                     </a>
@@ -75,11 +75,6 @@
             </div>
         </aside>
         <div class="main p-3 overflow-container">
-            {{-- navbar --}}
-            <div class="d-flex bg-dark text-white align-items-center p-4 fs-3 sidebar-title">
-                <i class=""></i>
-
-            </div>
             @yield('content')
         </div>
         <script src="{{ url('dist\js\sidebar.js') }}"></script>

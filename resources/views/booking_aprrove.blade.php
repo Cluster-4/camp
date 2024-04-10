@@ -13,6 +13,10 @@
             }
         </style>
     </head>
+    <div class="d-flex bg-dark text-white align-items-center p-4 fs-3 sidebar-title">
+        <i class="fi fi-rr-checkbox me-4" style="font-size: "></i>
+        อนุมัติคำขอจองห้อง
+    </div>
     <!-- CODE HERE -->
     <div class="shadow my-3" style="border-radius: 18px; width:100%; height: 83vh;">
         <div class="table-container" style="background-color: #ffffff;">

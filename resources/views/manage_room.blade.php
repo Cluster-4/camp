@@ -70,7 +70,10 @@
     </style>
 
     <body>
-
+        <div class="d-flex bg-dark text-white align-items-center p-4 fs-3 sidebar-title">
+            <i class="fi fi-rr-pencil me-4" style="font-size: "></i>
+            จัดการห้องประชุม
+        </div>
         <div class="shadow div-backgrund mt-4">
             <div class="ms-5 row align-items-start">
 
@@ -180,7 +183,7 @@
                                 <a href="{{ route('edit_room', $room->rm_id) }}">
                                     <button type="button" class="btn btn-primary button-edit">แก้ไขห้อง</button>
                                 </a>
-                                
+
                                 {{-- @csrf
                                 @method('DELETE') --}}
                                 {{-- <a href=""><button type="button" class="btn btn-danger button-edit ms-2">ลบห้อง</button></a> --}}

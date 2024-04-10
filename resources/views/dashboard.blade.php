@@ -9,6 +9,10 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="d-flex bg-dark text-white align-items-center p-4 fs-3 sidebar-title">
+        <i class="fi fi-sr-stats me-4" style="font-size: "></i>
+        แดชบอร์ด
+    </div>
     <div class="shadow mt-3" style="border-radius: 18px; width: 100%; height: 85vh">
         <div
             class="container"

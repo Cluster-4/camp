@@ -64,11 +64,6 @@
             </div>
         </aside>
         <div class="main p-3 overflow-container">
-            {{-- navbar --}}
-            <div class="d-flex bg-dark text-white align-items-center p-4 fs-3 sidebar-title">
-                <i class=""></i>
-
-            </div>
             @yield('content')
         </div>
         <script src="{{ url('dist\js\sidebar.js') }}"></script>

@@ -27,6 +27,11 @@
         </script>
     </head>
 
+    <div class="d-flex bg-dark text-white align-items-center p-4 fs-3 sidebar-title">
+        <i class="fi fi-rr-table-list me-4" style="font-size: "></i>
+        ตารางการใช้ห้อง
+    </div>
+
     <div class="shadow container" style="background-color :#ffffff">
 
         <body>
