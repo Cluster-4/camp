@@ -84,7 +84,7 @@
         <i class="fi fi-rr-pencil me-4" style="font-size: "></i>
         จัดการห้องประชุม
     </div>
-    
+
     <form action="{{ route('update_room', [$room->rm_id]) }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="shadow div-backgrund mt-4">
@@ -92,167 +92,145 @@
                 <div class="row">
                     <h1 class="text-center mt-5 head-page">แก้ไขห้องประชุม</h1>
 
-                    {{-- ซ้าย --}}
-                    <div class="col-6 mt-5">
-
-                        {{-- <div >
-                        <input type="file" id="rm_pic_path" name="rm_pic_path" class="input-picture">
-                    </div> --}}
-
-                        <div>
-                            <div class="mb-4 d-flex justify-content-center">
-                                <img id="selectedImage" src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
-                                    style="width: 70%; height:" />
+                {{-- ซ้าย --}}
+                <div class="col-6 mt-5">
+                    <div>
+                        <div class="mb-4 d-flex justify-content-center">
+                            <img id="selectedImage" src="{{ asset('storage/room_images/' . $room->rm_pic_path) }}" style="width: 70%;" />
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="btn btn-primary btn-rounded">
+                                <label class="form-label text-white m-1" for="customFile1">Choose file</label>
+                                <input type="file" class="" id="rm_pic_path" name="rm_pic_path" onchange="displaySelectedImage(event, 'selectedImage')">
                             </div>
-                            <div class="d-flex justify-content-center">
-                                <div class="btn btn-primary btn-rounded">
-                                    <label class="form-label text-white m-1" for="customFile1">Choose file</label>
-                                    <input type="file" class="" id="rm_pic_path" name="rm_pic_path"
-                                        onchange="displaySelectedImage(event, 'selectedImage')">
-                                </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- ขวา --}}
+                <div class="col-6 mt-5">
+                    <div class="container">
+                        {{-- ชื่อห้อง --}}
+                        <div class="row d-flex align-items-center">
+                            <div class="col">
+                                <label for="roomName" class="form-label">ชื่อห้อง</label>
+                            </div>
+                            <div class="col-6">
+                                <input type="text" class="form-control div-input" id="rm_name" name="rm_name" value="{{ $room->rm_name }}">
+                            </div>
+                            <div class="col">
                             </div>
                         </div>
 
-                    </div>
+                        <br>
 
-                    {{-- ขวา --}}
-                    <div class="col-6 mt-5">
-                        <div class="container">
-                            {{-- ชื่อห้อง --}}
-                            <div class="row d-flex align-items-center">
-                                <div class="col">
-                                    <label for="roomName" class="form-label">ชื่อห้อง</label>
-                                </div>
-                                <div class="col-6">
-                                    {{-- <input type="text" class="form-control div-input" id="roomName" placeholder="G105"> --}}
-                                    <input type="text" class="form-control div-input" id="rm_name" name="rm_name"
-                                        placeholder="G105">
-                                </div>
-                                <div class="col">
-
-                                </div>
+                        {{-- ขนาดห้อง --}}
+                        <div class="row d-flex align-items-center">
+                            <div class="col">
+                                <label for="floor" class="form-label">ขนาดห้อง</label>
                             </div>
-
-                            <br>
-
-                            {{-- ขนาดห้อง --}}
-                            <div class="row d-flex align-items-center">
-                                <div class="col">
-                                    <label for="floor" class="form-label">ขนาดห้อง</label>
-                                </div>
-                                <div class="col-6">
-                                    <select class="form-select div-input" id="rm_size_id" name="rm_size_id">
-                                        @foreach ($sizes as $size)
-                                            <option value={{ $size->rm_size_id }}>{{ $size->rm_size_name }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col">
-
-                                </div>
+                            <div class="col-6">
+                                <select class="form-select div-input" id="rm_size_id" name="rm_size_id">
+                                    @foreach ($sizes as $size)
+                                        <option value="{{ $size->rm_size_id }}" {{ $size->rm_size_id == $room->rm_size_id ? 'selected' : '' }}>{{ $size->rm_size_name }}</option>
+                                    @endforeach
+                                </select>
                             </div>
-
-                            <br>
-
-                            {{-- แบ่งครึ่งห้อง --}}
-                            <div class="row d-flex align-items-center">
-                                <div class="col">
-                                    <label for="type" class="form-label">แบ่งครึ่งห้อง</label>
-                                </div>
-                                <div class="col-6">
-                                    <select class="form-select div-input" id="rm_is_half" name="rm_is_half"
-                                        onchange="haft_function()">
-                                        <option value="1">ได้</option>
-                                        <option value="0">ไม่ได้</option>
-                                    </select>
-                                </div>
-                                <div class="col">
-
-                                </div>
+                            <div class="col">
                             </div>
+                        </div>
 
-                            <br>
+                        <br>
 
-                            {{-- สถานะ --}}
-                            <div class="row d-flex align-items-center">
-                                <div class="col">
-                                    <label for="facilities" class="form-label">สถานะ</label>
-                                </div>
-                                <div class="col-6">
-                                    <select class="form-select div-input" id="rm_status" name="rm_status">
-                                        <option value="พร้อมใช้">พร้อมใช้</option>
-                                        <option value="ไม่พร้อมใช้">ไม่พร้อมใช้</option>
-                                    </select>
-                                </div>
-                                <div class="col">
-
-                                </div>
+                        {{-- แบ่งครึ่งห้อง --}}
+                        <div class="row d-flex align-items-center">
+                            <div class="col">
+                                <label for="type" class="form-label">แบ่งครึ่งห้อง</label>
                             </div>
-
-                            <br>
-
-                            {{-- ราคา --}}
-                            <div class="row d-flex align-items-center">
-                                <div class="col">
-                                    <label for="price" class="form-label">ราคา</label>
-                                </div>
-                                <div class="col-6">
-                                    {{-- <input type="number" class="form-control div-input" id="price" placeholder="75"> --}}
-                                    <input type="number" class="form-control div-input" id="rm_price" name="rm_price"
-                                        placeholder="75">
-                                </div>
-                                <div class="col">
-                                    <label for="price" class="form-label">บาท/ชั่วโมง</label>
-                                </div>
+                            <div class="col-6">
+                                <select class="form-select div-input" id="rm_is_half" name="rm_is_half" onchange="haft_function()">
+                                    <option value="1" {{ $room->rm_is_half == 1 ? 'selected' : '' }}>ได้</option>
+                                    <option value="0" {{ $room->rm_is_half == 0 ? 'selected' : '' }}>ไม่ได้</option>
+                                </select>
                             </div>
-
-                            <br>
-
-                            {{-- คำอธิบายเพิ่มเติม --}}
-                            <div class="row d-flex align-items-top">
-                                <div class="col">
-                                    <label for="capacity" class="form-label">คำอธิบายเพิ่มเติม</label>
-                                </div>
-                                <div class="col-6">
-                                    {{-- <input type="text" class="form-control div-input" id="other" style="height: 100px;"> --}}
-                                    <input type="text" class="form-control div-input" id="rm_facilities"
-                                        name="rm_facilities" style="height: 100px;">
-                                </div>
-                                <div class="col">
-
-                                </div>
+                            <div class="col">
                             </div>
+                        </div>
 
-                            <br>
+                        <br>
 
-                            {{-- ประเภทห้อง --}}
-                            <div class="row d-flex align-items-center">
-                                <div class="col">
-                                    <label for="resources" class="form-label">ประเภทห้อง</label>
-                                </div>
-                                <div class="col-6">
-                                    <select class="form-select div-input" id="rm_type" name="rm_type">
-                                        <option value="ห้องทั่วไป">ห้องทั่วไป</option>
-                                        <option value="ห้องภายใน">ห้องภายใน</option>
-                                    </select>
-                                </div>
-                                <div class="col">
-
-                                </div>
+                        {{-- สถานะ --}}
+                        <div class="row d-flex align-items-center">
+                            <div class="col">
+                                <label for="facilities" class="form-label">สถานะ</label>
                             </div>
-
-                            <br><br>
-
-                            <div class="justify-content-end div-button mt-5" id="button-haft-room">
-                                <a href="manage_room"><button type="button"
-                                        class="btn btn-secondary custom-button">ย้อนกลับ</button></a>
-                                <button type="submit" class="btn btn-primary ms-2 custom-button">ยืนยัน</button>
+                            <div class="col-6">
+                                <select class="form-select div-input" id="rm_status" name="rm_status">
+                                    <option value="พร้อมใช้" {{ $room->rm_status == 'พร้อมใช้' ? 'selected' : '' }}>พร้อมใช้</option>
+                                    <option value="ไม่พร้อมใช้" {{ $room->rm_status == 'ไม่พร้อมใช้' ? 'selected' : '' }}>ไม่พร้อมใช้</option>
+                                </select>
                             </div>
+                            <div class="col">
+                            </div>
+                        </div>
+
+                        <br>
+
+                        {{-- ราคา --}}
+                        <div class="row d-flex align-items-center">
+                            <div class="col">
+                                <label for="price" class="form-label">ราคา</label>
+                            </div>
+                            <div class="col-6">
+                                <input type="number" class="form-control div-input" id="rm_price" name="rm_price" value="{{ $room->rm_price }}">
+                            </div>
+                            <div class="col">
+                                <label for="price" class="form-label">บาท/ชั่วโมง</label>
+                            </div>
+                        </div>
+
+                        <br>
+
+                        {{-- คำอธิบายเพิ่มเติม --}}
+                        <div class="row d-flex align-items-top">
+                            <div class="col">
+                                <label for="capacity" class="form-label">คำอธิบายเพิ่มเติม</label>
+                            </div>
+                            <div class="col-6">
+                                <input type="text" class="form-control div-input" id="rm_facilities" name="rm_facilities" value="{{ $room->rm_facilities }}" style="height: 100px;">
+                            </div>
+                            <div class="col">
+                            </div>
+                        </div>
+
+                        <br>
+
+                        {{-- ประเภทห้อง --}}
+                        <div class="row d-flex align-items-center">
+                            <div class="col">
+                                <label for="resources" class="form-label">ประเภทห้อง</label>
+                            </div>
+                            <div class="col-6">
+                                <select class="form-select div-input" id="rm_type" name="rm_type">
+                                    <option value="ห้องทั่วไป" {{ $room->rm_type == 'ห้องทั่วไป' ? 'selected' : '' }}>ห้องทั่วไป</option>
+                                    <option value="ห้องภายใน" {{ $room->rm_type == 'ห้องภายใน' ? 'selected' : '' }}>ห้องภายใน</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                            </div>
+                        </div>
+
+                        <br><br>
+
+                        <div class="justify-content-end div-button mt-5" id="button-haft-room">
+                            <a href="{{ route('manage_room') }}"><button type="button" class="btn btn-secondary custom-button">ย้อนกลับ</button></a>
+                            <button type="submit" class="btn btn-primary ms-2 custom-button">ยืนยัน</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
         {{-- หน้าสำหรับกรอกข้อมูลห้องที่สามารถแบ่งครึ่งได้ --}}
 
@@ -265,14 +243,12 @@
                     <div class="col-6 mt-5">
                         <div>
                             <div class="mb-4 d-flex justify-content-center">
-                                <img id="s_Image" src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
-                                    alt="example placeholder" style="width: 70%;" />
+                                <img id="s_Image" src="{{ asset('storage/room_images/' . $room->rm_half_a_pic_path) }}" style="width: 70%;" />
                             </div>
                             <div class="d-flex justify-content-center">
                                 <div class="btn btn-primary btn-rounded">
                                     <label class="form-label text-white m-1" for="customFile1">Choose file</label>
-                                    <input type="file" class="" id="rm_half_a_pic_path"
-                                        name="rm_half_a_pic_path" onchange="displaySelectedImage(event, 's_Image')">
+                                    <input type="file" class="" id="rm_half_a_pic_path" name="rm_half_a_pic_path" onchange="displaySelectedImage(event, 's_Image')">
                                 </div>
                             </div>
                         </div>
@@ -288,15 +264,13 @@
                                     <label for="floor" class="form-label">ขนาดห้อง</label>
                                 </div>
                                 <div class="col-6">
-                                    <select class="form-select div-input" id="rm_half_a_size_id"
-                                        name="rm_half_a_size_id">
+                                    <select class="form-select div-input" id="rm_half_a_size_id" name="rm_half_a_size_id">
                                         @foreach ($sizes as $size)
-                                            <option value={{ $size->rm_half_a_size_id }}>{{ $size->rm_size_name }}</option>
+                                            <option value="{{ $size->rm_half_a_size_id }}" {{ $size->rm_half_a_size_id == $room->rm_half_a_size_id ? 'selected' : '' }}>{{ $size->rm_size_name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="col">
-
                                 </div>
                             </div>
 
@@ -308,9 +282,7 @@
                                     <label for="price" class="form-label">ราคา</label>
                                 </div>
                                 <div class="col-6">
-                                    {{-- <input type="number" class="form-control div-input" id="price" placeholder="75"> --}}
-                                    <input type="text" class="form-control div-input" id="price"
-                                        placeholder="75">
+                                    <input type="text" class="form-control div-input" id="price" value="{{ $room->rm_a_price }}">
                                 </div>
                                 <div class="col">
                                     <label for="price" class="form-label">บาท/ชั่วโมง</label>
@@ -325,11 +297,9 @@
                                     <label for="capacity" class="form-label">คำอธิบายเพิ่มเติม</label>
                                 </div>
                                 <div class="col-6">
-                                    <input type="text" class="form-control div-input" id="rm_half_a_facilities"
-                                        name="rm_half_a_facilities" style="height: 100px;">
+                                    <input type="text" class="form-control div-input" id="rm_half_a_facilities" name="rm_half_a_facilities" value="{{ $room->rm_half_a_facilities }}" style="height: 100px;">
                                 </div>
                                 <div class="col">
-
                                 </div>
                             </div>
                         </div>
@@ -390,8 +360,7 @@
                                     <label for="price" class="form-label">ราคา</label>
                                 </div>
                                 <div class="col-6">
-                                    <input type="number" class="form-control div-input" id="price"
-                                        placeholder="75">
+                                    <input type="text" class="form-control div-input" id="price" value="{{ $room->rm_b_price }}">
                                 </div>
                                 <div class="col">
                                     <label for="price" class="form-label">บาท/ชั่วโมง</label>
@@ -406,8 +375,8 @@
                                     <label for="capacity" class="form-label">คำอธิบายเพิ่มเติม</label>
                                 </div>
                                 <div class="col-6">
-                                    <input type="text" class="form-control div-input" id="rm_half_b_facilities"
-                                        name="rm_half_b_facilities" style="height: 100px;">
+                                    <input type="text" class="form-control div-input" id="rm_half_b_facilities" name="rm_half_b_facilities" value="{{ $room->rm_half_b_facilities }}" style="height: 100px;">
+
                                 </div>
                                 <div class="col">
 

@@ -307,8 +307,8 @@
                                 </div>
                                 <div class="col-6">
                                     {{-- <input type="number" class="form-control div-input" id="price" placeholder="75"> --}}
-                                    <input type="text" class="form-control div-input" id="price"
-                                        placeholder="75">
+                                    <input type="text" class="form-control div-input" id="rm_a_price" name="rm_a_price" placeholder="75">
+
                                 </div>
                                 <div class="col">
                                     <label for="price" class="form-label">บาท/ชั่วโมง</label>
@@ -385,8 +385,7 @@
                                     <label for="price" class="form-label">ราคา</label>
                                 </div>
                                 <div class="col-6">
-                                    <input type="number" class="form-control div-input" id="price"
-                                        placeholder="75">
+                                    <input type="number" class="form-control div-input" id="price" name="rm_b_price" placeholder="75">
                                 </div>
                                 <div class="col">
                                     <label for="price" class="form-label">บาท/ชั่วโมง</label>
