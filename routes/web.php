@@ -141,7 +141,7 @@ Route::get('/edit_room',[Login_controller::class,'viewEditRoom']);
 
 
 Route::get('/', function () {
-    return view('home');
+    return view('other.home');
 });
 
 
