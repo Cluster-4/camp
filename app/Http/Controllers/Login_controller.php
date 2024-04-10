@@ -10,35 +10,77 @@ use Illuminate\Support\Facades\Redirect;
 
 class Login_controller extends Controller
 {
-    function login_view(){
+    function login_view()
+    {
         return view('login');
     }
-
-    function login_process(Request $req){
-        $req->validate([
-        'username' => 'required',
-        'password' => 'required',
-        ]);
-
-        $data = $req->all();
-        // use Illuminate\Support\Facades\Auth;
-        if(Auth::attempt(['username' => $data['username'], 'password' => $data['password']])){
-            if($data['acc_position'] == 'เจ้าหน้าที่'){
-                return Redirect::to('titles');//ไปหน้าหลักของเจ้าหน้าที่
-            }
-            else if($data['acc_position'] == 'ผู้ดูแลห้องประชุม'){
-                return Redirect::to('titles');//ไปหน้าหลักของผู้ดูแลห้องประชุม
-            }
-            else if($data['acc_position'] == 'ผู้ดูแลระบบ'){
-                return Redirect::to('titles');//ไปหน้าหลักของผู้ดูแลระบบ
-            }
-        }else{
-            return Redirect::to('login');
-        }
+    function dashboard_view()
+    {
+        return view('dashboard');
+    }
+    public function viewEditRoom()
+    {
+        return view('edit_room');
     }
 
-    function logout_process(){
-        Auth::logout();
+    function login_process(Request $request)
+    {
+        $request->session()->regenerate();
+            $credentials = [
+                'acc_username' => $request->acc_username,
+                'password' => $request->password
+            ];
+
+
+            if (Auth::attempt($credentials)) {
+                return redirect('dashboard');
+                // if ($credentials['acc_position'] == 'เจ้าหน้าที่') {
+                //     return Redirect::to('dashboard');//ไปหน้าหลักของเจ้าหน้าที่
+                // } else if ($credentials['acc_position'] == 'ผู้ดูแลห้องประชุม') {
+                //     return Redirect::to('edit_room');//ไปหน้าหลักของผู้ดูแลห้องประชุม
+                // } else if ($credentials['acc_position'] == 'ผู้ดูแลระบบ') {
+                //     return Redirect::to('titles');//ไปหน้าหลักของผู้ดูแลระบบ
+                // }
+
+            }
+            return Redirect::to('login')->with('error',' *** Email or password incorrect *** ');
+
+    }
+    // $request->validate([
+    // 'username' => 'required',
+    // 'password' => 'required',
+    // ]);
+
+    // $data = $request->all();
+
+    // if(Auth::attempt(['acc_username' => $data['username'], 'password' => $data['password']])){
+
+    //         if($data['acc_position'] == 'เจ้าหน้าที่'){
+    //         return Redirect::to('dashboard');//ไปหน้าหลักของเจ้าหน้าที่
+    //     }
+    //     else if($data['acc_position'] == 'ผู้ดูแลห้องประชุม'){
+    //         return Redirect::to('titles');//ไปหน้าหลักของผู้ดูแลห้องประชุม
+    //     }
+    //     else if($data['acc_position'] == 'ผู้ดูแลระบบ'){
+    //         return Redirect::to('titles');//ไปหน้าหลักของผู้ดูแลระบบ
+    //     }
+
+    // }else{
+    //     return Redirect::to('login');
+    // }
+
+
+    public function logout()
+    {
+        Auth()->logout();
+        session()->invalidate();
+        session()->regenerateToken();
         return Redirect::to('login');
     }
+
+    public function username()
+    {
+        return 'acc_username';
+    }
+
 }

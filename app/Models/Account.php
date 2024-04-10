@@ -17,10 +17,25 @@ class Account extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'password',
 
+    protected $table = "bmrs_accounts";
+    public function getAuthPassword()
+    {
+        return $this->acc_password;
+    }
+
+
+
+    protected $fillable = [
+        'acc_username',
+        'acc_fname',
+        'acc_lname',
+        'acc_position',
+        'acc_password',
+        'acc_email',
+        'acc_tel',
+        'acc_status',
+        'acc_pic_path',
     ];
 
     /**
@@ -29,7 +44,7 @@ class Account extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
-        'password',
+        'acc_password',
         'remember_token',
     ];
 
@@ -42,4 +57,5 @@ class Account extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    public $timestamps = false;
 }
