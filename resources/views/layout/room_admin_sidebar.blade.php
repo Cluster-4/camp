@@ -26,8 +26,8 @@
             <div class="d-flex">
                 {{-- hamburger-bar --}}
                 <button class="toggle-btn" type="button" style="background-color: transparent; border: 0px;">
-                    {{-- <i class="fi fi-sr-menu-burger text-white" style="font-size: 30px;"></i> --}}
-                    <i class="fi fi-rr-hamburger text-white" style="font-size: 30px"></i>
+                    <i class="fi fi-sr-menu-burger text-white" style="font-size: 30px;"></i>
+
                 </button>
                 {{-- ชื่่อระบบ โลโก้ระบบ --}}
                 <div class="sidebar-logo d-flex flex-row justify-content-center">
@@ -78,8 +78,8 @@
         <div class="main p-3 overflow-container">
             {{-- navbar --}}
             <div class="d-flex bg-dark text-white align-items-center p-4 fs-3 sidebar-title">
-                <i class=""></i>
-
+                <i class="fi fi-rr-table-list me-3"></i>
+                <i class="">ตารางการใช้ห้อง</i>
             </div>
             @yield('content')
         </div>

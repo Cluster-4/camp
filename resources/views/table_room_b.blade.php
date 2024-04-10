@@ -2,7 +2,56 @@
 @section('content')
     <!DOCTYPE html>
     <html lang="en">
+        <style>
+            body {
+                background-color: black;
+            }
 
+            .date-carousel {
+                background-color: rgb(255, 255, 255);
+                box-sizing: border-box;
+                display: flex;
+                height: 0.5in;
+                margin: auto;
+                position: relative;
+                width: 3in;
+                margin-bottom: 30px
+            }
+
+            .date-carousel-next,
+            .date-carousel-prev,
+            .date-carousel-input {
+                box-sizing: border-box;
+                position: relative;
+                border: none;
+            }
+
+            .date-carousel-next,
+            .date-carousel-prev {
+                background-color: transparent;
+                color: white;
+                cursor: pointer;
+                font-size: larger;
+                font-weight: bold;
+                width: 0.5in;
+            }
+
+            .date-carousel-input {
+                color: rgb(0, 0, 0);
+                background-color: transparent;
+                text-align: center;
+                width: 2in;
+                font-size: 1.5rem;
+            }
+
+            /* Disable Native UI */
+
+            .date-carousel-input::-webkit-inner-spin-button,
+            .date-carousel-input::-webkit-input-placeholder {
+                display: none;
+                -webkit-appearance: none;
+            }
+        </style>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,7 +91,7 @@
                                 <h1 style="magin-left:10px; font-size:32px">G104</h1>
                             </div>
                         </div>
-                        <div class="wrap-selected " style="width:48%; ">
+
                             <div style="margin-left:4%">
                                  <button
                                     style="font-size:16px; color:black; border-radius: 10px;  ; background-color: white ;height: 55px;
@@ -64,19 +113,23 @@
                                     class="btn btn-secondary btn-lg" type="button"
                                     onclick="goTableRoomFull()">เต็มห้อง</button>
                             </div>
-                        </div>
+
                         <div style="display: flex;justify-content: end;width:100%  ">
                             <div class="mt-4">
                                 <h1 style="font-size:32px"> ระหว่าง&nbsp; &nbsp;</h1>
                             </div>
-                            <div class="button-left mt-3">
-                            </div>
-                            <div class="mt-4">
-                                <h1 style="font-size:32px"> &nbsp;18/03/2567 - 24/03/2567&nbsp; </h1>
-                            </div>
-                            <div class="button-right mt-3">
 
+
+                            <div class="mt-4">
+                                <article class="date-carousel">
+                                    <input type="button" class="date-carousel-prev button-left" value="&lt;">
+                                    <input type="date" class="date-carousel-input start mt-2 ">
+                                    <input type="button" class="date-carousel-next button-right " value="&gt;">
+                                </article>
                             </div>
+
+
+
                         </div>
                     </div>
             </section>
@@ -215,7 +268,52 @@
 
         </body>
     </div>
+    <script>
+        var util = {
+            qs(sel, ctx) {
+                return (ctx || document).querySelector(sel);
+            },
+            qsa(sel, ctx) {
+                return Array.from((ctx || document).querySelectorAll(sel));
+            }
+        };
 
+        class DateCarousel {
+            constructor(el) {
+                this.element = el;
+                this.prevButton = util.qs(".date-carousel-prev", el);
+                this.input = util.qs(".date-carousel-input", el);
+                this.nextButton = util.qs(".date-carousel-next", el);
+                this.input.valueAsDate = new Date();
+                this.prevButton.addEventListener("click", this.prev.bind(this));
+                this.nextButton.addEventListener("click", this.next.bind(this));
+            }
+
+            prev() {
+                this.input.stepDown();
+                this.input.stepUp();
+                this.input.stepUp();
+                this.input.stepUp();
+                this.input.stepUp();
+                this.input.stepUp();
+                this.input.stepUp();
+                this.input.stepUp();
+            }
+
+            next() {
+                this.input.stepUp();
+                this.input.stepUp();
+                this.input.stepUp();
+                this.input.stepUp();
+                this.input.stepUp();
+                this.input.stepUp();
+                this.input.stepUp();
+            }
+        }
+        util.qsa('.date-carousel').forEach(function(el) {
+            new DateCarousel(el)
+        });
+    </script>
 
     </html>
 @endsection
