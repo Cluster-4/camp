@@ -35,12 +35,7 @@
         function showSuccessMessage() {
             let randomCode = generateRandomCode(6);
             let message =
-<<<<<<< Updated upstream
-                "หมายเลขการจอง :" + randomCode +
-                "\nหมายเหตุ : หมายเลขการจองสามารถนำไปตรวจสอบสถานะการจองได้ในเมนูติดตามสถานะการจอง";
-=======
                 "หมายเลขการจอง :" + randomCode + "\nหมายเหตุ : หมายเลขการจองสามารถนำไปตรวจสอบสถานะการจองได้ในเมนูติดตามสถานะการจอง";
->>>>>>> Stashed changes
             message = message.replaceAll("\n", "<br>");
             Swal.fire({
                 title: "จองเสร็จสิ้น",
