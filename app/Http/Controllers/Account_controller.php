@@ -55,6 +55,9 @@ class Account_controller extends Controller
         $AccountModel->acc_tel = $tel;
         $AccountModel->acc_status = $status;
         $AccountModel->acc_pic_path = $pic;
+        
+
+
 
 
         $AccountModel->save();
@@ -109,7 +112,10 @@ class Account_controller extends Controller
         $accountModelId->acc_password = $password;
         $accountModelId->acc_tel = $tel;
         $accountModelId->acc_status = $status;
-        $accountModelId->acc_pic_path = $pic;
+        if ($request->hasFile('acc_pic_path')) {
+            $imagePath = $request->file('acc_pic_path')->store('public/acc_images');
+            $AccountModel->acc_pic_path = basename($imagePath);
+        }
 
         $accountModelId->save();
 

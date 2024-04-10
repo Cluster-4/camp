@@ -14,27 +14,32 @@
     </head>
 
     <body>
-        <div class="container" style="background-color :#ffffff;">
-            <div class="container text-center">
-                <label for="text" class="mt-5 front-size: ">เพิ่มบัญชี</label>
-                <div class="row">
-                    <div class="col-sm-5 col-md-6">
-                        <div>
-                            <div class="mb-4 d-flex justify-content-center">
-                                <img id="selectedImage" src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" style="width: 70%; height:" />
-                            </div>
-                            <div class="d-flex justify-content-center">
-                                <div class="btn btn-primary btn-rounded">
-                                    <label class="form-label text-white m-1" for="customFile1">Choose file</label>
-                                    <input type="file" class="" id="rm_pic_path" name="rm_pic_path" onchange="displaySelectedImage(event, 'selectedImage')">
-                                    {{-- form-control d-none --}}
+        <form action="/manage_account" method="POST">
+            @csrf
+            <div class="container" style="background-color :#ffffff;">
+                <div class="container text-center">
+                    <label for="text" class="mt-5 front-size: ">เพิ่มบัญชี</label>
+                    <div class="row">
+
+                        <div class="col-sm-5 col-md-6">
+
+                            <div>
+                                <div class="mb-4 d-flex justify-content-center">
+                                    <img id="selectedImage" src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
+                                        style="width: 70%; height:" />
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <div class="btn btn-primary btn-rounded">
+                                        <label class="form-label text-white m-1" for="customFile1">Choose file</label>
+                                        <input type="file" class="" id="pic" name="pic"
+                                            onchange="displaySelectedImage(event, 'selectedImage')">
+                                        {{-- form-control d-none --}}
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0 mt-5">
-                        <form action="/manage_account" method="POST">
-                            @csrf
+                        <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0 mt-5">
+
                             <label for="" class="">ชื่อผู้ใช้ :
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                             <input type="เนส" name="username" class="text"><br>
@@ -78,12 +83,16 @@
                             </select>
                             <br>
                             <br>
-                            <button type="button" class="btn btn-primary">ยกเลิก</button>
+                            <a href="/manage_account">
+                                <button type="button" class="btn btn-primary">ยกเลิก</button>
+
+                            </a>
                             <button type="submit" class="btn btn-primary">ถัดไป</button>
-                        </form>
+
+                        </div>
                     </div>
                 </div>
-            </div>
+        </form>
     </body>
 
     </html>

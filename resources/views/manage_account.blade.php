@@ -167,7 +167,7 @@
                                         <td><span class="status text-active">&bull;</span>{{ $accounts->acc_status }}</td>
                                     @endif
 
-                                    <td class="dl-and-edit_btn">
+                                    <td class="dl-and-edit_btn d-flex flex-row">
                                         <a href="manage_account/{{ $accounts->acc_id }}/edit" class="edit"
                                             title="เเก้ไข"data-toggle="tooltip"><button type="button"
                                                 class="btn btn-primary">เเก้ไขบัญชี</button>
