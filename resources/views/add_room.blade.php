@@ -58,7 +58,7 @@
         }
 
         .div-backgrund {
-            width: 94.5vw;
+            width: 100%;
             height: 84vh;
         }
 
