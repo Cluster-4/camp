@@ -44,7 +44,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item" onclick="toggleActive(event)">
-                    <a href="#" class="sidebar-link">
+                    <a href="/manage_account" class="sidebar-link">
                         <i class="fi fi-sr-users" style="font-size: 30px; display: flex;"></i>
                         <span class="pl-3">จัดการบัญชีผู้ใช้งาน</span>
                     </a>
