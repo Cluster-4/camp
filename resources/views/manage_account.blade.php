@@ -130,11 +130,10 @@
                                         </a>
 
 
-                                        <form class="delete-form1" action="manage_account/{{ $accounts->acc_id }}"
-                                            method="POST">
+                                        <form class="delete-form" action="manage_account/{{ $accounts->acc_id }}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="button" class="btn btn-danger">ลบบัญชี</button>
+                                            <button  type="submit" class="btn btn-danger">ลบบัญชี</button>
                                         </form>
                                     </td>
 
