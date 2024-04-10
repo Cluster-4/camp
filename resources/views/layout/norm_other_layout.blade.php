@@ -40,7 +40,7 @@
     <div class="shadow mt-2 mx-auto"
         style="display: flex; align-items: center; width: 97vw; height: 10vh; border-radius: 15px; background: linear-gradient(#1E1450, #1E3ACC); font-size:40px; color:white;">
         <img src="logo_bmrs.jpg" style="margin-left: 2rem; width:73px; height=65.39px; border-radius: 30%;" />
-        <h1 style="margin-left: 1rem;">ระบบจองห้องประชุมหน่วยงานรายการ</h1>
+        <h1 style="margin-left: 1rem;">ระบบจองห้องประชุมหน่วยงานราชการ</h1>
     </div>
     <!-- กรอบใหญ่ -->
     <div class="shadow mx-auto overflow-y-auto mt-3"
@@ -53,7 +53,7 @@
             var contentHeight = document.querySelector('.position-relative').scrollHeight;
             var containerHeight = document.querySelector('.position-relative').clientHeight;
 
-            if (contentHeight > containerHeight) {
+            if (contentHeight > containerHeight){
                 document.querySelector('.position-relative').classList.add('overflow-y-auto');
             }
         };

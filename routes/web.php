@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\RoomBookingController;
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\Booking_info_controller;
@@ -15,7 +16,15 @@ use App\Http\Controllers\Booking_info_controller;
 |
 */
 
-Route::get('/manage_room', function () {
+Route::get('/login',[LoginController::class,'viewlogin'])->name('viewlogin');
+Route::post('/login',[LoginController::class,'login'])->name('login');
+Route::get('/home',[LoginController::class,'viewlogin'])->name('home');
+Route::get('/edit_room',[LoginController::class,'edit_size_room'])->name('edit_room');
+Route::delete('/logout',[LoginController::class,'logout'])->name('logout');
+
+
+
+Route::get('/', function () {
     return view('manage_room');
 });
 
@@ -58,9 +67,9 @@ Route::get('/booking', function () {
     return view('other.booking');
 });
 
-// Route::get('/process_first', function () {
-//     return view('other.process_first');
-// });
+Route::get('/process_first', function () {
+    return view('other.process_first');
+});
 
 Route::get('/process_second', function () {
     return view('other.process_second');
@@ -120,3 +129,8 @@ Route::delete('/manage_room/{id}', [RoomController::class, 'deleteRoom'])->name(
 Route::post('/manage_room/{id}/edit', [RoomController::class, 'updateRoom'])->name('update_room');
 
 Route::get('/manage_room/{id}/edit', [RoomController::class, 'editRoom'])->name('edit_room');
+Route::post('/store/booking/information', [Booking_info_controller::class, 'store'])->name('store_booking');
+
+
+Route::post('/booking',[Booking_info_controller::class, 'filter'])->name ('filter');
+Route::get('/booking',[Booking_info_controller::class, 'filter'])->name ('filter');
