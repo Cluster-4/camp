@@ -38,7 +38,7 @@
 
             <ul class="sidebar-nav">
                 <li class="sidebar-item" onclick="toggleActive(event)">
-                    <a href="/manage_room" class="sidebar-link">
+                    <a href="{{ url('/manage_room') }}" class="sidebar-link">
                         <i class="fi fi-rr-pencil" style="font-size: 30px; display: flex;"></i>
                         <span class="pl-3">จัดการห้องประชุม</span>
                     </a>
