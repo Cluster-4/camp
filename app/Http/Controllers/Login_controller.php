@@ -30,9 +30,8 @@ class Login_controller extends Controller
                 'acc_username' => $request->acc_username,
                 'password' => $request->password
             ];
-
-
             if (Auth::attempt($credentials)) {
+
                 return redirect('dashboard');
                 // if ($credentials['acc_position'] == 'เจ้าหน้าที่') {
                 //     return Redirect::to('dashboard');//ไปหน้าหลักของเจ้าหน้าที่
