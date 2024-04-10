@@ -145,11 +145,6 @@ Route::get('/', function () {
 });
 
 
-
-Route::get('/', function () {
-    return view('manage_room');
-});
-
 Route::get('/home', function () {
     return view('other.home');
 });
