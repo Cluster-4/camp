@@ -55,7 +55,7 @@ class Account_controller extends Controller
         $AccountModel->acc_tel = $tel;
         $AccountModel->acc_status = $status;
         $AccountModel->acc_pic_path = $pic;
-        
+
 
 
 
@@ -128,8 +128,8 @@ class Account_controller extends Controller
     public function destroy(string $id)
     {
         $AccountModelId = AccountModel::find($id);
-
         $AccountModelId->delete();
+        sleep(3);
         return Redirect::to("/manage_account");
     }
 

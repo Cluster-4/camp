@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="CSS/manage_account.css">
 
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="sweetalert2.all.min.js"></script>
 
     </head>
     <style>
@@ -101,7 +102,7 @@
 
         .tabletop td:nth-child(4),
         .container2 td:nth-child(4) {
-            width: 16%;
+            width: 25%;
             /* กำหนดความกว้างของคอลัมน์ที่สี่ใน tabletop และ table */
         }
 
@@ -160,24 +161,22 @@
                                     <td>{{ $index + 1 }}</td>
                                     <td>{{ $accounts->acc_fname }} {{ $accounts->acc_lname }}</td>
                                     <td>{{ $accounts->acc_position }}</td>
-
                                     @if ($accounts->acc_status == 'Inactive')
                                         <td><span class="status text-inactive">&bull;</span>{{ $accounts->acc_status }}</td>
                                     @else
                                         <td><span class="status text-active">&bull;</span>{{ $accounts->acc_status }}</td>
                                     @endif
 
-                                    <td class="dl-and-edit_btn d-flex flex-row">
+                                    <td class="dl-and-edit_btn d-flex" style="width: 100%">
                                         <a href="manage_account/{{ $accounts->acc_id }}/edit" class="edit"
                                             title="เเก้ไข"data-toggle="tooltip"><button type="button"
-                                                class="btn btn-primary">เเก้ไขบัญชี</button>
+                                                class="btn btn-primary mx-2">แก้ไข</button>
                                         </a>
-
-
-                                        <form class="delete-form" action="manage_account/{{ $accounts->acc_id }}" method="POST">
+                                        <form class="delete-form" action="manage_account/{{ $accounts->acc_id }}"
+                                            method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <button  type="submit" class="btn btn-danger">ลบบัญชี</button>
+                                            <button type="submit" class="btn btn-danger">ลบ</button>
                                         </form>
                                     </td>
                                 </tr>
@@ -189,7 +188,58 @@
         </div>
         </div>
     </body>
+    <style>
+        .swal2-cancel {
+            margin-right: 1rem;
+            /* หากคุณไม่ต้องการให้ปุ่ม Cancel มีระยะห่างทางขวา */
+        }
+    </style>
+    <script>
+        // เพิ่ม event listener สำหรับการคลิกที่ปุ่ม delete
+        document.querySelectorAll('.delete-form').forEach(form => {
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // หยุดการ submit ฟอร์มเพื่อให้ SweetAlert ปรากฏก่อน
 
+                const swalWithBootstrapButtons = Swal.mixin({
+                    customClass: {
+                        confirmButton: "btn btn-success",
+                        cancelButton: "btn btn-danger"
+                    },
+                    buttonsStyling: false
+                });
 
-
+                swalWithBootstrapButtons.fire({
+                    title: "ยืนยันการลบใช่หรือไม่",
+                    text: "บัญชีนี้จะถูกลบ",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonText: "ยืนยัน",
+                    cancelButtonText: "ยกเลิก",
+                    reverseButtons: true
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire({
+                            title: "ยืนยันการลบ",
+                            text: "ลบบัญชีเสร็จสิ้น",
+                            icon: "success",
+                            timer: 3000,
+                            timerProgressBar: true
+                        });
+                        // เมื่อผู้ใช้กด confirm
+                        form.submit(); // ส่งคำขอลบข้อมูลโดยการ submit ฟอร์ม
+                    } else if (
+                        /* Read more about handling dismissals below */
+                        result.dismiss === Swal.DismissReason.cancel
+                    ) {
+                        swalWithBootstrapButtons.fire({
+                            title: "ยกเลิกการลบ",
+                            text: "ยกเลิกการลบบัญชีเสร็จสิ้น",
+                            confirmButtonText: "ยืนยัน",
+                            icon: "error"
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 @endsection

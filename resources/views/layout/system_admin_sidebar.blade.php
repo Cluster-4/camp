@@ -26,15 +26,14 @@
             <div class="d-flex">
                 {{-- hamburger-bar --}}
                 <button class="toggle-btn" type="button" style="background-color: transparent; border: 0px;">
-                    {{-- <i class="fi fi-sr-menu-burger text-white" style="font-size: 30px;"></i> --}}
-                    <i class="fi fi-rr-hamburger text-white" style="font-size: 30px;"></i>
+                    <i class="fi fi-sr-menu-burger text-white" style="font-size: 30px;"></i>
                 </button>
                 {{-- ชื่่อระบบ โลโก้ระบบ --}}
-                <div class="sidebar-logo d-flex flex-row justify-content-center">
+                {{-- <div class="sidebar-logo d-flex flex-row justify-content-center">
                     <img src="logo_bmrs.jpg" class="img-fluid" alt="" width="73px" height="65.39px"
                         style="border-radius: 15px" />
                     <span class="fs-5 lh-sm ms-3 mt-3">ระบบจองห้องประชุม<br>หน่วยงานราชการ</span>
-                </div>
+                </div> --}}
             </div>
 
             <ul class="sidebar-nav">

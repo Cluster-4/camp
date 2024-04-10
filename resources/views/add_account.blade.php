@@ -31,8 +31,7 @@
                                             style="width: 70%; height:" />
                                     </div>
                                     <div class="d-flex justify-content-center">
-                                        <div class="btn btn-primary btn-rounded">
-                                            <label class="form-label text-white m-1" for="customFile1">Choose file</label>
+                                        <div class="btn btn-primary btn-rounded" id="btn_add">
                                             <input type="file" class="" id="rm_pic_path" name="rm_pic_path"
                                                 onchange="displaySelectedImage(event, 'selectedImage')">
                                             {{-- form-control d-none --}}
@@ -104,7 +103,7 @@
                                         <input type="text" class="input" name="email">
                                     </div>
                                 </div>
-                                <div class="row mb-1">
+                                <div class="row mb-1 ">
                                     <div class="col-3">
                                         <label for="">สถานะ :
                                         </label>
@@ -116,7 +115,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary btn-next">ถัดไป</button>
+                                <button type="submit" class="btn btn-primary btn-next">บันทึก</button>
                                 <a href="/manage_account"><button type="button" class="btn btn-secondary btn-cancel">ยกเลิก</button></a>
                             </div>
                         </form>
@@ -125,4 +124,20 @@
             </div>
     </body>
     </html>
+    <script>
+        function displaySelectedImage(event, elementId) {
+    const selectedImage = document.getElementById(elementId);
+    const fileInput = event.target;
+
+    if (fileInput.files && fileInput.files[0]) {
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            selectedImage.src = e.target.result;
+        };
+
+        reader.readAsDataURL(fileInput.files[0]);
+    }
+}
+    </script>
 @endsection

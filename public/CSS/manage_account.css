@@ -12,7 +12,7 @@ body {
 .container {
     overflow: auto;
     border-radius: 15px;
-    height: auto;
+    height: 87%;
     min-width: 100%;
     margin-left: 1px;
     margin-top: 14px;
@@ -32,15 +32,13 @@ body {
 
 .container2 {
     overflow: auto;
+     /* ใช้ในการเลื่อนเนื้อหาเมื่อเกินขนาดคอนเทนเนอร์ */
     min-width: 100%;
     margin-left: 1px;
     width: 350px;
     /* กำหนดความกว้างของคอนเทนเนอร์ */
-    height: 460px;
+    height: 400px;
     /* กำหนดความสูงของคอนเทนเนอร์ */
-    overflow: auto;
-    /* ใช้ในการเลื่อนเนื้อหาเมื่อเกินขนาดคอนเทนเนอร์ */
-
 }
 
 .table-wrapper {
@@ -76,9 +74,7 @@ body {
     border-style: double;
     margin-top: 15px;
 }
-.text-center tr{
-    border: 1px slategrey;
-}
+
 
 .text {
     border-radius: 8px;

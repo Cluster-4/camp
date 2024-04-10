@@ -28,8 +28,7 @@
                                         style="width: 70%; height:" />
                                 </div>
                                 <div class="d-flex justify-content-center">
-                                    <div class="btn btn-primary btn-rounded">
-                                        <label class="form-label text-white m-1" for="customFile1">Choose file</label>
+                                    <div class="btn btn-primary btn-rounded" id="btn_add">
                                         <input type="file" class="" id="rm_pic_path" name="rm_pic_path"
                                             onchange="displaySelectedImage(event, 'selectedImage')">
                                         {{-- form-control d-none --}}
@@ -45,8 +44,6 @@
                             <div class="col-3">
                                 <input class="input" type="text" name="username" value={{ $acc_data->acc_username }}>
                             </div>
-
-
                         </div>
                         <div class="row mb-1">
                             <div class="col-3">
@@ -56,8 +53,6 @@
                                 <input class="input" type="text" name="fname" value={{ $acc_data->acc_fname }}>
                             </div>
                         </div>
-
-
                         <div class="row mb-1">
                             <div class="col-3">
                                 <label for="" class="text">นามสกุล : </label>
@@ -66,8 +61,6 @@
                                 <input class="input" type="text" name="lname" value={{ $acc_data->acc_lname }}>
                             </div>
                         </div>
-
-
                         <div class="row mb-1">
                             <div class="col-3">
                                 <label for="" class="text">บทบาท :</label>
@@ -81,8 +74,6 @@
                                 </select>
                             </div>
                         </div>
-
-
                         <div class="row mb-1">
                             <div class="col-3">
                                 <label for="" class="text">รหัสผ่าน : </label>
@@ -91,8 +82,6 @@
                                 <input class="input" type="text" name="password" value={{ $acc_data->acc_password }}>
                             </div>
                         </div>
-
-
                         <div class="row mb-1">
                             <div class="col-3">
                                 <label for="" class="text">เบอร์โทรศัพท์ : </label>
@@ -101,8 +90,6 @@
                                 <input class="input" type="text" name="tel" value={{ $acc_data->acc_tel }}>
                             </div>
                         </div>
-
-
                         <div class="row mb-1">
                             <div class="col-3">
                                 <label for="" class="text">อีเมลล์ : </label>
@@ -111,8 +98,6 @@
                                 <input class="input" name="email" value={{ $acc_data->acc_email }}>
                             </div>
                         </div>
-
-
                         <div class="row">
                             <div class="col-3">
                                 <label for="" class="text">สถานะ :</label>
@@ -126,16 +111,30 @@
                         </div>
                         <div>
                             <a href="/check_edit_account"><button type="submit"
-                                    class="btn btn-primary btn-save ">ถัดไป</button></a>
+                                    class="btn btn-primary btn-save ">บันทึก</button></a>
                             <a href="/manage_account"><button type="button"
                                     class="btn btn-secondary btn-back">ยกเลิก</button></a>
                         </div>
-
                         </form>
                     </div>
                 </div>
             </div>
     </body>
-
     </html>
+    <script>
+        function displaySelectedImage(event, elementId) {
+    const selectedImage = document.getElementById(elementId);
+    const fileInput = event.target;
+
+    if (fileInput.files && fileInput.files[0]) {
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            selectedImage.src = e.target.result;
+        };
+
+        reader.readAsDataURL(fileInput.files[0]);
+    }
+}
+    </script>
 @endsection
