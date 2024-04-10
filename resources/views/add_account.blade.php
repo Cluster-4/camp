@@ -14,7 +14,7 @@
     </head>
 
     <body>
-        <form action="/manage_account" method="POST">
+        <form action="https://manage_account" method="POST">
             @csrf
             <div class="container" style="background-color :#ffffff;">
                 <div class="container text-center">
