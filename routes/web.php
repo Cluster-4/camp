@@ -50,9 +50,6 @@ Route::get('/edit_room',[Login_controller::class,'viewEditRoom']);
     Route::get('/manage_room', function () {
         return view('manage_room');
     });
-    Route::get('/table', function () {
-        return view('table_room');
-    });
     Route::get('/table_a', function () {
         return view('table_room_a');
     });
@@ -117,9 +114,9 @@ Route::get('/edit_room',[Login_controller::class,'viewEditRoom']);
     Route::get('/edit_room', function () {
         return view('edit_room');
     });
-    Route::get('/add_room', function () {
-        return view('add_room');
-    });
+    // Route::get('/add_room', function () {
+    //     return view('add_room');
+    // });
     Route::get('/setting_size_room', function () {
         return view('setting_size_room');
     });
@@ -161,9 +158,9 @@ Route::get('/test', function () {
     return view('layout.norm_officer_layout');
 });
 
-Route::get('/edit_room', function () {
-    return view('edit_room');
-});
+// Route::get('/edit_room', function () {
+//     return view('edit_room');
+// });
 
 Route::get('/setting_size_room', function () {
     return view('setting_size_room');
@@ -239,7 +236,7 @@ Route::get('/booking', [RoomController::class, 'index_booking'])->name('booking'
 
 Route::get('/process_first', [RoomController::class, 'index_process_first'])->name('process_1');
 
-Route::get('/process_first/{room_id}', [RoomController::class, 'index_process_first'])->name('process_1');
+Route::get('/process_first/{room_id}', [RoomController::class, 'index_process_first'])->name('process_2');
 
 Route::post('/store/booking/information', [Booking_info_controller::class, 'store'])->name('store.booking.information');
 
@@ -251,8 +248,8 @@ Route::get('/manage_room/{id}/edit', [RoomController::class, 'editRoom'])->name(
 Route::post('/store/booking/information', [Booking_info_controller::class, 'store'])->name('store_booking');
 
 
-Route::post('/booking',[Booking_info_controller::class, 'filter'])->name ('filter');
-Route::get('/booking',[Booking_info_controller::class, 'filter'])->name ('filter');
+// Route::post('/booking',[Booking_info_controller::class, 'filter'])->name ('filter_1');
+// Route::get('/booking',[Booking_info_controller::class, 'filter'])->name ('filter');
 Route::resource("/manage_account",Account_controller::class);
 
 Route::get('/manage_account/search', [Account_controller::class, 'search'])->name('manage_account.search');
