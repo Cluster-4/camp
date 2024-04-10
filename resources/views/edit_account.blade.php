@@ -17,7 +17,7 @@
             <div class="container text-center">
                 <label for="text" class="Name mt-5 front-size: ">เเก้ไขบัญชีผู้ใช้</label>
                 <div class="row">
-                    <div class="col-sm-5 col-md-6">
+                    <div class="col-sm-5 col-md-6 mt-4">
                         <form action="/manage_account/{{ $acc_data->acc_id }}" class="" style="text-align: start"
                             method="POST">
                             @csrf
@@ -38,13 +38,12 @@
                             </div>
                     </div>
                     <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0 mt-4">
-
                         <div class="row mb-1">
                             <div class="col-3">
                                 <label for="" class="text">ชื่อผู้ใช้ : </label>
                             </div>
                             <div class="col-3">
-                                <input type="text" name="username" value={{ $acc_data->acc_username }}>
+                                <input class="input" type="text" name="username" value={{ $acc_data->acc_username }}>
                             </div>
 
 
@@ -54,7 +53,7 @@
                                 <label for="" class="text">ชื่อ: </label>
                             </div>
                             <div class="col-3">
-                                <input type="text" name="fname" value={{ $acc_data->acc_fname }}>
+                                <input class="input" type="text" name="fname" value={{ $acc_data->acc_fname }}>
                             </div>
                         </div>
 
@@ -64,7 +63,7 @@
                                 <label for="" class="text">นามสกุล : </label>
                             </div>
                             <div class="col-3">
-                                <input type="text" name="lname" value={{ $acc_data->acc_lname }}>
+                                <input class="input" type="text" name="lname" value={{ $acc_data->acc_lname }}>
                             </div>
                         </div>
 
@@ -89,7 +88,7 @@
                                 <label for="" class="text">รหัสผ่าน : </label>
                             </div>
                             <div class="col-3">
-                                <input type="text" name="password" value={{ $acc_data->acc_password }}>
+                                <input class="input" type="text" name="password" value={{ $acc_data->acc_password }}>
                             </div>
                         </div>
 
@@ -99,7 +98,7 @@
                                 <label for="" class="text">เบอร์โทรศัพท์ : </label>
                             </div>
                             <div class="col-3">
-                                <input type="text" name="tel" value={{ $acc_data->acc_tel }}>
+                                <input class="input" type="text" name="tel" value={{ $acc_data->acc_tel }}>
                             </div>
                         </div>
 
@@ -109,7 +108,7 @@
                                 <label for="" class="text">อีเมลล์ : </label>
                             </div>
                             <div class="col-3">
-                                <input type="text" name="email" value={{ $acc_data->acc_email }}>
+                                <input class="input" name="email" value={{ $acc_data->acc_email }}>
                             </div>
                         </div>
 
@@ -119,14 +118,12 @@
                                 <label for="" class="text">สถานะ :</label>
                             </div>
                             <div class="col-3">
-                                <select name="status" id="" class="drop ">
+                                <select name="status" id="" class="drop">
                                     <option value="Active">Active</option>
                                     <option value="Inactive">Inactive</option>
                                 </select>
                             </div>
                         </div>
-
-
                         <div>
                             <a href="/check_edit_account"><button type="submit"
                                     class="btn btn-primary btn-save ">ถัดไป</button></a>

@@ -180,14 +180,11 @@
                                             <button  type="submit" class="btn btn-danger">ลบบัญชี</button>
                                         </form>
                                     </td>
-
                                 </tr>
                                 <?php } ?>
                             </tbody>
                         </table>
                 </div>
-
-
             </div>
         </div>
         </div>
