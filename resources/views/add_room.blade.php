@@ -107,7 +107,6 @@
                             </div>
                             <div class="d-flex justify-content-center">
                                 <div class="btn btn-primary btn-rounded">
-                                    <label class="form-label text-white m-1" for="customFile1">Choose file</label>
                                     <input type="file" class="" id="rm_pic_path" name="rm_pic_path" onchange="displaySelectedImage(event, 'selectedImage')">
                                     {{-- form-control d-none --}}
                                 </div>
@@ -269,7 +268,6 @@
                             </div>
                             <div class="d-flex justify-content-center">
                                 <div class="btn btn-primary btn-rounded">
-                                    <label class="form-label text-white m-1" for="customFile1">Choose file</label>
                                     <input type="file" class="" id="rm_half_a_pic_path" name="rm_half_a_pic_path" onchange="displaySelectedImage(event, 's_Image')">
                                 </div>
                             </div>
@@ -348,7 +346,6 @@
                             </div>
                             <div class="d-flex justify-content-center">
                                 <div class="btn btn-primary btn-rounded">
-                                    <label class="form-label text-white m-1" for="customFile1">Choose file</label>
                                     <input type="file" class="" id="rm_half_b_pic_path" name="rm_half_b_pic_path" onchange="displaySelectedImage(event, 'select_Image')">
                                 </div>
                             </div>

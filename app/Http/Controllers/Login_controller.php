@@ -44,24 +44,23 @@ class Login_controller extends Controller
             'acc_username' => $request->acc_username,
             'password' => $request->password
         ];
+
         if (Auth::attempt($credentials)) {
-
-
+            print_r($request->acc_username);
+            print_r(Auth::user()->acc_position);
+            // return redirect('manage_room');
             if (Auth::user()->acc_position == 'ผู้ดูแลห้องประชุม') {
                 return redirect('dashboard');
 
             } else if (Auth::user()->acc_position == 'เจ้าหน้าที่') {
 
-                return redirect('home');
+                return redirect('home_officer');
 
-            }else if (Auth::user()->acc_position == 'ผู้ดูแลระบบ') {
+            }else if (Auth::user()->acc_position == 'ผู้ดูเเลระบบ') {
+                print('login complete');
 
                 return redirect('manage_room');
             }
-
-
-
-
 
             // if ($credentials['acc_position'] == 'เจ้าหน้าที่') {
             //     return Redirect::to('dashboard');//ไปหน้าหลักของเจ้าหน้าที่
@@ -72,7 +71,8 @@ class Login_controller extends Controller
             // }
 
         }
-        return Redirect::to('login')->with('error', ' *** Email or password incorrect *** ');
+
+        // return Redirect::to('login')->with('error', ' *** Email or password incorrect *** ');
 
     }
     // $request->validate([

@@ -15,7 +15,7 @@
     <body>
         <div class="shadow container container" style="background-color :#ffffff;">
             <div class="container text-center">
-                <label for="text" class="Name mt-5 front-size: ">เเก้ไขบัญชีผู้ใช้</label>
+                <label for="text" class="Name mt-5 front-size: Name">เเก้ไขบัญชีผู้ใช้</label>
                 <div class="row">
                     <div class="col-sm-5 col-md-6">
                         <form action="/manage_account/{{ $acc_data->acc_id }}" class="" style="text-align: start"
@@ -76,9 +76,9 @@
                             <div class="col-3">
                                 <select name="position" id="" class="drop ">
                                     <option value="บทบาท">บทบาท</option>
-                                    <option value="saab">เจ้าหน้าที่</option>
-                                    <option value="mercedes">ผู้ดูเเลห้องประชุม</option>
-                                    <option value="audi">ผู้ดูเเลระบบ</option>
+                                    <option value="เจ้าหน้าที่">เจ้าหน้าที่</option>
+                                    <option value="ผู้ดูเเลห้องประชุม">ผู้ดูเเลห้องประชุม</option>
+                                    <option value="ผู้ดูเเลระบบ">ผู้ดูเเลระบบ</option>
                                 </select>
                             </div>
                         </div>
@@ -89,7 +89,7 @@
                                 <label for="" class="text">รหัสผ่าน : </label>
                             </div>
                             <div class="col-3">
-                                <input type="text" name="password" value={{ $acc_data->acc_password }}>
+                                <input type="text" name="password" value="">
                             </div>
                         </div>
 

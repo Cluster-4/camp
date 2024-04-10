@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Account;
+use Illuminate\Hashing\BcryptHasher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -51,7 +52,7 @@ class Account_controller extends Controller
         $AccountModel->acc_lname = $lname;
         $AccountModel->acc_position = $position;
         $AccountModel->acc_email = $email;
-        $AccountModel->acc_password = $password;
+        $AccountModel->acc_password = bcrypt($password);
         $AccountModel->acc_tel = $tel;
         $AccountModel->acc_status = $status;
         $AccountModel->acc_pic_path = $pic;
@@ -108,7 +109,7 @@ class Account_controller extends Controller
         $accountModelId->acc_lname = $lname;
         $accountModelId->acc_position = $position;
         $accountModelId->acc_email = $email;
-        $accountModelId->acc_password = $password;
+        $accountModelId->acc_password = bcrypt($password);
         $accountModelId->acc_tel = $tel;
         $accountModelId->acc_status = $status;
         $accountModelId->save();

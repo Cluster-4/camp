@@ -1,4 +1,4 @@
-@extends('layout.norm_officer_sidebar')
+@extends('layout.system_admin_sidebar')
 @section('page_name', 'Booking_approvement')
 @section('content')
     <!DOCTYPE html>
@@ -18,7 +18,7 @@
             @csrf
             <div class="container" style="background-color :#ffffff;">
                 <div class="container text-center">
-                    <label for="text" class="mt-5 front-size: ">เพิ่มบัญชี</label>
+                    <label for="text" class="mt-5 Name ">เพิ่มบัญชี</label>
                     <div class="row">
 
                         <div class="col-sm-5 col-md-6">
@@ -30,7 +30,7 @@
                                 </div>
                                 <div class="d-flex justify-content-center">
                                     <div class="btn btn-primary btn-rounded">
-                                        <label class="form-label text-white m-1" for="customFile1">Choose file</label>
+
                                         <input type="file" class="" id="pic" name="pic"
                                             onchange="displaySelectedImage(event, 'selectedImage')">
                                         {{-- form-control d-none --}}
@@ -82,7 +82,7 @@
                                     <label for="">รหัสผ่าน : </label>
                                 </div>
                                 <div class="col-3">
-                                    <input type="text" class="input" name="password">
+                                    <input type="text" class="input"  name="password">
                                 </div>
                             </div>
                             <div class="row mb-1">
@@ -114,9 +114,9 @@
                                     </select>
                                 </div>
                             </div>
-                        </a><button type="submit" class="btn btn-primary">ถัดไป</button>
+                        </a><button type="submit" class="btn btn-primary btn-next">ถัดไป</button>
                             <a href="/manage_account">
-                                <button type="button" class="btn btn-primary">ยกเลิก</button>
+                                <button type="button" class="btn btn-secondary btn-cancel">ยกเลิก</button>
                         </div>
                     </div>
                 </div>
