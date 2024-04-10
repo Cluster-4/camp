@@ -28,6 +28,16 @@ class RoomController extends Controller
         return view('edit_room', compact('sizes'));
     }
 
+    public function index_booking(){
+        $rooms = Room::all();
+        return view('other.booking', compact('rooms'));
+    }
+
+    public function index_process_first(Request $request) {
+        $roomId = $request->query('room_id');
+        $room = Room::findOrFail($roomId);
+        return view('other.process_first', compact('room'));
+    }
     public function storeRoom(Request $request)
     {
         // Validate input data

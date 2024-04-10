@@ -71,9 +71,8 @@
                                 <div class="col-3">
                                     <select name="position" class="drop">
                                         <option value="เจ้าหน้าที่">เจ้าหน้าที่</option>
-                                        <option value="ผู้ดูเเลห้องประชุม">ผู้ดูเเลห้องประชุม</option>
-                                        <option value="ผู้ดูเเลระบบ">ผู้ดูเเลระบบ</option>
-                                        <option value="ผู้ดูบริหาร">ผู้ดูบริหาร</option>
+                                        <option value="ผู้ดูเเลห้องประชุม">ผู้ดูแลห้องประชุม</option>
+                                        <option value="ผู้ดูเเลระบบ">ผู้ดูแลระบบ</option>
                                     </select>
                                 </div>
                             </div>

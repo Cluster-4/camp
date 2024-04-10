@@ -113,6 +113,10 @@
     </style>
 
     <body>
+        <div class="d-flex bg-dark text-white align-items-center p-4 fs-3 sidebar-title">
+            <i class="fi fi-rr-pencil me-4" style="font-size: "></i>
+            จัดการบัญชีผู้ใช้งาน
+        </div>
         <div class="shadow container" style="background-color :#ffffff;">
             <div class="table-wrapper">
                 <form action="">
@@ -129,9 +133,9 @@
                         </svg>
                         <select name="cars" id="cars" class="shadow Status "style=" padding-left: 40px ">
                             <option value="บทบาท">บทบาท</option>
-                            <option value="saab">เจ้าหน้าที่</option>
-                            <option value="mercedes">ผู้ดูเเลห้องประชุม</option>
-                            <option value="audi">ผู้ดูเเลระบบ</option>
+                            <option value="เจ้าหน้าที่">เจ้าหน้าที่</option>
+                            <option value="ผู้ดูแลห้องประชุม">ผู้ดูแลห้องประชุม</option>
+                            <option value="ผู้ดูแลระบบ">ผู้ดูแลระบบ</option>
                         </select>
                         <a href="/manage_account/create"><button type="button"
                                 class="btn1 btn-success">เพิ่มบัญชี</button></a>

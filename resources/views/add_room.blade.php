@@ -197,7 +197,7 @@
                                 </div>
                                 <div class="col-6">
                                     {{-- <input type="number" class="form-control div-input" id="price" placeholder="75"> --}}
-                                    <input type="number" class="form-control div-input" id="rm_price" name="rm_price" placeholder="75">
+                                    <input type="number" class="form-control div-input" id="rm_price" name="rm_price" placeholder="75" min="0">
                                 </div>
                                 <div class="col">
                                     <label for="price" class="form-label">บาท/ชั่วโมง</label>

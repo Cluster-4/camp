@@ -182,7 +182,7 @@
                                 <label for="price" class="form-label">ราคา</label>
                             </div>
                             <div class="col-6">
-                                <input type="number" class="form-control div-input" id="rm_price" name="rm_price" value="{{ $room->rm_price }}">
+                                <input type="number" class="form-control div-input" id="rm_price" name="rm_price" min="0" value="{{ $room->rm_price }}">
                             </div>
                             <div class="col">
                                 <label for="price" class="form-label">บาท/ชั่วโมง</label>
@@ -247,7 +247,7 @@
                             </div>
                             <div class="d-flex justify-content-center">
                                 <div class="btn btn-primary btn-rounded">
-                                    
+
                                     <input type="file" class="" id="rm_half_a_pic_path" name="rm_half_a_pic_path" onchange="displaySelectedImage(event, 's_Image')">
                                 </div>
                             </div>
@@ -282,7 +282,7 @@
                                     <label for="price" class="form-label">ราคา</label>
                                 </div>
                                 <div class="col-6">
-                                    <input type="text" class="form-control div-input" id="price" value="{{ $room->rm_a_price }}">
+                                    <input type="text" class="form-control div-input" id="price" min="0" value="{{ $room->rm_a_price }}">
                                 </div>
                                 <div class="col">
                                     <label for="price" class="form-label">บาท/ชั่วโมง</label>
@@ -360,7 +360,7 @@
                                     <label for="price" class="form-label">ราคา</label>
                                 </div>
                                 <div class="col-6">
-                                    <input type="text" class="form-control div-input" id="price" value="{{ $room->rm_b_price }}">
+                                    <input type="text" class="form-control div-input" id="price" min="0" value="{{ $room->rm_b_price }}">
                                 </div>
                                 <div class="col">
                                     <label for="price" class="form-label">บาท/ชั่วโมง</label>

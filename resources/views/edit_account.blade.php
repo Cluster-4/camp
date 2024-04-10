@@ -77,8 +77,8 @@
                                 <select name="position" id="" class="drop ">
                                     <option value="บทบาท">บทบาท</option>
                                     <option value="เจ้าหน้าที่">เจ้าหน้าที่</option>
-                                    <option value="ผู้ดูเเลห้องประชุม">ผู้ดูเเลห้องประชุม</option>
-                                    <option value="ผู้ดูเเลระบบ">ผู้ดูเเลระบบ</option>
+                                    <option value="ผู้ดูเเลห้องประชุม">ผู้ดูแลห้องประชุม</option>
+                                    <option value="ผู้ดูเเลระบบ">ผู้ดูแลระบบ</option>
                                 </select>
                             </div>
                         </div>
