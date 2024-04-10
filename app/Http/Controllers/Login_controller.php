@@ -17,33 +17,62 @@ class Login_controller extends Controller
     function dashboard_view()
     {
         return view('dashboard');
+
     }
     public function viewEditRoom()
     {
         return view('edit_room');
     }
+    public function viewManage_Room()
+    {
+        return view('manage_room');
+    }
+    public function viewHome()
+    {
+        return view('manage_room');
+    }
+    public function viewHome_officer()
+    {
+        return view('officer.home');
+    }
+
 
     function login_process(Request $request)
     {
-        $request->session()->regenerate();
-            $credentials = [
-                'acc_username' => $request->acc_username,
-                'password' => $request->password
-            ];
+        // $request->session()->regenerate();
+        $credentials = [
+            'acc_username' => $request->acc_username,
+            'password' => $request->password
+        ];
+        if (Auth::attempt($credentials)) {
 
 
-            if (Auth::attempt($credentials)) {
+            if (Auth::user()->acc_position == 'ผู้ดูแลห้องประชุม') {
                 return redirect('dashboard');
-                // if ($credentials['acc_position'] == 'เจ้าหน้าที่') {
-                //     return Redirect::to('dashboard');//ไปหน้าหลักของเจ้าหน้าที่
-                // } else if ($credentials['acc_position'] == 'ผู้ดูแลห้องประชุม') {
-                //     return Redirect::to('edit_room');//ไปหน้าหลักของผู้ดูแลห้องประชุม
-                // } else if ($credentials['acc_position'] == 'ผู้ดูแลระบบ') {
-                //     return Redirect::to('titles');//ไปหน้าหลักของผู้ดูแลระบบ
-                // }
 
+            } else if (Auth::user()->acc_position == 'เจ้าหน้าที่') {
+
+                return redirect('home');
+
+            }else if (Auth::user()->acc_position == 'ผู้ดูแลระบบ') {
+
+                return redirect('manage_room');
             }
-            return Redirect::to('login')->with('error',' *** Email or password incorrect *** ');
+
+
+
+
+
+            // if ($credentials['acc_position'] == 'เจ้าหน้าที่') {
+            //     return Redirect::to('dashboard');//ไปหน้าหลักของเจ้าหน้าที่
+            // } else if ($credentials['acc_position'] == 'ผู้ดูแลห้องประชุม') {
+            //     return Redirect::to('edit_room');//ไปหน้าหลักของผู้ดูแลห้องประชุม
+            // } else if ($credentials['acc_position'] == 'ผู้ดูแลระบบ') {
+            //     return Redirect::to('titles');//ไปหน้าหลักของผู้ดูแลระบบ
+            // }
+
+        }
+        return Redirect::to('login')->with('error', ' *** Email or password incorrect *** ');
 
     }
     // $request->validate([

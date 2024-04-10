@@ -94,7 +94,7 @@
 </style>
 
 <body>
-    <form action="{{ route('login_view') }}" method="POST">
+    <form action="{{ route('login') }}" method="POST">
         @csrf
 
         <div class="wrap-login100">

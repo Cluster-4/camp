@@ -20,13 +20,13 @@ use App\Http\Controllers\Login_controller;
 |
 */
 
-Route::get('/login',[LoginController::class,'viewlogin'])->name('viewlogin');
-Route::post('/login',[LoginController::class,'login'])->name('login');
+// Route::get('/login',[LoginController::class,'viewlogin'])->name('viewlogin');
+// Route::post('/login',[LoginController::class,'login'])->name('login');
 Route::get('/home',[LoginController::class,'viewlogin'])->name('home');
 Route::get('/edit_room',[LoginController::class,'edit_size_room'])->name('edit_room');
-Route::delete('/logout',[LoginController::class,'logout'])->name('logout');
+// Route::delete('/logout',[LoginController::class,'logout'])->name('logout');
 // Login_controller
-Route::get('/login',[Login_controller::class,'login_view'])->name('login_view');
+Route::get('/login',[Login_controller::class,'login_view'])->name('login');
 Route::post('/login',[Login_controller::class,'login_process'])->name('login_process');
 
 Route::get('/home',[Login_controller::class,'login_view'])->name('home');
@@ -38,14 +38,9 @@ Route::get('/logout',[Login_controller::class,'logout']);
 
 Route::get('/edit_room',[Login_controller::class,'viewEditRoom'])->name('viewEditRoom');
 
+Route::get('/dashboard',[Login_controller::class,'dashboard_view']);
+Route::get('/edit_room',[Login_controller::class,'viewEditRoom']);
 
-Route::middleware(['room_admin_mid'])->group(function(){
-    Route::get('/dashboard',[Login_controller::class,'dashboard_view']);
-});
-
-Route::middleware(['system_admin_mid'])->group(function(){
-    Route::get('/edit_room',[Login_controller::class,'viewEditRoom']);
-});
 
 
 
@@ -160,10 +155,6 @@ Route::get('/home', function () {
 });
 Route::get('/table', function () {
     return view('table_room');
-});
-
-Route::get('/login', function () {
-    return view('login');
 });
 
 Route::get('/test', function () {
