@@ -57,6 +57,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <link rel="stylesheet" href="CSS/tebleRoom.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <script>
             function goTableRoomA() {
                 window.location.href = "/table_a";
@@ -93,7 +97,7 @@
                         </div>
 
                             <div style="margin-left:4%">
-                                 <button
+                                <button
                                     style="font-size:16px; color:black; border-radius: 10px;  ; background-color: white ;height: 55px;
                     width: 130px;"
                                     class="ml-4 btn btn-secondary btn-lg " type="button"
@@ -103,8 +107,8 @@
                                 <button
                                     style="font-size:16px; color:black; border-radius: 10px; background-color: #6FA0FF ;height: 55px;
                     width: 130px;"
-                                    class="btn btn-primary btn-lg " type="button"
-                                    onclick="goTableRoomB()">ครึ่งห้องส่วน B</button>
+                                    class="btn btn-primary btn-lg " type="button" onclick="goTableRoomB()">ครึ่งห้องส่วน
+                                    B</button>
                             </div>
                             <div style="margin-left:4%">
                                 <button

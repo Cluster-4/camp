@@ -62,19 +62,19 @@
                 window.location.href = "/table_a";
             }
 
-            function goTableRoomB() {
-                window.location.href = "/table_b";
-            }
+        function goTableRoomB() {
+            window.location.href = "/table_b";
+        }
 
-            function goTableRoomFull() {
-                window.location.href = "/table_full";
-            }
+        function goTableRoomFull() {
+            window.location.href = "/table_full";
+        }
 
-            function returnTemp() {
-                window.location.href = "/table";
-            }
-        </script>
-    </head>
+        function returnTemp() {
+            window.location.href = "/table";
+        }
+    </script>
+</head>
 
     <div class="shadow container" style="background-color :#ffffff">
 
@@ -252,6 +252,15 @@
                             <td></td>
                         </tr>
                     </table>
+            </table>
+        </div>
+        <hr style="visibility: hidden;">
+        <div class="just">
+            <button type="button" class="btn btn-return buttomBack" onclick="returnTemp()">ย้อนกลับ</button>
+        </div>
+        <hr style="visibility: hidden;">
+    </section>
+</body>
 
                 </div>
                 <hr style="visibility: hidden;">
