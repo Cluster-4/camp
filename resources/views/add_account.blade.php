@@ -14,6 +14,10 @@
     </head>
 
     <body>
+        <div class="d-flex bg-dark text-white align-items-center p-4 fs-3 sidebar-title">
+            <i class="fi fi-sr-users me-4" style="font-size: "></i>
+            จัดการบัญชีผู้ใช้งาน
+        </div>
         <form action="{{ url('/manage_account') }}" method="POST">
             @csrf
             <div class="container" style="background-color :#ffffff;">

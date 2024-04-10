@@ -114,7 +114,7 @@
 
     <body>
         <div class="d-flex bg-dark text-white align-items-center p-4 fs-3 sidebar-title">
-            <i class="fi fi-rr-pencil me-4" style="font-size: "></i>
+            <i class="fi fi-sr-users me-4" style="font-size: "></i>
             จัดการบัญชีผู้ใช้งาน
         </div>
         <div class="shadow container" style="background-color :#ffffff;">

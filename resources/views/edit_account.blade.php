@@ -13,6 +13,10 @@
     </head>
 
     <body>
+        <div class="d-flex bg-dark text-white align-items-center p-4 fs-3 sidebar-title">
+            <i class="fi fi-sr-users me-4" style="font-size: "></i>
+            จัดการบัญชีผู้ใช้งาน
+        </div>
         <div class="shadow container container" style="background-color :#ffffff;">
             <div class="container text-center">
                 <label for="text" class="Name mt-5 front-size: Name">เเก้ไขบัญชีผู้ใช้</label>

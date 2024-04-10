@@ -46,7 +46,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item" onclick="toggleActive(event)">
-                    <a href="/approve" class="sidebar-link">
+                    <a href="{{ url('/dashboard') }}" class="sidebar-link">
                         <i class="fi fi-rr-checkbox" style="font-size: 30px; display: flex;"></i>
                         <span class="pl-3">อนุมัติคำขอจองห้อง</span>
                     </a>
@@ -78,7 +78,7 @@
                     <span>ผู้ดูแลห้องประชุม</span>
                 </div>
 
-            
+
                     <a href="{{ url('logout')}}" class="text-white sidebar-link d-flex justify-content-end">
                         <i class="fi fi-sr-sign-out-alt" style="font-size: 30"></i>
                     </a>
