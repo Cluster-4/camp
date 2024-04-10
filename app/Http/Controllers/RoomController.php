@@ -30,27 +30,7 @@ class RoomController extends Controller
 
     public function storeRoom(Request $request)
     {
-        // Validate input data
-        // $request->validate([
-        //     'rm_name' => 'required|string|max:255',
-        //     'rm_type' => 'required|string|max:255',
-        //     'rm_status' => 'required|string|max:255',
-        //     'rm_price' => 'required|numeric',
-        //     'rm_facilities' => 'nullable|string',
-        //     'rm_can_half' => 'required|boolean',
-        //     'rm_size_id' => 'required|integer',
-        //     'rm_is_half' => 'nullable|boolean',
-        //     'rm_pic_path' => 'nullable|string',
-        //     'rm_half_a_size_id' => 'nullable|integer',
-        //     'rm_half_a_facilities' => 'nullable|string',
-        //     'rm_half_a_pic_path' => 'nullable|string',
-        //     'rm_half_a_is_half' => 'nullable|boolean',
-        //     'rm_half_b_size_id' => 'nullable|integer',
-        //     'rm_half_b_facilities' => 'nullable|string',
-        //     'rm_half_b_pic_path' => 'nullable|string',
-        //     'rm_half_b_is_half' => 'nullable|boolean'
-        // ]);
-
+        
         $room = new Room();
         $room->rm_name = $request->input('rm_name');
         $room->rm_type = $request->input('rm_type');
