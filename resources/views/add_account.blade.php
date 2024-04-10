@@ -1,4 +1,4 @@
-@extends('layout.norm_officer_layout')
+@extends('layout.norm_officer_sidebar')
 @section('page_name', 'Booking_approvement')
 @section('content')
     <!DOCTYPE html>
@@ -14,7 +14,7 @@
     </head>
 
     <body>
-        <form action="https://manage_account" method="POST">
+        <form action="{{ url('/manage_account') }}" method="POST">
             @csrf
             <div class="container" style="background-color :#ffffff;">
                 <div class="container text-center">
@@ -114,7 +114,7 @@
                                     </select>
                                 </div>
                             </div>
-                            </a><button type="submit" class="btn btn-primary">ถัดไป</button>
+                        </a><button type="submit" class="btn btn-primary">ถัดไป</button>
                             <a href="/manage_account">
                                 <button type="button" class="btn btn-primary">ยกเลิก</button>
                         </div>
