@@ -119,7 +119,10 @@
                                 </div>
                                 <div class="col-6">
                                     {{-- <input type="text" class="form-control div-input" id="roomName" placeholder="G105"> --}}
-                                    <input type="text" class="form-control div-input" id="rm_name" name="rm_name" placeholder="G105">
+                                    <input type="text" class="form-control div-input @error('rm_name') is-invalid @enderror" id="rm_name" name="rm_name" placeholder="G105">
+                                    @error('rm_name')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="col">
 
@@ -191,7 +194,10 @@
                                 </div>
                                 <div class="col-6">
                                     {{-- <input type="number" class="form-control div-input" id="price" placeholder="75"> --}}
-                                    <input type="number" class="form-control div-input" id="rm_price" name="rm_price" placeholder="75">
+                                    <input type="number" class="form-control div-input @error('rm_price') is-invalid @enderror" id="rm_price" name="rm_price" placeholder="75">
+                                    @error('rm_price')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="col">
                                     <label for="price" class="form-label">บาท/ชั่วโมง</label>

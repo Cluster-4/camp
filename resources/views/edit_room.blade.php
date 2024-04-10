@@ -113,6 +113,7 @@
                             </div>
                             <div class="col-6">
                                 <input type="text" class="form-control div-input" id="rm_name" name="rm_name" value="{{ $room->rm_name }}">
+                                
                             </div>
                             <div class="col">
                             </div>

@@ -30,48 +30,101 @@ class RoomController extends Controller
 
     public function storeRoom(Request $request)
     {
-        
+
+        // $room = new Room();
+        // $room->rm_name = $request->input('rm_name');
+        // $room->rm_type = $request->input('rm_type');
+        // $room->rm_status = $request->input('rm_status');
+        // $room->rm_price = $request->input('rm_price');
+        // $room->rm_facilities = $request->input('rm_facilities');
+        // // $room->rm_can_half = $request->input('rm_can_half');
+        // $room->rm_size_id = (int) $request->input('rm_size_id');
+        // $room->rm_is_half = $request->input('rm_is_half');
+
+        // $room->rm_pic_path = $request->input('rm_pic_path');
+
+        // $room->rm_a_price = $request->input('rm_a_price');
+        // $room->rm_b_price = $request->input('rm_b_price');
+
+        // $room->rm_half_a_size_id = $request->input('rm_half_a_size_id');
+        // $room->rm_half_a_facilities = $request->input('rm_half_a_facilities');
+
+        // $room->rm_half_a_pic_path = $request->input('rm_half_a_pic_path');
+
+        // $room->rm_half_a_is_half = $request->input('rm_half_a_is_half');
+        // $room->rm_half_b_size_id = $request->input('rm_half_b_size_id');
+        // $room->rm_half_b_facilities = $request->input('rm_half_b_facilities');
+
+        // $room->rm_half_b_pic_path = $request->input('rm_half_b_pic_path');
+
+        // $room->rm_half_b_is_half = $request->input('rm_half_b_is_half');
+
+        // if ($request->hasFile('rm_pic_path')) {
+        //     $imagePath = $request->file('rm_pic_path')->store('public/room_images');
+        //     $room->rm_pic_path = basename($imagePath);
+        // }
+
+
+        // // บันทึกรูปภาพของครึ่งห้อง A
+        // if ($request->hasFile('rm_half_a_pic_path')) {
+        //     $imagePath = $request->file('rm_half_a_pic_path')->store('public/room_images');
+        //     $room->rm_half_a_pic_path = $imagePath;
+        // }
+
+        // // บันทึกรูปภาพของครึ่งห้อง B
+        // if ($request->hasFile('rm_half_b_pic_path')) {
+        //     $imagePath = $request->file('rm_half_b_pic_path')->store('public/room_images');
+        //     $room->rm_half_b_pic_path = $imagePath;
+        // }
+
+        // $room->save();
+
+        // return redirect()->to('/manage_room');
+
+        $request->validate([
+            'rm_name' => 'required',
+            'rm_type' => 'required',
+            'rm_status' => 'required',
+            'rm_price' => 'required',
+            'rm_facilities' => 'nullable',
+            'rm_size_id' => 'required',
+            'rm_is_half' => 'required',
+            'rm_a_price' => 'nullable',
+            'rm_b_price' => 'nullable',
+            'rm_half_a_size_id' => 'required',
+            'rm_half_a_facilities' => 'nullable',
+            'rm_half_b_size_id' => 'required',
+            'rm_half_b_facilities' => 'nullable',
+            'rm_pic_path' => 'nullable',
+            'rm_half_a_pic_path' => 'nullable',
+            'rm_half_b_pic_path' => 'nullable',
+        ]);
+
         $room = new Room();
         $room->rm_name = $request->input('rm_name');
         $room->rm_type = $request->input('rm_type');
         $room->rm_status = $request->input('rm_status');
         $room->rm_price = $request->input('rm_price');
         $room->rm_facilities = $request->input('rm_facilities');
-        // $room->rm_can_half = $request->input('rm_can_half');
         $room->rm_size_id = (int) $request->input('rm_size_id');
         $room->rm_is_half = $request->input('rm_is_half');
-
-        $room->rm_pic_path = $request->input('rm_pic_path');
-
         $room->rm_a_price = $request->input('rm_a_price');
         $room->rm_b_price = $request->input('rm_b_price');
-
         $room->rm_half_a_size_id = $request->input('rm_half_a_size_id');
         $room->rm_half_a_facilities = $request->input('rm_half_a_facilities');
-
-        $room->rm_half_a_pic_path = $request->input('rm_half_a_pic_path');
-
-        $room->rm_half_a_is_half = $request->input('rm_half_a_is_half');
         $room->rm_half_b_size_id = $request->input('rm_half_b_size_id');
         $room->rm_half_b_facilities = $request->input('rm_half_b_facilities');
-
-        $room->rm_half_b_pic_path = $request->input('rm_half_b_pic_path');
-
-        $room->rm_half_b_is_half = $request->input('rm_half_b_is_half');
 
         if ($request->hasFile('rm_pic_path')) {
             $imagePath = $request->file('rm_pic_path')->store('public/room_images');
             $room->rm_pic_path = basename($imagePath);
         }
 
-
-        // บันทึกรูปภาพของครึ่งห้อง A
         if ($request->hasFile('rm_half_a_pic_path')) {
             $imagePath = $request->file('rm_half_a_pic_path')->store('public/room_images');
             $room->rm_half_a_pic_path = $imagePath;
         }
 
-        // บันทึกรูปภาพของครึ่งห้อง B
         if ($request->hasFile('rm_half_b_pic_path')) {
             $imagePath = $request->file('rm_half_b_pic_path')->store('public/room_images');
             $room->rm_half_b_pic_path = $imagePath;
@@ -99,34 +152,41 @@ class RoomController extends Controller
 
     public function updateRoom(Request $request, $id)
     {
+        $request->validate([
+            'rm_name' => 'required',
+            'rm_type' => 'required',
+            'rm_status' => 'required',
+            'rm_price' => 'required',
+            'rm_facilities' => 'nullable',
+            'rm_size_id' => 'required',
+            'rm_is_half' => 'required',
+            'rm_a_price' => 'nullable',
+            'rm_b_price' => 'nullable',
+            'rm_half_a_size_id' => 'required',
+            'rm_half_a_facilities' => 'nullable',
+            'rm_half_b_size_id' => 'required',
+            'rm_half_b_facilities' => 'nullable',
+            'rm_pic_path' => 'nullable',
+            'rm_half_a_pic_path' => 'nullable',
+            'rm_half_b_pic_path' => 'nullable',
+        ]);
+
         $room = Room::findOrFail($id);
+
         // Update room properties
         $room->rm_name = $request->input('rm_name');
         $room->rm_type = $request->input('rm_type');
         $room->rm_status = $request->input('rm_status');
         $room->rm_price = $request->input('rm_price');
         $room->rm_facilities = $request->input('rm_facilities');
-        // $room->rm_can_half = $request->input('rm_can_half');
         $room->rm_size_id = (int) $request->input('rm_size_id');
         $room->rm_is_half = $request->input('rm_is_half');
-
         $room->rm_a_price = $request->input('rm_a_price');
         $room->rm_b_price = $request->input('rm_b_price');
-
-        $room->rm_pic_path = $request->input('rm_pic_path');
-
         $room->rm_half_a_size_id = $request->input('rm_half_a_size_id');
         $room->rm_half_a_facilities = $request->input('rm_half_a_facilities');
-
-        $room->rm_half_a_pic_path = $request->input('rm_half_a_pic_path');
-
-        $room->rm_half_a_is_half = $request->input('rm_half_a_is_half');
         $room->rm_half_b_size_id = $request->input('rm_half_b_size_id');
         $room->rm_half_b_facilities = $request->input('rm_half_b_facilities');
-
-        $room->rm_half_b_pic_path = $request->input('rm_half_b_pic_path');
-
-        $room->rm_half_b_is_half = $request->input('rm_half_b_is_half');
 
         // Update room images if new ones are provided
         if ($request->hasFile('rm_pic_path')) {
@@ -147,5 +207,6 @@ class RoomController extends Controller
         $room->save();
 
         return redirect()->route('manage_room')->with('success', 'Room updated successfully');
+
     }
 }
