@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\Booking_info_controller;
@@ -13,6 +14,14 @@ use App\Http\Controllers\Booking_info_controller;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('/login',[LoginController::class,'viewlogin'])->name('viewlogin');
+Route::post('/login',[LoginController::class,'login'])->name('login');
+Route::get('/home',[LoginController::class,'viewlogin'])->name('home');
+Route::get('/edit_room',[LoginController::class,'edit_size_room'])->name('edit_room');
+Route::delete('/logout',[LoginController::class,'logout'])->name('logout');
+
+
 
 Route::get('/', function () {
     return view('manage_room');
