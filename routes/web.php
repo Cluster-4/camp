@@ -67,9 +67,9 @@ Route::get('/booking', function () {
     return view('other.booking');
 });
 
-// Route::get('/process_first', function () {
-//     return view('other.process_first');
-// });
+Route::get('/process_first', function () {
+    return view('other.process_first');
+});
 
 Route::get('/process_second', function () {
     return view('other.process_second');
@@ -117,4 +117,8 @@ Route::get('/booking', [RoomController::class, 'index_booking'])->name('booking'
 Route::get('/process_first', [RoomController::class, 'index_process_first'])->name('process_1');
 Route::get('/process_first/{room_id}', [RoomController::class, 'index_process_first'])->name('process_1');
 
-Route::post('/store/booking/information', [Booking_info_controller::class, 'store'])->name('store.booking.information');
+Route::post('/store/booking/information', [Booking_info_controller::class, 'store'])->name('store_booking');
+
+
+Route::post('/booking',[Booking_info_controller::class, 'filter'])->name ('filter');
+Route::get('/booking',[Booking_info_controller::class, 'filter'])->name ('filter');

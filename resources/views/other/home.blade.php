@@ -70,12 +70,13 @@
             <!-- กรอบ input ข้อมูล -->
             <div class="shadow mt-3"
                 style="width: 58vw; height: 45vh; border-radius: 15px; background-color: #D9D9D9;justify-content: center; align-items: center;">
-                <form>
+                <form method="POST" action="/booking">
+                    @csrf
                     <!-- ชื่อห้อง -->
                     <div class="row" style="display: flex; justify-content: center;">
                         <div class="col-10 mt-5 inner-addon right-addon">
                             <i class="fi fi-rr-search me-2" style="color: black; font-size: 30px;"></i>
-                            <input type="text" class="form-control"
+                            <input type="text" class="form-control" name="name_room"
                                 style="height: 8vh; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 30px;"
                                 id="name_room" placeholder="ค้นหาห้องประชุม">
                         </div>
@@ -84,14 +85,14 @@
                     <div class="row" style="display: flex; justify-content: center;">
                         <div class="col-5 mt-2 inner-addon right-addon" style="position: relative;">
                             <i class="fi fi-rr-calendar" style="color: black; font-size: 27px; margin-right:4%"></i>
-                            <input type="text" id="date_in" class="form-control input-date"
+                            <input type="text" name="date_in" id="date_in" class="form-control input-date"
                                 style="height: 8vh; border-radius: 15px; font-size: 30px; " placeholder="วันที่เข้าใช้"
                                 onclick="(this.type='date')" />
                             <span style="position: absolute; top: 1vh; right: 5%; color: red;">*</span>
                         </div>
                         <div class="col-5 mt-2 inner-addon right-addon" style="position: relative;">
                             <i class="fi fi-rr-calendar" style="color: black; font-size: 27px; margin-right:4%"></i>
-                            <input type="text" id="date_out" class="form-control"
+                            <input type="text" name="date_out" id="date_out" class="form-control"
                                 style="height: 8vh; border-radius: 15px; font-size: 30px;" placeholder="วันที่สิ้นสุดการใช้"
                                 onclick="(this.type='date')" />
                             <span style="position: absolute; top: 1vh; right: 5%; color: red;">*</span>
@@ -101,14 +102,14 @@
                     <div class="row" style="display: flex; justify-content: center;">
                         <div class="col-5 mt-2 inner-addon right-addon" style="position: relative;">
                             <i class="fi fi-rr-clock-three" style="color: black; font-size: 27px; margin-right:4%"></i>
-                            <input type="text" id="time_in" class="form-control"
+                            <input type="text" name="time_in" id="time_in" class="form-control"
                                 style="height: 8vh; border-radius: 15px; font-size: 30px;" placeholder="เวลาเข้าใช้"
                                 onclick="(this.type='time')" />
                             <span style="position: absolute; top: 1vh; right: 5%; color: red;">*</span>
                         </div>
                         <div class="col-5 mt-2 inner-addon right-addon" style="position: relative;">
                             <i class="fi fi-rr-clock-three" style="color: black; font-size: 27px; margin-right:4%"></i>
-                            <input type="text" id="time_out" class="form-control"
+                            <input type="text" name="time_out" id="time_out" class="form-control"
                                 style="height: 8vh; border-radius: 15px; font-size: 30px;"
                                 placeholder="เวลาที่สิ้นสุดการใช้" onclick="(this.type='time')" />
                             <span style="position: absolute; top: 1vh; right: 5%; color: red;">*</span>

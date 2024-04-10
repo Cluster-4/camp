@@ -14,11 +14,11 @@ class booking_information_model extends Model
 
     public function room_size()
     {
-        return $this->belongsTo(Room_size_model::class);
+        return $this->hasMany(Room_size_model::class);
     }
     public function room()
     {
-        return $this->belongsTo(Room::class);
+        return $this->hasMany(Room::class);
     }
 
     protected $fillable = [
@@ -29,6 +29,8 @@ class booking_information_model extends Model
         'bkg_tel',
         'bkg_date_use',
         'bkg_date_end',
+        'bkg_time_in',
+        'bkg_time_out',
         'bkg_create_time',
         'bkg_cancel_resson',
         'bkg_approve_date',
