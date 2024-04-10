@@ -72,7 +72,7 @@ class Login_controller extends Controller
 
         }
 
-        // return Redirect::to('login')->with('error', ' *** Email or password incorrect *** ');
+        return Redirect::to('login')->with('error', ' *** Email or password incorrect *** ');
 
     }
     // $request->validate([
