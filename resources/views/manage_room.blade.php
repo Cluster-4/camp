@@ -168,7 +168,13 @@
                                 <h5 class="card-title">รายละเอียด</h5>
                                 <p class="card-text">
                                     ขนาด : {{ $room->room_size->rm_size_name }}<br>
-                                    แบ่งครึ่งห้อง : {{ $room->rm_is_half }}<br>
+
+                                    @if ( $room->rm_is_half == 1 )
+                                        แบ่งครึ่งห้อง : ได้<br>
+                                    @else
+                                        แบ่งครึ่งห้อง : ไม่ได้<br>
+                                    @endif
+                                    {{-- แบ่งครึ่งห้อง : {{ $room->rm_is_half }}<br> --}}
                                     ราคา : {{ $room->rm_price }}<br>
                                     สถานะ : {{ $room->rm_status }}<br>
                                     ประเภทห้อง : {{ $room->rm_type }}<br>
@@ -180,7 +186,7 @@
                                 <a href="{{ route('edit_room', $room->rm_id) }}">
                                     <button type="button" class="btn btn-primary button-edit">แก้ไขห้อง</button>
                                 </a>
-                                
+
                                 {{-- @csrf
                                 @method('DELETE') --}}
                                 {{-- <a href=""><button type="button" class="btn btn-danger button-edit ms-2">ลบห้อง</button></a> --}}
