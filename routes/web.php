@@ -22,24 +22,24 @@ use App\Http\Controllers\Login_controller;
 
 // Route::get('/login',[LoginController::class,'viewlogin'])->name('viewlogin');
 // Route::post('/login',[LoginController::class,'login'])->name('login');
-Route::get('/cluster4/home',[LoginController::class,'viewlogin'])->name('home');
-Route::get('/cluster4/edit_room',[LoginController::class,'edit_size_room'])->name('edit_room');
+Route::get('/home',[LoginController::class,'viewlogin'])->name('home');
+Route::get('/edit_room',[LoginController::class,'edit_size_room'])->name('edit_room');
 // Route::delete('/logout',[LoginController::class,'logout'])->name('logout');
 // Login_controller
-Route::get('/cluster4/login',[Login_controller::class,'login_view'])->name('login');
-Route::post('/cluster4/login',[Login_controller::class,'login_process'])->name('login_process');
+Route::get('/login',[Login_controller::class,'login_view'])->name('login');
+Route::post('/login',[Login_controller::class,'login_process'])->name('login_process');
 
-Route::get('/cluster4/home',[Login_controller::class,'login_view'])->name('home');
-
-
-
-Route::get('/cluster4/logout',[Login_controller::class,'logout']);
+Route::get('/home',[Login_controller::class,'login_view'])->name('home');
 
 
-Route::get('/cluster4/edit_room',[Login_controller::class,'viewEditRoom'])->name('viewEditRoom');
 
-Route::get('/cluster4/dashboard',[Login_controller::class,'dashboard_view']);
-Route::get('/cluster4/edit_room',[Login_controller::class,'viewEditRoom']);
+Route::get('/logout',[Login_controller::class,'logout']);
+
+
+Route::get('/edit_room',[Login_controller::class,'viewEditRoom'])->name('viewEditRoom');
+
+Route::get('/dashboard',[Login_controller::class,'dashboard_view']);
+Route::get('/edit_room',[Login_controller::class,'viewEditRoom']);
 
 
 

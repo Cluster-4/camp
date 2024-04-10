@@ -132,7 +132,7 @@ class Account_controller extends Controller
         $searchName = $request->input('searchName');
         $searchRole = $request->input('searchRole');
 
-        $query = AccountModel::query();
+        $query = Account::query();
 
         if ($searchName) {
             $query->where('acc_fname', 'like', '%' . $searchName . '%');
