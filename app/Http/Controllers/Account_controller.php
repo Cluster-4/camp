@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AccountModel;
+use App\Models\Account;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -13,7 +13,7 @@ class Account_controller extends Controller
      */
     public function index()
     {
-        $data["bmrs_accounts"] = AccountModel::all();
+        $data["bmrs_accounts"] = Account::all();
         return view('manage_account', $data);
     }
 
@@ -44,7 +44,7 @@ class Account_controller extends Controller
         $pic = $request->input("pic");
 
 
-        $AccountModel = new AccountModel();
+        $AccountModel = new Account();
 
         $AccountModel->acc_username = $username;
         $AccountModel->acc_fname = $fname;
@@ -55,7 +55,7 @@ class Account_controller extends Controller
         $AccountModel->acc_tel = $tel;
         $AccountModel->acc_status = $status;
         $AccountModel->acc_pic_path = $pic;
-        
+
 
 
 
@@ -77,8 +77,8 @@ class Account_controller extends Controller
      */
     public function edit(string $id)
     {
-        $acc_data = AccountModel::find($id);
-        $accounts = AccountModel::all();
+        $acc_data = Account::find($id);
+        $accounts = Account::all();
 
         if ($acc_data === null) {
             return Redirect::to("/manage_account");
@@ -102,8 +102,7 @@ class Account_controller extends Controller
         $status = $request->input("status");
         $pic = $request->input("pic");
 
-        $accountModelId = AccountModel::find($id);
-
+        $accountModelId = Account::find($id);
         $accountModelId->acc_username = $username;
         $accountModelId->acc_fname = $fname;
         $accountModelId->acc_lname = $lname;
@@ -112,11 +111,6 @@ class Account_controller extends Controller
         $accountModelId->acc_password = $password;
         $accountModelId->acc_tel = $tel;
         $accountModelId->acc_status = $status;
-        if ($request->hasFile('acc_pic_path')) {
-            $imagePath = $request->file('acc_pic_path')->store('public/acc_images');
-            $AccountModel->acc_pic_path = basename($imagePath);
-        }
-
         $accountModelId->save();
 
         return Redirect::to("/manage_account");
@@ -127,7 +121,7 @@ class Account_controller extends Controller
      */
     public function destroy(string $id)
     {
-        $AccountModelId = AccountModel::find($id);
+        $AccountModelId = Account::find($id);
 
         $AccountModelId->delete();
         return Redirect::to("/manage_account");

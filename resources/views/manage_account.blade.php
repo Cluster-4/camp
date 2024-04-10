@@ -167,17 +167,17 @@
                                         <td><span class="status text-active">&bull;</span>{{ $accounts->acc_status }}</td>
                                     @endif
 
-                                    <td class="dl-and-edit_btn d-flex flex-row">
+                                    <td class="dl-and-edit_btn d-flex flex-row justify-content-center" style="width: auto;">
                                         <a href="manage_account/{{ $accounts->acc_id }}/edit" class="edit"
-                                            title="เเก้ไข"data-toggle="tooltip"><button type="button"
-                                                class="btn btn-primary">เเก้ไขบัญชี</button>
+                                            title="แก้ไข"data-toggle="tooltip"><button type="button"
+                                                class="btn btn-primary mx-2">แก้ไข</button>
                                         </a>
 
 
                                         <form class="delete-form" action="manage_account/{{ $accounts->acc_id }}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <button  type="submit" class="btn btn-danger">ลบบัญชี</button>
+                                            <button  type="submit" class="btn btn-danger">ลบ</button>
                                         </form>
                                     </td>
 

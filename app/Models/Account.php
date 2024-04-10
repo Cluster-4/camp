@@ -23,6 +23,7 @@ class Account extends Authenticatable
     {
         return $this->acc_password;
     }
+    protected $primaryKey = "acc_id";
 
 
 

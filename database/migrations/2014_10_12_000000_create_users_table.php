@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('bmrs_accounts', function (Blueprint $table) {
-            $table->id('acc_id');
+            $table->id('acc_id')->autoIncrement();  
             $table->string('acc_username');
             $table->string('acc_lname');
             $table->string('acc_fname');

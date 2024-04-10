@@ -39,56 +39,84 @@
                             </div>
                         </div>
                         <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0 mt-5">
-
-                            <label for="" class="">ชื่อผู้ใช้ :
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                            <input type="เนส" name="username" class="text"><br>
-                            <br>
-                            <label for="" class="justify-content-start">ชื่อ :
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                            <input type="text" name="fname" class="text">
-                            <br>
-                            <br>
-                            <label for="">นามสกุล : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                            <input type="text" name="lname" class="text">
-                            <br>
-                            <br>
-                            <label for="บทบาท">บทบาท : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                            <select name="position" class="drop">
-                                <option value="เจ้าหน้าที่">เจ้าหน้าที่</option>
-                                <option value="ผู้ดูเเลห้องประชุม">ผู้ดูเเลห้องประชุม</option>
-                                <option value="ผู้ดูเเลระบบ">ผู้ดูเเลระบบ</option>
-                                <option value="ผู้ดูบริหาร">ผู้ดูบริหาร</option>
-                            </select>
-                            <br>
-                            <br>
-                            <label for="">รหัสผ่าน : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                            <input type="text" class="text" name="password">
-                            <br>
-                            <br>
-                            <label for="">เบอร์โทรศัพท์ : </label>
-                            <input type="text" class="text" name="tel">
-                            <br>
-                            <br>
-                            <label for="">อีเมล :
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                            <input type="text" class="text" name="email">
-                            <br>
-                            <br>
-                            <label for="">สถานะ :
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                            <select name="status" id="" class="drop">
-                                <option value="Active">Active</option>
-                                <option value="Inactive">Inactive</option>
-                            </select>
-                            <br>
-                            <br>
+                            <div class="row mb-1">
+                                <div class="col-3">
+                                    <label for="" class="text">ชื่อผู้ใช้ :</label>
+                                </div>
+                                <div class="col-3">
+                                    <input type="เนส" name="username" class="input">
+                                </div>
+                            </div>
+                            <div class="row mb-1">
+                                <div class="col-3">
+                                    <label for="" class="text">ชื่อ :
+                                    </label>
+                                </div>
+                                <div class="col-3">
+                                    <input type="text" name="fname" class="input">
+                                </div>
+                            </div>
+                            <div class="row mb-1">
+                                <div class="col-3">
+                                    <label for="">นามสกุล : </label>
+                                </div>
+                                <div class="col-3">
+                                    <input type="text" name="lname" class="input">
+                                </div>
+                            </div>
+                            <div class="row mb-1">
+                                <div class="col-3">
+                                    <label for="บทบาท">บทบาท : </label>
+                                </div>
+                                <div class="col-3">
+                                    <select name="position" class="drop">
+                                        <option value="เจ้าหน้าที่">เจ้าหน้าที่</option>
+                                        <option value="ผู้ดูเเลห้องประชุม">ผู้ดูเเลห้องประชุม</option>
+                                        <option value="ผู้ดูเเลระบบ">ผู้ดูเเลระบบ</option>
+                                        <option value="ผู้ดูบริหาร">ผู้ดูบริหาร</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-1">
+                                <div class="col-3">
+                                    <label for="">รหัสผ่าน : </label>
+                                </div>
+                                <div class="col-3">
+                                    <input type="text" class="input" name="password">
+                                </div>
+                            </div>
+                            <div class="row mb-1">
+                                <div class="col-3">
+                                    <label for="">เบอร์โทรศัพท์ : </label>
+                                </div>
+                                <div class="col-3">
+                                    <input type="text" class="input" name="tel">
+                                </div>
+                            </div>
+                            <div class="row mb-1">
+                                <div class="col-3">
+                                    <label for="">อีเมล :
+                                    </label>
+                                </div>
+                                <div class="col-3">
+                                    <input type="text" class="input" name="email">
+                                </div>
+                            </div>
+                            <div class="row mb-1">
+                                <div class="col-3">
+                                    <label for="">สถานะ :
+                                    </label>
+                                </div>
+                                <div class="col-3">
+                                    <select name="status" id="" class="drop">
+                                        <option value="Active">Active</option>
+                                        <option value="Inactive">Inactive</option>
+                                    </select>
+                                </div>
+                            </div>
+                            </a><button type="submit" class="btn btn-primary">ถัดไป</button>
                             <a href="/manage_account">
                                 <button type="button" class="btn btn-primary">ยกเลิก</button>
-
-                            </a>
-                            <button type="submit" class="btn btn-primary">ถัดไป</button>
-
                         </div>
                     </div>
                 </div>
