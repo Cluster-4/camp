@@ -13,12 +13,12 @@ class system_admin_mid
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
+
     public function handle(Request $request, Closure $next): Response
     {
         if(Auth()->user()->acc_position=='ผู้ดูแลระบบ')
         {
             return $next($request);
-
         }
         abort(404);
     }
